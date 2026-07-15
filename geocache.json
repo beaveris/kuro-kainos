@@ -3808,5 +3808,15 @@
   "lat": 55.5590558,
   "lon": 22.4731434,
   "tikslumas": "pašto kodas"
+ },
+ "Kena, Miško g. 6, 13146": {
+  "lat": 54.646056514,
+  "lon": 25.62513572,
+  "tikslumas": "registras"
+ },
+ "Rokiškis, Panevėžio g. 7C, 42163": {
+  "lat": 55.942937184,
+  "lon": 25.585789331,
+  "tikslumas": "registras"
  }
 }
