@@ -1,0 +1,45 @@
+name: Atnaujinti kuro kainas
+
+on:
+  schedule:
+    # UTC laikas: 10:00 ir 16:30 UTC = 13:00 ir 19:30 Lietuvos (EEST), darbo dienomis
+    - cron: "0 10 * * 1-5"
+    - cron: "30 16 * * 1-5"
+  workflow_dispatch: {}
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Įdiegti priklausomybes
+        run: pip install pandas openpyxl requests
+
+      - name: Parsisiųsti naujas dienas ir geokoduoti naujas degalines
+        run: python update_history.py
+
+      - name: Įcommitinti naujus duomenis
+        run: |
+          git config user.name "kuro-kainos-bot"
+          git config user.email "actions@github.com"
+          git add data/ geocache.json
+          if git diff --cached --quiet; then
+            echo "Naujų duomenų nėra."
+          else
+            git commit -m "Duomenų atnaujinimas $(date -u +%Y-%m-%d)"
+            git push
+          fi

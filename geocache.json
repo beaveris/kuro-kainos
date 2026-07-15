@@ -1,0 +1,3812 @@
+{
+ "Kazlavo k. 4, 69285": {
+  "lat": 54.328889952,
+  "lon": 23.14719285,
+  "tikslumas": "registras"
+ },
+ "Juodalaukių k. 2, 32104": {
+  "lat": 55.717887269,
+  "lon": 26.213766096,
+  "tikslumas": "registras"
+ },
+ "Visaginas, Taikos pr. 23B, 31107": {
+  "lat": 55.594871012,
+  "lon": 26.456513128,
+  "tikslumas": "registras"
+ },
+ "Visaginas, Statybininkų g. 1, 31138": {
+  "lat": 55.594458834,
+  "lon": 26.438903174,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Vilkpėdės g. 2, 03151": {
+  "lat": 54.665005381,
+  "lon": 25.246318385,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Verkių g. 52, 09109": {
+  "lat": 54.720352239,
+  "lon": 25.295702742,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Sodų g. 22, 03211": {
+  "lat": 54.670655087,
+  "lon": 25.281856209,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Saltoniškių g. 12, 08105": {
+  "lat": 54.699353187,
+  "lon": 25.259829712,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Pilaitės pr. 28, 06264": {
+  "lat": 54.70147292,
+  "lon": 25.2033249,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Pilaitės pr. 13, 06264": {
+  "lat": 54.702859445,
+  "lon": 25.203955563,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Ozo g. 12, 08311": {
+  "lat": 54.713801297,
+  "lon": 25.277101931,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Olandų g. 57, 01205": {
+  "lat": 54.681911132,
+  "lon": 25.314034195,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Nemenčinės pl. 5, 10222": {
+  "lat": 54.726327109,
+  "lon": 25.326509499,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Naugarduko g. 74, 03203": {
+  "lat": 54.671251893,
+  "lon": 25.261812411,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Liepkalnio g. 128A, 02121": {
+  "lat": 54.647477289,
+  "lon": 25.304044245,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Laisvės pr. 8, 04133": {
+  "lat": 54.674321923,
+  "lon": 25.222678855,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Kirtimų g. 29, 02244": {
+  "lat": 54.633287954,
+  "lon": 25.150721421,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Justiniškių g. 12, 05131": {
+  "lat": 54.703261629,
+  "lon": 25.219452859,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Grigiškės, Kovo 11-osios g. 75, 27119": {
+  "lat": 54.6691856,
+  "lon": 25.1048756,
+  "tikslumas": "pastatas"
+ },
+ "Vilnius, Gariūnų g. 16A, 21401": {
+  "lat": 54.667292745,
+  "lon": 25.173851305,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Dariaus ir Girėno g. 30A, 02169": {
+  "lat": 54.652974803,
+  "lon": 25.272109677,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Ateities g. 17B, 06326": {
+  "lat": 54.735759934,
+  "lon": 25.258443522,
+  "tikslumas": "registras"
+ },
+ "Avižienių k., Ožiarūčių g. 1A, 14185": {
+  "lat": 54.7641105,
+  "lon": 25.1972513,
+  "tikslumas": "pastatas"
+ },
+ "Vilkaviškis, Vytauto g. 105, 70118": {
+  "lat": 54.647676619,
+  "lon": 23.029109582,
+  "tikslumas": "registras"
+ },
+ "Vievis, Kauno g. 26A, 21376": {
+  "lat": 54.771166517,
+  "lon": 24.820912987,
+  "tikslumas": "registras"
+ },
+ "Valkininkai, Vilniaus g. 6, 65438": {
+  "lat": 54.364672716,
+  "lon": 24.837283269,
+  "tikslumas": "registras"
+ },
+ "Gediminas, Vyturio g. 2, 28126": {
+  "lat": 55.478130564,
+  "lon": 25.581893346,
+  "tikslumas": "registras"
+ },
+ "Utena, Pramonės g. 23, 28124": {
+  "lat": 55.490085839,
+  "lon": 25.650927503,
+  "tikslumas": "registras"
+ },
+ "Utena, Metalo g. 8, 28216": {
+  "lat": 55.497023462,
+  "lon": 25.630736196,
+  "tikslumas": "registras"
+ },
+ "Šventupės k., Beržų g. 13, 20360": {
+  "lat": 55.322003486,
+  "lon": 24.875068233,
+  "tikslumas": "registras"
+ },
+ "Dukstynos k., Vytauto g. 131, 20186": {
+  "lat": 55.269155379,
+  "lon": 24.810113616,
+  "tikslumas": "registras"
+ },
+ "Ukmergė, Žiedo g. 15, 20127": {
+  "lat": 55.246239258,
+  "lon": 24.743202997,
+  "tikslumas": "registras"
+ },
+ "Aukštųjų Semeniukų k., Logistikos g. 9, 21401": {
+  "lat": 54.701967575,
+  "lon": 25.009346325,
+  "tikslumas": "registras"
+ },
+ "Telšiai, Pramonės g. 2A, 87101": {
+  "lat": 55.993350323,
+  "lon": 22.240155652,
+  "tikslumas": "registras"
+ },
+ "Tauragė, Pramonės g. 1, 72338": {
+  "lat": 55.240858906,
+  "lon": 22.305239871,
+  "tikslumas": "registras"
+ },
+ "Tauragė, Dariaus ir Girėno g. 138, 72194": {
+  "lat": 55.266476898,
+  "lon": 22.311073155,
+  "tikslumas": "registras"
+ },
+ "Švenčionėliai, Žemutinė g. 51A, 18212": {
+  "lat": 55.168512408,
+  "lon": 26.01501072,
+  "tikslumas": "registras"
+ },
+ "Pabradė, Vilniaus g. 116B, 18177": {
+  "lat": 54.97508636,
+  "lon": 25.744879592,
+  "tikslumas": "registras"
+ },
+ "Kaltanėnai, Utenos g. 1, 18239": {
+  "lat": 55.25523585,
+  "lon": 25.990543717,
+  "tikslumas": "registras"
+ },
+ "Švenčionys, Vilniaus g. 50A, 18123": {
+  "lat": 55.125471593,
+  "lon": 26.145308802,
+  "tikslumas": "registras"
+ },
+ "Širvintos, Plento g. 4, 19117": {
+  "lat": 55.045695823,
+  "lon": 24.94256384,
+  "tikslumas": "registras"
+ },
+ "Šilutė, Tilžės g. 59, 99168": {
+  "lat": 55.342872648,
+  "lon": 21.496699144,
+  "tikslumas": "registras"
+ },
+ "Kuodaičių k., 75101": {
+  "lat": 55.5152942,
+  "lon": 22.1748745,
+  "tikslumas": "pašto kodas"
+ },
+ "Kužiai, Draugystės g. 2, 80260": {
+  "lat": 55.979139613,
+  "lon": 23.136173644,
+  "tikslumas": "registras"
+ },
+ "Kuršėnai, Vilniaus g. 38A, 81136": {
+  "lat": 55.999999544,
+  "lon": 22.947706458,
+  "tikslumas": "registras"
+ },
+ "Aukštelkės k., Ilgoji g. 1, 80184": {
+  "lat": 55.881907438,
+  "lon": 23.205173517,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, Užmiesčio g. 2, 76273": {
+  "lat": 55.922685574,
+  "lon": 23.357931992,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, Tilžės g. 274, 76201": {
+  "lat": 55.944238228,
+  "lon": 23.331162166,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, J. Basanavičiaus g. 122A, 76161": {
+  "lat": 55.954719337,
+  "lon": 23.315961833,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, Gegužių g. 26, 78348": {
+  "lat": 55.905373844,
+  "lon": 23.260154559,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, Dubijos g. 1C,": {
+  "lat": 55.926524494,
+  "lon": 23.307082095,
+  "tikslumas": "registras"
+ },
+ "Jašiūnai, Lydos g. 13, 17247": {
+  "lat": 54.439646009,
+  "lon": 25.327295039,
+  "tikslumas": "registras"
+ },
+ "Skuodas, Vilniaus g. 50, 98119": {
+  "lat": 56.270201975,
+  "lon": 21.547109215,
+  "tikslumas": "registras"
+ },
+ "Rokiškis, Žemaitės g. 2C, 42164": {
+  "lat": 55.934098801,
+  "lon": 25.585604277,
+  "tikslumas": "registras"
+ },
+ "Rokiškis, Panevėžio g. 5, 42163": {
+  "lat": 55.944511736,
+  "lon": 25.585613534,
+  "tikslumas": "registras"
+ },
+ "Vejukų k. 5, 60345": {
+  "lat": 55.386710959,
+  "lon": 22.901332644,
+  "tikslumas": "registras"
+ },
+ "Mačiūnų k., Kauno pl. 40, 59157": {
+  "lat": 54.658977603,
+  "lon": 23.947103998,
+  "tikslumas": "registras"
+ },
+ "Grigaliūnų k. 11, 59281": {
+  "lat": 54.713930418,
+  "lon": 23.649820912,
+  "tikslumas": "registras"
+ },
+ "Plungė, Žaltakalnio g. 10, 90158": {
+  "lat": 55.898376214,
+  "lon": 21.840254577,
+  "tikslumas": "registras"
+ },
+ "Plungė, J. Tumo-Vaižganto g. 102, 90160": {
+  "lat": 55.903039406,
+  "lon": 21.830014522,
+  "tikslumas": "registras"
+ },
+ "Pasvalys, Vilniaus g. 50, 39177": {
+  "lat": 56.056008349,
+  "lon": 24.40740184,
+  "tikslumas": "registras"
+ },
+ "Brazdigalos k. 1, 39198": {
+  "lat": 56.042177523,
+  "lon": 24.378160482,
+  "tikslumas": "registras"
+ },
+ "Panevėžys, Venslaviškio g. 16, 35116": {
+  "lat": 55.736930158,
+  "lon": 24.387145962,
+  "tikslumas": "registras"
+ },
+ "Panevėžys, Senamiesčio g. 116A, 35115": {
+  "lat": 55.748535353,
+  "lon": 24.393313352,
+  "tikslumas": "registras"
+ },
+ "Panevėžys, Ramygalos g. 186G, 36224": {
+  "lat": 55.709266395,
+  "lon": 24.373665762,
+  "tikslumas": "registras"
+ },
+ "Panevėžys, Ramygalos g. 155, 36224": {
+  "lat": 55.703809065,
+  "lon": 24.380900181,
+  "tikslumas": "registras"
+ },
+ "Panevėžys, Pušaloto g. 193A, 191A": {
+  "lat": 55.7531878,
+  "lon": 24.3120183,
+  "tikslumas": "pastatas"
+ },
+ "Panevėžys, Navadolio g. 31, 36252": {
+  "lat": 55.714597038,
+  "lon": 24.335141736,
+  "tikslumas": "registras"
+ },
+ "Panevėžys, J. Janonio g. 28A, 35101": {
+  "lat": 55.738819512,
+  "lon": 24.310174096,
+  "tikslumas": "registras"
+ },
+ "Tičkūnų k., Tičkūnų g. 31, 38410": {
+  "lat": 55.778861353,
+  "lon": 24.365006546,
+  "tikslumas": "registras"
+ },
+ "Šilagalio k., Panevėžio aplinkl. 5, 36258": {
+  "lat": 55.670508735,
+  "lon": 24.349993019,
+  "tikslumas": "registras"
+ },
+ "Ramygala, Vienkiemio g. 1B, 38262": {
+  "lat": 55.520984647,
+  "lon": 24.312591395,
+  "tikslumas": "registras"
+ },
+ "Krekenava, Tilto g. 35, 38305": {
+  "lat": 55.541540625,
+  "lon": 24.107847833,
+  "tikslumas": "registras"
+ },
+ "Pakruojis, Vytauto Didžiojo g. 98, 83162": {
+  "lat": 55.980449016,
+  "lon": 23.857991499,
+  "tikslumas": "registras"
+ },
+ "Gojaus k., Utenos g. 16, 33165": {
+  "lat": 55.214639951,
+  "lon": 25.437842737,
+  "tikslumas": "registras"
+ },
+ "Molėtai, Vilniaus g. 101, 33112": {
+  "lat": 55.222871033,
+  "lon": 25.404627779,
+  "tikslumas": "registras"
+ },
+ "Mažeikiai, Žemaitijos g. 75, 89132": {
+  "lat": 56.300318993,
+  "lon": 22.360817958,
+  "tikslumas": "registras"
+ },
+ "Mažeikiai, Montuotojų g. 2A, 89101": {
+  "lat": 56.315600406,
+  "lon": 22.302744133,
+  "tikslumas": "registras"
+ },
+ "Marijampolė, J. Ambrazevičiaus-Brazaičio g. 2, 68161": {
+  "lat": 54.567684241,
+  "lon": 23.33933786,
+  "tikslumas": "registras"
+ },
+ "Marijampolė, Geležinkelio g. 5, 68305": {
+  "lat": 54.554365546,
+  "lon": 23.362370657,
+  "tikslumas": "registras"
+ },
+ "Lazdijai, Turistų g. 32, 67102": {
+  "lat": 54.228605628,
+  "lon": 23.528102278,
+  "tikslumas": "registras"
+ },
+ "Kupiškis, Pergalės g. 15, 40109": {
+  "lat": 55.844528676,
+  "lon": 24.978981767,
+  "tikslumas": "registras"
+ },
+ "Kerelių k. 1A, 40473": {
+  "lat": 55.856554055,
+  "lon": 25.173591292,
+  "tikslumas": "registras"
+ },
+ "Kretingsodžio k., 97100": {
+  "lat": 55.8956647,
+  "lon": 21.2179472,
+  "tikslumas": "pašto kodas"
+ },
+ "Kretinga, Vytauto g. 163, 97133": {
+  "lat": 55.890542991,
+  "lon": 21.278495789,
+  "tikslumas": "registras"
+ },
+ "Sudmantų k., Vilniaus pl. 6": {
+  "lat": 55.704455796,
+  "lon": 21.221595902,
+  "tikslumas": "registras"
+ },
+ "Kretingalė, Klaipėdos g. 1A, 96332": {
+  "lat": 55.827554473,
+  "lon": 21.184799768,
+  "tikslumas": "registras"
+ },
+ "Gargždai, Vilniaus pl. 65, 96173": {
+  "lat": 55.73220318,
+  "lon": 21.376157253,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Taikos pr. 70A-1, 93202": {
+  "lat": 55.7001378,
+  "lon": 21.1491373,
+  "tikslumas": "pastatas"
+ },
+ "Klaipėda, Šilutės pl. 52, 94181": {
+  "lat": 55.681965795,
+  "lon": 21.185173234,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Priestočio g. 28, 92191": {
+  "lat": 55.71923581,
+  "lon": 21.14117203,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Nemuno g. 139, 93185": {
+  "lat": 55.673962976,
+  "lon": 21.148039407,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Liepojos g. 242, 92330": {
+  "lat": 55.753700146,
+  "lon": 21.1313986,
+  "tikslumas": "registras"
+ },
+ "Gudžiūnų k., Baisogalos g. 5, 58267": {
+  "lat": 55.518550804,
+  "lon": 23.77352001,
+  "tikslumas": "registras"
+ },
+ "Dotnuva, Tilto g. 2A, 58352": {
+  "lat": 55.374752078,
+  "lon": 23.88085247,
+  "tikslumas": "registras"
+ },
+ "Ąžuolų Būdos k.": {
+  "lat": 54.7901401,
+  "lon": 23.448325,
+  "tikslumas": "savivaldybė"
+ },
+ "Zapyškis, Vytauto g. 20A, 53419": {
+  "lat": 54.926952805,
+  "lon": 23.661905106,
+  "tikslumas": "registras"
+ },
+ "Margavos k., 54471": {
+  "lat": 54.9579225,
+  "lon": 24.0294935,
+  "tikslumas": "pašto kodas"
+ },
+ "Kumpių k., Verslo g. 13A, 54311": {
+  "lat": 54.959155905,
+  "lon": 23.866815076,
+  "tikslumas": "registras"
+ },
+ "Kampiškių k., Baltijos g. 41, 09300": {
+  "lat": 54.842540271,
+  "lon": 23.849560079,
+  "tikslumas": "registras"
+ },
+ "Ilgakiemio k., Prienų g. 22,": {
+  "lat": 54.774118312,
+  "lon": 23.889695798,
+  "tikslumas": "registras"
+ },
+ "Giraitės k., Automagistralės g. 4, 54310": {
+  "lat": 54.959108237,
+  "lon": 23.864332656,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Veiverių g. 124B, 46282": {
+  "lat": 54.883333108,
+  "lon": 23.893652221,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Veiverių g. 117, 46354": {
+  "lat": 54.866563586,
+  "lon": 23.889334545,
+  "tikslumas": "registras"
+ },
+ "Kaunas, T. Masiulio g. 22B, 52447": {
+  "lat": 54.881007271,
+  "lon": 24.009786422,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Statybininkų g. 3A, 50124": {
+  "lat": 54.920107609,
+  "lon": 23.948836653,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Raudondvario pl. 288, 47164": {
+  "lat": 54.921398973,
+  "lon": 23.810330668,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Pramonės pr. 44, 50302": {
+  "lat": 54.927114846,
+  "lon": 23.974663502,
+  "tikslumas": "registras"
+ },
+ "Kaunas, P. Lukšio g. 66A, 49404": {
+  "lat": 54.924866687,
+  "lon": 23.942496843,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Miežėnų g. 18, 47115": {
+  "lat": 54.917642459,
+  "lon": 23.863193169,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Marijampolės pl. 29, 45438": {
+  "lat": 54.849556239,
+  "lon": 23.966786307,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Karaliaus Mindaugo pr. 54, 44351": {
+  "lat": 54.887370402,
+  "lon": 23.921353385,
+  "tikslumas": "registras"
+ },
+ "Kaunas, K. Baršausko g. 64, 44405": {
+  "lat": 54.897649258,
+  "lon": 23.958109938,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Islandijos pl. 61A, 49117": {
+  "lat": 54.933537489,
+  "lon": 23.968511577,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Didžioji g. 84, 45462": {
+  "lat": 54.855148638,
+  "lon": 24.013175185,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Biruliškių g. 18A, 51205": {
+  "lat": 54.910628265,
+  "lon": 24.023205234,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Baltijos g. 90B, 47130": {
+  "lat": 54.918004225,
+  "lon": 23.873689248,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Ateities pl. 37A, 52119": {
+  "lat": 54.918225113,
+  "lon": 24.039649742,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Ateities pl. 105, 52119": {
+  "lat": 54.92713657,
+  "lon": 24.043746046,
+  "tikslumas": "registras"
+ },
+ "Kaunas, A. Juozapavičiaus pr. 90, 45267": {
+  "lat": 54.878078734,
+  "lon": 23.934133422,
+  "tikslumas": "registras"
+ },
+ "Pelucmurgių k., Muitinės g. 35, 69270": {
+  "lat": 54.339820374,
+  "lon": 23.163098815,
+  "tikslumas": "registras"
+ },
+ "Kalvarija, Dariaus ir Girėno g. 81, 69206": {
+  "lat": 54.424465944,
+  "lon": 23.231907792,
+  "tikslumas": "registras"
+ },
+ "Kaišiadorys, Gedimino g. 135, 56173": {
+  "lat": 54.855280246,
+  "lon": 24.441792107,
+  "tikslumas": "registras"
+ },
+ "Joniškis, Vilniaus g. 51, 84166": {
+  "lat": 56.224395338,
+  "lon": 23.600907335,
+  "tikslumas": "registras"
+ },
+ "Jonava, Darbininkų g. 4D, 55101": {
+  "lat": 55.093686983,
+  "lon": 24.28294553,
+  "tikslumas": "registras"
+ },
+ "Ignalina, Turistų g. 28A, 30138": {
+  "lat": 55.338948578,
+  "lon": 26.145640064,
+  "tikslumas": "registras"
+ },
+ "Elektrėnai, Elektrinės g. 6, 26109": {
+  "lat": 54.784552794,
+  "lon": 24.654164826,
+  "tikslumas": "registras"
+ },
+ "Biržai, Pasvalio g. 1B, 41132": {
+  "lat": 56.202025871,
+  "lon": 24.737698108,
+  "tikslumas": "registras"
+ },
+ "Biržai, Parodos g. 2, 41136": {
+  "lat": 56.201411052,
+  "lon": 24.748821859,
+  "tikslumas": "registras"
+ },
+ "Anykščiai, Piliakalnio g. 9, 29109": {
+  "lat": 55.541257291,
+  "lon": 25.134757428,
+  "tikslumas": "registras"
+ },
+ "Anykščiai, A. Vienuolio g. 34, 29148": {
+  "lat": 55.521698245,
+  "lon": 25.086177376,
+  "tikslumas": "registras"
+ },
+ "Alytus, Ulonų g. 33B, 62136": {
+  "lat": 54.384755308,
+  "lon": 24.050002621,
+  "tikslumas": "registras"
+ },
+ "Alytus, Naujoji g. 27, 62175": {
+  "lat": 54.413977202,
+  "lon": 24.00962865,
+  "tikslumas": "registras"
+ },
+ "Daugų k., Neveiglo g. 25, 64144": {
+  "lat": 54.366879655,
+  "lon": 24.337587153,
+  "tikslumas": "registras"
+ },
+ "Skaistgirys, Liepų g. 22, 84380": {
+  "lat": 56.310435722,
+  "lon": 23.380822645,
+  "tikslumas": "registras"
+ },
+ "Druskininkai, Gardino g. 98, 66225": {
+  "lat": 53.990179419,
+  "lon": 24.005703124,
+  "tikslumas": "registras"
+ },
+ "Gaudikaičių k., Šiaulių pl. 1A, 87100": {
+  "lat": 56.004975891,
+  "lon": 22.240108211,
+  "tikslumas": "registras"
+ },
+ "Elektrėnai, Sabališkių g. 1U, 26141": {
+  "lat": 54.789248935,
+  "lon": 24.672805565,
+  "tikslumas": "registras"
+ },
+ "Tauragė, Dariaus ir Girėno g. 130A, 72194": {
+  "lat": 55.265198149,
+  "lon": 22.308924393,
+  "tikslumas": "registras"
+ },
+ "Ylių k., Pušyno g. 11, 60389": {
+  "lat": 55.411603294,
+  "lon": 22.831106581,
+  "tikslumas": "registras"
+ },
+ "Radviliškis, Versmės g. 2, 82197": {
+  "lat": 55.814364156,
+  "lon": 23.545938465,
+  "tikslumas": "registras"
+ },
+ "Gudžionių k., Šilų sen., Plento g. 7, 55462": {
+  "lat": 55.0955,
+  "lon": 24.3265556,
+  "tikslumas": "pastatas"
+ },
+ "Pabradė, Vilniaus g. 94, 18177": {
+  "lat": 54.978556878,
+  "lon": 25.756607296,
+  "tikslumas": "registras"
+ },
+ "Molėtai, Aplinkkelio g. 165, 33134": {
+  "lat": 55.217572044,
+  "lon": 25.411434893,
+  "tikslumas": "gatvė (registras)"
+ },
+ "Utena, Kupiškio g. 12, 28135": {
+  "lat": 55.481095566,
+  "lon": 25.579116798,
+  "tikslumas": "registras"
+ },
+ "Utena, J. Basanavičiaus g. 129, 28216": {
+  "lat": 55.505178946,
+  "lon": 25.624883286,
+  "tikslumas": "registras"
+ },
+ "Ukmergė, Kauno g. 45B, 20119": {
+  "lat": 55.242008793,
+  "lon": 24.742998287,
+  "tikslumas": "registras"
+ },
+ "Kėdainiai, J. Basanavičiaus g. 91E, 57356": {
+  "lat": 55.278008454,
+  "lon": 23.959992561,
+  "tikslumas": "registras"
+ },
+ "Katyčių k., 75493": {
+  "lat": 55.5345864,
+  "lon": 22.3379739,
+  "tikslumas": "pašto kodas"
+ },
+ "Mažeikiai, M. Daukšos g. 29, 89132": {
+  "lat": 56.301251479,
+  "lon": 22.349854434,
+  "tikslumas": "registras"
+ },
+ "N. Valios k., Europos g. 6, 69270": {
+  "lat": 54.3282552,
+  "lon": 23.1505396,
+  "tikslumas": "pastatas"
+ },
+ "Salaperaugio k., Europos g. 1, 69286": {
+  "lat": 54.330092198,
+  "lon": 23.149474227,
+  "tikslumas": "registras"
+ },
+ "Marijampolė, Vilkaviškio g. 61D, 68153": {
+  "lat": 54.562685838,
+  "lon": 23.33233699,
+  "tikslumas": "registras"
+ },
+ "Marijampolė, Stoties g. 4C, 68112": {
+  "lat": 54.560305249,
+  "lon": 23.36584954,
+  "tikslumas": "registras"
+ },
+ "Alytus, Ūdrijos g. 31, 62411": {
+  "lat": 54.408900662,
+  "lon": 24.005283551,
+  "tikslumas": "registras"
+ },
+ "Alytus, Santaikos g. 34A, 62123": {
+  "lat": 54.387090056,
+  "lon": 24.026280578,
+  "tikslumas": "registras"
+ },
+ "Šilagalio k., Panevėžio aplinkl. 22, 36258": {
+  "lat": 55.672785414,
+  "lon": 24.332463322,
+  "tikslumas": "registras"
+ },
+ "Šilagalio k., Panevėžio aplinkl. 7, 36224": {
+  "lat": 55.670512896,
+  "lon": 24.348530639,
+  "tikslumas": "registras"
+ },
+ "Panevežys, Klaipėdos g. 144B, 37376": {
+  "lat": 55.73063,
+  "lon": 24.316109,
+  "tikslumas": "pastatas"
+ },
+ "Panevėžys, Margirio g. 1B, 36248": {
+  "lat": 55.719355845,
+  "lon": 24.348949537,
+  "tikslumas": "registras"
+ },
+ "Raubonių k., Ąžuolpamūšio g. 1A, 39447": {
+  "lat": 56.115287407,
+  "lon": 24.470719104,
+  "tikslumas": "registras"
+ },
+ "Panevėžys, Klaipėdos g. 66,  35193": {
+  "lat": 55.727693964,
+  "lon": 24.348482647,
+  "tikslumas": "registras"
+ },
+ "Panevėžys, Ramygalos g. 145B, 36225": {
+  "lat": 55.709640547,
+  "lon": 24.374703596,
+  "tikslumas": "registras"
+ },
+ "Panevėžys, Klaipėdos g. 81, 37106": {
+  "lat": 55.728367784,
+  "lon": 24.33225093,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, Dubijos g. 18A, 77172": {
+  "lat": 55.929388498,
+  "lon": 23.294117386,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, Tilžės g. 72, 78140": {
+  "lat": 55.920290243,
+  "lon": 23.292906887,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, Gegužių g. 28, 78348": {
+  "lat": 55.905942863,
+  "lon": 23.259168191,
+  "tikslumas": "registras"
+ },
+ "Sudmantų k., Sendvario g. 2, 96327": {
+  "lat": 55.706091441,
+  "lon": 21.202602138,
+  "tikslumas": "registras"
+ },
+ "Jakų k., Vilniaus pl. 9, 96322": {
+  "lat": 55.706032951,
+  "lon": 21.23891296,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Šilutės pl. 5C, 91109": {
+  "lat": 55.703177425,
+  "lon": 21.164914446,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Smiltelės g. 17, 95188": {
+  "lat": 55.669848176,
+  "lon": 21.192913695,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Artojo g. 2, 92105": {
+  "lat": 55.717239299,
+  "lon": 21.151555764,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Minijos g. 119, 93231": {
+  "lat": 55.684758538,
+  "lon": 21.150419027,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Taikos pr. 60, 93225": {
+  "lat": 55.688946688,
+  "lon": 21.155062337,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Šilutės pl. 30, 91177": {
+  "lat": 55.693091566,
+  "lon": 21.17496935,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Plieno g. 1, 95112": {
+  "lat": 55.672962716,
+  "lon": 21.200992243,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Europos pr. 43, 46329": {
+  "lat": 54.875764873,
+  "lon": 23.912369899,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Vakarinis aplinkkelis 18, 48182": {
+  "lat": 54.934546,
+  "lon": 23.8668388,
+  "tikslumas": "pastatas"
+ },
+ "Kaunas, Savanorių pr. 441C, 49185": {
+  "lat": 54.929360755,
+  "lon": 23.973382714,
+  "tikslumas": "registras"
+ },
+ "Kumpių k., Vakarų g. 14, 47425": {
+  "lat": 54.949855311,
+  "lon": 23.873901598,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Tunelio g. 26, 44391": {
+  "lat": 54.894768569,
+  "lon": 23.944270083,
+  "tikslumas": "registras"
+ },
+ "Ramučių k., Vijoklių g. 1C, 54467": {
+  "lat": 54.948400936,
+  "lon": 24.01807584,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Kuršių g. 1, 48106": {
+  "lat": 54.936282403,
+  "lon": 23.886037828,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Raudondvario pl. 103, 47185": {
+  "lat": 54.906871166,
+  "lon": 23.872788495,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Islandijos pl. 191E, 49168": {
+  "lat": 54.931465258,
+  "lon": 23.95113148,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Birželio 23-iosios g. 23A, 50220": {
+  "lat": 54.916084431,
+  "lon": 23.953801611,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Taikos pr. 80A, 50441": {
+  "lat": 54.912056024,
+  "lon": 23.972848292,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Ateities pl. 50B, 52106": {
+  "lat": 54.926168112,
+  "lon": 24.06031318,
+  "tikslumas": "registras"
+ },
+ "Kaunas, R. Kalantos g. 27, 52303": {
+  "lat": 54.895068052,
+  "lon": 23.985969987,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Žemaičių pl. 26, 48256": {
+  "lat": 54.925470142,
+  "lon": 23.891903039,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Veiverių g. 132D, 46337": {
+  "lat": 54.875495872,
+  "lon": 23.89085263,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Jonavos g. 110, 44136": {
+  "lat": 54.913608532,
+  "lon": 23.912022573,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Pramonės pr. 6A, 51267": {
+  "lat": 54.909865725,
+  "lon": 23.984015514,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Geležinio Vilko g. 41, 09300": {
+  "lat": 54.704175288,
+  "lon": 25.267039343,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Panerių g. 42, 03202": {
+  "lat": 54.668191028,
+  "lon": 25.264942169,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Gariūnų g. 55, 02300": {
+  "lat": 54.658324419,
+  "lon": 25.158976988,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Eišiškių pl. 82, 02200": {
+  "lat": 54.621224482,
+  "lon": 25.242997597,
+  "tikslumas": "registras"
+ },
+ "Vilnius, J. Tiškevičiaus g. 19, 02231": {
+  "lat": 54.624389083,
+  "lon": 25.111599785,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Žirnių g. 17, 02118": {
+  "lat": 54.656627048,
+  "lon": 25.292108706,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Pilaitės pr. 27, 06269": {
+  "lat": 54.709162936,
+  "lon": 25.18984963,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Geležinio Vilko g. 37A, 08104": {
+  "lat": 54.701397009,
+  "lon": 25.263756487,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Justiniškių g. 14B, 05131": {
+  "lat": 54.704996239,
+  "lon": 25.214942876,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Architektų g. 130, 04216": {
+  "lat": 54.680743394,
+  "lon": 25.207782722,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Dariaus ir Girėno g. 17, 02169": {
+  "lat": 54.655191719,
+  "lon": 25.270644611,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Subačiaus g. 64, 11342": {
+  "lat": 54.676838128,
+  "lon": 25.309513014,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Žirmūnų g. 54C, 08233": {
+  "lat": 54.706728899,
+  "lon": 25.304160144,
+  "tikslumas": "registras"
+ },
+ "Vilnius, P. Lukšio g. 22, 09108": {
+  "lat": 54.711934132,
+  "lon": 25.293028715,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Molėtų pl. 8, 08426": {
+  "lat": 54.754826462,
+  "lon": 25.271479409,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Kedrų g. 2, 03159": {
+  "lat": 54.677162597,
+  "lon": 25.255948157,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Savanorių pr. 187, 02300": {
+  "lat": 54.646983477,
+  "lon": 25.210515773,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Kauno g. 26, 03212": {
+  "lat": 54.671722837,
+  "lon": 25.270059899,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Parodų g. 1A, 04133": {
+  "lat": 54.67342734,
+  "lon": 25.224062936,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Savanorių pr. 220A, 02301": {
+  "lat": 54.644301179,
+  "lon": 25.207368265,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Rygos g. 2, 05259": {
+  "lat": 54.715574868,
+  "lon": 25.228964355,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Žirmūnų g. 68B, 09113": {
+  "lat": 54.717499351,
+  "lon": 25.304490352,
+  "tikslumas": "registras"
+ },
+ "Vilnius, S. Stanevičiaus g. 3, 07131": {
+  "lat": 54.721423669,
+  "lon": 25.256229661,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Geležinio Vilko g. 63, 08104": {
+  "lat": 54.712098043,
+  "lon": 25.270731794,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Erfurto g. 41, 04226": {
+  "lat": 54.672643747,
+  "lon": 25.198177464,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Talino g. 2C, 05200": {
+  "lat": 54.713770758,
+  "lon": 25.2091057,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Ukmergės g. 296, 12105": {
+  "lat": 54.736165874,
+  "lon": 25.231156025,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Servečės g. 2, 02121": {
+  "lat": 54.633697104,
+  "lon": 25.304486184,
+  "tikslumas": "registras"
+ },
+ "Maciuičių k., Laisvės g. 50, 96159": {
+  "lat": 55.693545937,
+  "lon": 21.413641626,
+  "tikslumas": "registras"
+ },
+ "Jonava, Taurostos g. 16A, 55195": {
+  "lat": 55.067041457,
+  "lon": 24.289473835,
+  "tikslumas": "gatvė (registras)"
+ },
+ "Ylių k., Šilo g. 1, 60389": {
+  "lat": 55.412978614,
+  "lon": 22.821811068,
+  "tikslumas": "registras"
+ },
+ "Degučių k., Topolių g. 1, 83291": {
+  "lat": 55.970722485,
+  "lon": 23.587423706,
+  "tikslumas": "registras"
+ },
+ "Slabados k., Pievų g. 19, 60109": {
+  "lat": 55.386087716,
+  "lon": 23.043107072,
+  "tikslumas": "registras"
+ },
+ "Raseiniai, Vilniaus g. 3B, 60187": {
+  "lat": 55.37042858,
+  "lon": 23.132319282,
+  "tikslumas": "registras"
+ },
+ "Didžiosios Riešės k., Molėtų g. 15, 14262": {
+  "lat": 54.7807412,
+  "lon": 25.2739087,
+  "tikslumas": "pastatas"
+ },
+ "Panevėžys, Klaipėdos g. 92A, 37383": {
+  "lat": 55.728708769,
+  "lon": 24.338971841,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Islandijos pl. 32, 47446": {
+  "lat": 54.939640459,
+  "lon": 23.893488071,
+  "tikslumas": "registras"
+ },
+ "Tauragė, Dariaus ir Girėno g. 83A, 72192": {
+  "lat": 55.267041243,
+  "lon": 22.309648646,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Oslo g. 12, 04123": {
+  "lat": 54.670969627,
+  "lon": 25.192081588,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Varnių g. 46, 48403": {
+  "lat": 54.914408295,
+  "lon": 23.900526294,
+  "tikslumas": "registras"
+ },
+ "Kaunas, R. Kalantos g. 68, 52365": {
+  "lat": 54.893119093,
+  "lon": 23.995837964,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, Vilniaus g. 62, 76251": {
+  "lat": 55.92482266,
+  "lon": 23.33405659,
+  "tikslumas": "registras"
+ },
+ "Marijampolė, J. Dailidės g. 10, 68307": {
+  "lat": 54.557191,
+  "lon": 23.3540773,
+  "tikslumas": "pastatas"
+ },
+ "Klaipėda, Sausio 15-osios g. 2, 91200": {
+  "lat": 55.702076362,
+  "lon": 21.138001157,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Jūrininkų pr. 31, 95225": {
+  "lat": 55.656684304,
+  "lon": 21.182458202,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Tilžės g. 56A, 91110": {
+  "lat": 55.704277836,
+  "lon": 21.160807829,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, Tilžės g. 25, 78229": {
+  "lat": 55.91264211,
+  "lon": 23.273835956,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Jonavos g. 38, 44263": {
+  "lat": 54.901519472,
+  "lon": 23.894976344,
+  "tikslumas": "registras"
+ },
+ "Kaunas, K. Baršausko g. 57, 51423": {
+  "lat": 54.899051492,
+  "lon": 23.959916974,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Sukilėlių pr. 120, 49237": {
+  "lat": 54.928588097,
+  "lon": 23.928793097,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Tvirtovės al. 33A, 50157": {
+  "lat": 54.913105846,
+  "lon": 23.926215918,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Savanorių pr. 404B, 50301": {
+  "lat": 54.928282696,
+  "lon": 23.973882681,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Gariūnų g. 45, 02300": {
+  "lat": 54.658968705,
+  "lon": 25.161134249,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Geležinio Vilko g. 4, 08104": {
+  "lat": 54.702841797,
+  "lon": 25.263941053,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Kareivių g. 3, 08221": {
+  "lat": 54.715540912,
+  "lon": 25.291017087,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Savanorių pr. 119A, 03150": {
+  "lat": 54.662804088,
+  "lon": 25.234888724,
+  "tikslumas": "registras"
+ },
+ "Vilnius, P. Žadeikos g. 1A, 06319": {
+  "lat": 54.730460491,
+  "lon": 25.239041475,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Savanorių pr. 118, 03153": {
+  "lat": 54.661845882,
+  "lon": 25.235448683,
+  "tikslumas": "registras"
+ },
+ "Brazavo k., Muitinės g. 5B, 69231": {
+  "lat": 54.368078612,
+  "lon": 23.183746,
+  "tikslumas": "registras"
+ },
+ "Salaperaugio k., Europos g. 13a, 69286": {
+  "lat": 54.322808453,
+  "lon": 23.141138987,
+  "tikslumas": "registras"
+ },
+ "Pikelių k. 1, 60376": {
+  "lat": 55.460809715,
+  "lon": 22.694849068,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Vilniaus pl. 1A, 94105": {
+  "lat": 55.692750734,
+  "lon": 21.179687925,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Taikos pr. 112A, 93150": {
+  "lat": 55.666464956,
+  "lon": 21.172786768,
+  "tikslumas": "registras"
+ },
+ "Serdokų k., Vilkaviškio g. 10, 70201": {
+  "lat": 54.636415894,
+  "lon": 23.07479605,
+  "tikslumas": "registras"
+ },
+ "Nekrūnų k. 1, 67171": {
+  "lat": 54.226770617,
+  "lon": 23.525332014,
+  "tikslumas": "registras"
+ },
+ "Utena, J. Basanavičiaus g. 3, 28134": {
+  "lat": 55.495602867,
+  "lon": 25.58357501,
+  "tikslumas": "registras"
+ },
+ "Dėdeliškių k., Didžiulio g. 5, 21401": {
+  "lat": 54.686401454,
+  "lon": 25.05404662,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Karaliaus Mindaugo pr. 34A, 44306": {
+  "lat": 54.89414889,
+  "lon": 23.913935616,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Islandijos pl. 61C, 49117": {
+  "lat": 54.933770323,
+  "lon": 23.965671491,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Briedžių takas 6B, 49106": {
+  "lat": 54.9361034,
+  "lon": 23.9482536,
+  "tikslumas": "gatvė"
+ },
+ "Biržai, Kilučių g. 93, 41154": {
+  "lat": 56.195071388,
+  "lon": 24.771803675,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Taikos pr. 52A, 51305": {
+  "lat": 54.912015424,
+  "lon": 23.956753812,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Geležinio Vilko g. 24, 08412": {
+  "lat": 54.751419115,
+  "lon": 25.26649466,
+  "tikslumas": "registras"
+ },
+ "Jakų k., Vilniaus pl. 21, 92498": {
+  "lat": 55.711540863,
+  "lon": 21.262928181,
+  "tikslumas": "registras"
+ },
+ "Košių II k., Dvaro g. 3, 75226": {
+  "lat": 55.484175742,
+  "lon": 22.588463361,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Žemaičių pl. 19, 48255": {
+  "lat": 54.92527132,
+  "lon": 23.890608723,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Vakarinio aplinkkelio 10, 48182": {
+  "lat": 54.9356047,
+  "lon": 23.8701462,
+  "tikslumas": "pastatas"
+ },
+ "Šilagalio k., Panevėžio aplinkl. 20, 36258": {
+  "lat": 55.672298245,
+  "lon": 24.336512812,
+  "tikslumas": "registras"
+ },
+ "Tauragė, Gedimino g. 47, 72294": {
+  "lat": 55.248331262,
+  "lon": 22.303034391,
+  "tikslumas": "registras"
+ },
+ "Radviliškis, Gedimino g. 42B, 82174": {
+  "lat": 55.811684279,
+  "lon": 23.550069688,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Prūsų g. 26A, 02154": {
+  "lat": 54.658561644,
+  "lon": 25.266332425,
+  "tikslumas": "registras"
+ },
+ "Kretinga, Klaipėdos g. 155, 97156": {
+  "lat": 55.863618497,
+  "lon": 21.217477403,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Geležinio Vilko g. 39, 08104": {
+  "lat": 54.702364007,
+  "lon": 25.264950264,
+  "tikslumas": "registras"
+ },
+ "Jonava, Vasario 16-osios g. 33, 55164": {
+  "lat": 55.070560106,
+  "lon": 24.263210945,
+  "tikslumas": "registras"
+ },
+ "Rokiškis, Respublikos g. 111A, 42135": {
+  "lat": 55.952248945,
+  "lon": 25.589676912,
+  "tikslumas": "registras"
+ },
+ "Satkūnų k., Sidabros g. 2A, 84101": {
+  "lat": 56.258416429,
+  "lon": 23.621872588,
+  "tikslumas": "registras"
+ },
+ "Mažeikiai, Žemaitijos g. 57, 89128": {
+  "lat": 56.302358188,
+  "lon": 22.345265861,
+  "tikslumas": "registras"
+ },
+ "Varėna, Savanorių g. 5, 65186": {
+  "lat": 54.210204817,
+  "lon": 24.576699302,
+  "tikslumas": "registras"
+ },
+ "Šilutė, Cintjoniškių g. 15, 99116": {
+  "lat": 55.350441277,
+  "lon": 21.474502505,
+  "tikslumas": "registras"
+ },
+ "Telšiai, Luokės g. 70, 87128": {
+  "lat": 55.977122014,
+  "lon": 22.265377459,
+  "tikslumas": "registras"
+ },
+ "Kurėnų k., Ežero g. 7, 20102": {
+  "lat": 55.311756705,
+  "lon": 24.787242864,
+  "tikslumas": "registras"
+ },
+ "Kėdainiai, J. Basanavičiaus g. 40A, 57290": {
+  "lat": 55.286600758,
+  "lon": 23.972262655,
+  "tikslumas": "registras"
+ },
+ "Panevėžys, Parko g. 7A, 35189": {
+  "lat": 55.731726723,
+  "lon": 24.34240502,
+  "tikslumas": "registras"
+ },
+ "Panevėžys, J. Basanavičiaus g. 63, 36204": {
+  "lat": 55.71769154,
+  "lon": 24.371199787,
+  "tikslumas": "registras"
+ },
+ "Druskininkai, M. K. Čiurlionio g. 113, 66161": {
+  "lat": 54.010236389,
+  "lon": 23.993363497,
+  "tikslumas": "registras"
+ },
+ "Alytus, Rūtų g. 2B, 62119": {
+  "lat": 54.395039059,
+  "lon": 24.038235084,
+  "tikslumas": "registras"
+ },
+ "Marijampolė, Kauno g. 130, 68230": {
+  "lat": 54.576373712,
+  "lon": 23.37149314,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, H. Manto g. 96, 92295": {
+  "lat": 55.730400585,
+  "lon": 21.124714912,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Taikos pr. 61B, 91182": {
+  "lat": 55.692374951,
+  "lon": 21.153683465,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Minijos g. 90, 93234": {
+  "lat": 55.687670493,
+  "lon": 21.145004572,
+  "tikslumas": "registras"
+ },
+ "Kuršėnai, Plento g. 1, 81115": {
+  "lat": 55.999263286,
+  "lon": 22.989648499,
+  "tikslumas": "registras"
+ },
+ "Palanga, Kretingos g. 56, 00111": {
+  "lat": 55.914658075,
+  "lon": 21.077908071,
+  "tikslumas": "registras"
+ },
+ "Ūtos k., Baltijos Kelio g. 33, 35189": {
+  "lat": 55.810596881,
+  "lon": 24.369100257,
+  "tikslumas": "registras"
+ },
+ "Utena, J. Basanavičiaus g. 108A, 28214": {
+  "lat": 55.505150129,
+  "lon": 25.620955932,
+  "tikslumas": "registras"
+ },
+ "Elektrėnai, Sabališkių g. 1F, 26128": {
+  "lat": 54.789087559,
+  "lon": 24.675974773,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, Pramonės g. 17, 78136": {
+  "lat": 55.909309255,
+  "lon": 23.319464345,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Talino g. 2B, 05200": {
+  "lat": 54.713429247,
+  "lon": 25.209111058,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, Dubijos g. 20A, 77207": {
+  "lat": 55.928815584,
+  "lon": 23.297616183,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Veiverių g. 49A, 46336": {
+  "lat": 54.880898572,
+  "lon": 23.894048218,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Savanorių pr. 321, 50120": {
+  "lat": 54.91967731,
+  "lon": 23.95119256,
+  "tikslumas": "registras"
+ },
+ "Alytus, Naujoji g. 120, 62175": {
+  "lat": 54.4245894,
+  "lon": 24.0034518,
+  "tikslumas": "registras"
+ },
+ "Kaunas, R. Kalantos g. 159, 52314": {
+  "lat": 54.89416121,
+  "lon": 24.00678102,
+  "tikslumas": "registras"
+ },
+ "Avižienių k., Sudervės g. 2G, 14198": {
+  "lat": 54.7603651,
+  "lon": 25.2015468,
+  "tikslumas": "pastatas"
+ },
+ "Kaunas, Raudondvario pl. 107A, 47186": {
+  "lat": 54.908183424,
+  "lon": 23.864909395,
+  "tikslumas": "registras"
+ },
+ "Mastaičių k., Baltijos g. 1, 53289": {
+  "lat": 54.81308151,
+  "lon": 23.859299548,
+  "tikslumas": "gatvė (registras)"
+ },
+ "Kaunas, Pramonės pr. 18, 51183": {
+  "lat": 54.916191302,
+  "lon": 23.986586523,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Eišiškių pl. 11, 02184": {
+  "lat": 54.651548011,
+  "lon": 25.269353165,
+  "tikslumas": "registras"
+ },
+ "Vilnius, J. Tiškevičiaus g. 24, 02231": {
+  "lat": 54.62316186,
+  "lon": 25.11020358,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Laisvės pr. 43C, 05112": {
+  "lat": 54.70921175,
+  "lon": 25.228197727,
+  "tikslumas": "registras"
+ },
+ "Vilnius, A. Goštauto g. 13, 01108": {
+  "lat": 54.694355558,
+  "lon": 25.263429035,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Kareivių g. 13, 09109": {
+  "lat": 54.718538948,
+  "lon": 25.300565514,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Ukmergės g. 231, 07156": {
+  "lat": 54.720323905,
+  "lon": 25.246121217,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Sporto g. 16A, 09200": {
+  "lat": 54.695076336,
+  "lon": 25.298108428,
+  "tikslumas": "registras"
+ },
+ "Vilnius, A. P. Kavoliuko g. 32A, 04329": {
+  "lat": 54.6953297,
+  "lon": 25.2182785,
+  "tikslumas": "pastatas"
+ },
+ "Vilnius, Baltupio g. 10, 08303": {
+  "lat": 54.735965534,
+  "lon": 25.26545348,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Geležinio Vilko g. 2A, 03150": {
+  "lat": 54.670981118,
+  "lon": 25.236656241,
+  "tikslumas": "registras"
+ },
+ "Migonių k., Kalvių g. 4, 56292": {
+  "lat": 54.7553261,
+  "lon": 24.2405568,
+  "tikslumas": "pastatas"
+ },
+ "Šilutė, Ramučių g. 43, 99150": {
+  "lat": 55.354600324,
+  "lon": 21.493166795,
+  "tikslumas": "gatvė (registras)"
+ },
+ "Dumblės k., 17178": {
+  "lat": 54.2322504,
+  "lon": 24.869238,
+  "tikslumas": "pastatas"
+ },
+ "Tartoko k., 17127": {
+  "lat": 54.4568792,
+  "lon": 25.2794664,
+  "tikslumas": "gatvė"
+ },
+ "Vilnius, J.Kazlausko g. 33, 08314": {
+  "lat": 54.7223735,
+  "lon": 25.2710643,
+  "tikslumas": "pastatas"
+ },
+ "Pasvalys, Mūšos g. 2E, 39105": {
+  "lat": 56.069592041,
+  "lon": 24.387502572,
+  "tikslumas": "registras"
+ },
+ "Virbališkių k., Verslo g. 2, 53458": {
+  "lat": 54.90258231,
+  "lon": 23.762832817,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Marvelės g. 106D, 46205": {
+  "lat": 54.901324806,
+  "lon": 23.854330247,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Ašigalio g. 1A, 49161": {
+  "lat": 54.933420642,
+  "lon": 23.943545694,
+  "tikslumas": "registras"
+ },
+ "Likiškėlių k., Kalninės g. 5, 62442": {
+  "lat": 54.381917047,
+  "lon": 23.993118957,
+  "tikslumas": "registras"
+ },
+ "Simnas, Alytaus g. 48, 64313": {
+  "lat": 54.383872206,
+  "lon": 23.659486984,
+  "tikslumas": "registras"
+ },
+ "Mažeikiai, Sedos g. 16, 89233": {
+  "lat": 56.305861335,
+  "lon": 22.342528617,
+  "tikslumas": "registras"
+ },
+ "Palanga (Šventoji), Elijos g. 26, 00319": {
+  "lat": 56.0128803,
+  "lon": 21.1037154,
+  "tikslumas": "pastatas"
+ },
+ "Vilkaviškis, Vytauto g. 2D, 70137": {
+  "lat": 54.643311135,
+  "lon": 23.053135033,
+  "tikslumas": "registras"
+ },
+ "Kybartai, J. Basanavičiaus g. 45A, 70417": {
+  "lat": 54.638530851,
+  "lon": 22.763104998,
+  "tikslumas": "registras"
+ },
+ "Baisogalos k., Beržų g. 19, 82323": {
+  "lat": 55.634783598,
+  "lon": 23.733496127,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, Pramonės g. 3A, 78140": {
+  "lat": 55.917981675,
+  "lon": 23.297652113,
+  "tikslumas": "registras"
+ },
+ "Radikių k., 13, 84164": {
+  "lat": 54.9655483,
+  "lon": 23.9253311,
+  "tikslumas": "pastatas"
+ },
+ "Šiauliai, Tilžės g. 223, 76200": {
+  "lat": 55.940609256,
+  "lon": 23.326278671,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, V. Bielskio g. 47A, 76159": {
+  "lat": 55.956294292,
+  "lon": 23.308423932,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, Nuklono g. 4, 78349": {
+  "lat": 55.916729592,
+  "lon": 23.246900889,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, Pramonės g. 28, 77116": {
+  "lat": 55.904981412,
+  "lon": 23.328047822,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, Vilniaus g. 16, 76265": {
+  "lat": 55.923471382,
+  "lon": 23.350175252,
+  "tikslumas": "registras"
+ },
+ "Radviliškis, Šiaulių g. 12, 82142": {
+  "lat": 55.815451241,
+  "lon": 23.543532566,
+  "tikslumas": "registras"
+ },
+ "Vytėnai, Vytėnų vs 9, 42255": {
+  "lat": 55.8575363,
+  "lon": 25.733614,
+  "tikslumas": "pastatas"
+ },
+ "Gavaltuvos k., Sodo g. 11, 69370": {
+  "lat": 54.676728414,
+  "lon": 23.417700848,
+  "tikslumas": "registras"
+ },
+ "Tryškiai, Beržų g. 24/Drąsiųjų g. 7, 88155": {
+  "lat": 56.0620119,
+  "lon": 22.5823782,
+  "tikslumas": "pastatas"
+ },
+ "Kalnuotės 1 k. 15130": {
+  "lat": 54.6913587,
+  "lon": 25.2909558,
+  "tikslumas": "pastatas"
+ },
+ "Skabeikių k. 4, 85233": {
+  "lat": 56.159963524,
+  "lon": 22.760877092,
+  "tikslumas": "registras"
+ },
+ "Ruoščių k. 1, 57109": {
+  "lat": 55.336032016,
+  "lon": 23.914793007,
+  "tikslumas": "registras"
+ },
+ "Užventis, Žemaitės g. 52, 86343": {
+  "lat": 55.786191374,
+  "lon": 22.671123924,
+  "tikslumas": "registras"
+ },
+ "Alytaus g. 59, Krosnos k., 67443": {
+  "lat": 54.3791165,
+  "lon": 23.5285824,
+  "tikslumas": "pastatas"
+ },
+ "Stripinių k., Skuodo g. 7, 98347": {
+  "lat": 56.283869858,
+  "lon": 21.833118277,
+  "tikslumas": "registras"
+ },
+ "Mažeikiai, Laižuvos g. 82d, 89213": {
+  "lat": 56.313737936,
+  "lon": 22.368050509,
+  "tikslumas": "registras"
+ },
+ "Bačkonių k., Pastrėvio g. 1A, 56240": {
+  "lat": 54.802429543,
+  "lon": 24.502153695,
+  "tikslumas": "registras"
+ },
+ "Venta, Plento g. 2, 85302": {
+  "lat": 56.19431262,
+  "lon": 22.678027919,
+  "tikslumas": "registras"
+ },
+ "Minijos g. 1, Aleksandravo k., 90390": {
+  "lat": 55.928876,
+  "lon": 21.6199022,
+  "tikslumas": "pastatas"
+ },
+ "Žemaičių Naumiestis, Klaipėdos g. 76, 99206": {
+  "lat": 55.355478941,
+  "lon": 21.680035872,
+  "tikslumas": "registras"
+ },
+ "Telšiai, Mažeikių g. 1, 87101": {
+  "lat": 55.999795166,
+  "lon": 22.241610358,
+  "tikslumas": "registras"
+ },
+ "Šilalė, Rytinio Kelio g. 2a, 75122": {
+  "lat": 55.485882753,
+  "lon": 22.199427716,
+  "tikslumas": "registras"
+ },
+ "Skaudvilė, Adakavo g. 1, 73435": {
+  "lat": 55.401576296,
+  "lon": 22.5977563,
+  "tikslumas": "registras"
+ },
+ "Laivių k., Platelių g. 1a, 97317": {
+  "lat": 56.063034928,
+  "lon": 21.582002124,
+  "tikslumas": "registras"
+ },
+ "Raseiniai, Jurbarko g. 34, 60180": {
+  "lat": 55.37063288,
+  "lon": 23.119425855,
+  "tikslumas": "registras"
+ },
+ "Rainių k., Telšių g. 2B, 88401": {
+  "lat": 55.956567595,
+  "lon": 22.301034443,
+  "tikslumas": "registras"
+ },
+ "Plungė, Dariaus ir Girėno g. 31, 90118": {
+  "lat": 55.919865895,
+  "lon": 21.856997397,
+  "tikslumas": "registras"
+ },
+ "Pagėgiai, Klaipėdos g. 6b, 99290": {
+  "lat": 55.140442119,
+  "lon": 21.903148623,
+  "tikslumas": "registras"
+ },
+ "Vabalų k., Paršežerio g. 1, 75406": {
+  "lat": 55.619490065,
+  "lon": 22.246164617,
+  "tikslumas": "registras"
+ },
+ "Kretinga, Tiekėjų g. 34a, 97187": {
+  "lat": 55.88440399,
+  "lon": 21.221761914,
+  "tikslumas": "registras"
+ },
+ "Kelmė, Putvinskio g. 29, 86113": {
+  "lat": 55.6412613,
+  "lon": 22.9268833,
+  "tikslumas": "pastatas"
+ },
+ "Rimšų k., Tauragės g. 29, 74280": {
+  "lat": 55.261861782,
+  "lon": 22.691954988,
+  "tikslumas": "registras"
+ },
+ "Mardosų k., Alytaus pl. 2, 59240": {
+  "lat": 54.508713332,
+  "lon": 23.909914501,
+  "tikslumas": "registras"
+ },
+ "Kazlų Rūda, S. Daukanto g. 19D, 69430": {
+  "lat": 54.739258011,
+  "lon": 23.496298582,
+  "tikslumas": "registras"
+ },
+ "Jūrės k., Medelyno g. 4A, 69446": {
+  "lat": 54.769137639,
+  "lon": 23.486572049,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Marijampolės pl. 20, 46147": {
+  "lat": 54.850220827,
+  "lon": 23.965742464,
+  "tikslumas": "registras"
+ },
+ "Pavilnučio k., Bažnyčios g. 7, 99392": {
+  "lat": 55.51391269,
+  "lon": 21.609493599,
+  "tikslumas": "registras"
+ },
+ "Saviečių k., Vandžiogalos g. 29, 58151": {
+  "lat": 55.16693309,
+  "lon": 23.994789331,
+  "tikslumas": "registras"
+ },
+ "Kėdainiai, Gedimino g. 50, 57309": {
+  "lat": 55.291538858,
+  "lon": 23.960592965,
+  "tikslumas": "registras"
+ },
+ "Kėdainiai, Dariaus ir Girėno 23 A, 57149": {
+  "lat": 55.3127081,
+  "lon": 23.9781131,
+  "tikslumas": "pastatas"
+ },
+ "Kėdainiai, Šėtos g. 120, 58115": {
+  "lat": 55.297331025,
+  "lon": 24.001275443,
+  "tikslumas": "registras"
+ },
+ "Kėdainiai, J.Basanavičiaus g. 103, 57350": {
+  "lat": 55.2742329,
+  "lon": 23.9449674,
+  "tikslumas": "pastatas"
+ },
+ "Gobergiškės k., Dvaro g. 1, 92498": {
+  "lat": 55.71963387,
+  "lon": 21.293935626,
+  "tikslumas": "registras"
+ },
+ "Tytuvėnai, Žemaitės g. 14, 86490": {
+  "lat": 55.594184126,
+  "lon": 23.179617682,
+  "tikslumas": "registras"
+ },
+ "Panevėžys, S. Kerbedžio g. 2, 35135": {
+  "lat": 55.743153528,
+  "lon": 24.342520994,
+  "tikslumas": "registras"
+ },
+ "Panevėžys, Pušaloto g. 140, 35100": {
+  "lat": 55.746585844,
+  "lon": 24.329156668,
+  "tikslumas": "registras"
+ },
+ "Panevėžys, G. Petkevičaitės-Bitės g. 35C, 37138": {
+  "lat": 55.722554861,
+  "lon": 24.342261099,
+  "tikslumas": "registras"
+ },
+ "Pelėdnagiai, Miškininkų g. 14, 58163": {
+  "lat": 55.252531552,
+  "lon": 23.968055419,
+  "tikslumas": "registras"
+ },
+ "Šėta, Ramygalos g. 55, 58129": {
+  "lat": 55.29035781,
+  "lon": 24.252997582,
+  "tikslumas": "registras"
+ },
+ "Mažeikiai, Žemaitijos g. 42, 89239": {
+  "lat": 56.302177807,
+  "lon": 22.342526528,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Varnių g. 50, 48401": {
+  "lat": 54.913838373,
+  "lon": 23.906968915,
+  "tikslumas": "registras"
+ },
+ "Mažeikiai, Skuodo g. 14, 89100": {
+  "lat": 56.31442753,
+  "lon": 22.3109271,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Pramonės pr. 37, 51271": {
+  "lat": 54.915921475,
+  "lon": 23.984215875,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Minijos g. 44, 91197": {
+  "lat": 55.693860657,
+  "lon": 21.140272672,
+  "tikslumas": "registras"
+ },
+ "Alytus, Kauno g. 73, 62107": {
+  "lat": 54.403324067,
+  "lon": 24.037087651,
+  "tikslumas": "registras"
+ },
+ "Kakliniškių k., Žilvičių g. 1A, 26138": {
+  "lat": 54.790815786,
+  "lon": 24.670561408,
+  "tikslumas": "registras"
+ },
+ "Žiežmarių k., Kauno pl. 6, 56232": {
+  "lat": 54.8159618,
+  "lon": 24.4334433,
+  "tikslumas": "pastatas"
+ },
+ "Kaunas, Kalvarijos g. 138, 46403": {
+  "lat": 54.851346261,
+  "lon": 23.843111625,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Veiverių g. 148B, 46392": {
+  "lat": 54.867244786,
+  "lon": 23.887541189,
+  "tikslumas": "registras"
+ },
+ "Biruliškių k., 54469": {
+  "lat": 54.9510447,
+  "lon": 24.0290411,
+  "tikslumas": "gatvė"
+ },
+ "Ringaudų k., Beržų g. 2N, 53335": {
+  "lat": 54.888635077,
+  "lon": 23.818573981,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Šilutės pl. 26A, 91177": {
+  "lat": 55.698616316,
+  "lon": 21.167059075,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Šilutės pl. 94, 95264": {
+  "lat": 55.668149156,
+  "lon": 21.208650861,
+  "tikslumas": "registras"
+ },
+ "Jakų k., Vilniaus pl. 13, 92498": {
+  "lat": 55.707832156,
+  "lon": 21.245789742,
+  "tikslumas": "registras"
+ },
+ "Vilimiškės k., 97220": {
+  "lat": 55.9010912,
+  "lon": 21.0818342,
+  "tikslumas": "gatvė"
+ },
+ "Aleksandravo k., 68100": {
+  "lat": 55.0207332,
+  "lon": 22.8698907,
+  "tikslumas": "gatvė"
+ },
+ "Panevėžys, Senamiesčio g. 115, 35114": {
+  "lat": 55.748174306,
+  "lon": 24.391032097,
+  "tikslumas": "registras"
+ },
+ "Panevėžys, Klaipėdos g. 162 D, 37372": {
+  "lat": 55.731739396,
+  "lon": 24.303399429,
+  "tikslumas": "registras"
+ },
+ "Nausodė, Šiaulių g. 50, 38366": {
+  "lat": 55.733870713,
+  "lon": 24.263500657,
+  "tikslumas": "registras"
+ },
+ "Verbyliškių k., Alytaus g. 2, 59431": {
+  "lat": 54.57884694,
+  "lon": 24.17050347,
+  "tikslumas": "registras"
+ },
+ "Pikelių k. 8, 60375": {
+  "lat": 55.46149412,
+  "lon": 22.695838495,
+  "tikslumas": "registras"
+ },
+ "Nemakščių apyl., Pikelių k. 6, 60375": {
+  "lat": 55.4298915,
+  "lon": 22.7724375,
+  "tikslumas": "pastatas"
+ },
+ "Šiauliai, Serbentų g. 82, 77126": {
+  "lat": 55.913663759,
+  "lon": 23.337127053,
+  "tikslumas": "registras"
+ },
+ "Telšiai, Plungės g. 33 D, 87329": {
+  "lat": 55.979230342,
+  "lon": 22.226646998,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Žirmūnų g. 1T, 09239": {
+  "lat": 54.695882969,
+  "lon": 25.299980321,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Ukmergės g. 319, 06305": {
+  "lat": 54.736894907,
+  "lon": 25.231923541,
+  "tikslumas": "registras"
+ },
+ "Vilnius, O. Milašiaus g. 31, 10102": {
+  "lat": 54.728138371,
+  "lon": 25.326863661,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Juodasis kl. 32, 11307": {
+  "lat": 54.6629447,
+  "lon": 25.3423921,
+  "tikslumas": "pastatas"
+ },
+ "Tauragė, Gedimino g. 46, 72336": {
+  "lat": 55.244121658,
+  "lon": 22.304015846,
+  "tikslumas": "registras"
+ },
+ "Šilutė, Šiaurės g. 1, 99116": {
+  "lat": 55.356546584,
+  "lon": 21.469002503,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Baltosios Vokės g. 35, 02243": {
+  "lat": 54.613233859,
+  "lon": 25.184045757,
+  "tikslumas": "registras"
+ },
+ "Raseiniai, Liepų g. 10E, 60119": {
+  "lat": 55.391360926,
+  "lon": 23.127078323,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Priestočio g. 26, 92228": {
+  "lat": 55.719307474,
+  "lon": 21.140004428,
+  "tikslumas": "registras"
+ },
+ "Trepkalnių k., Mokyklos g. 2, 96278": {
+  "lat": 55.608507402,
+  "lon": 21.59396064,
+  "tikslumas": "registras"
+ },
+ "Slengių k., Šilelių g. 1, 92338": {
+  "lat": 55.751443061,
+  "lon": 21.173204711,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Kuršių g. 13A, 48109": {
+  "lat": 54.936165288,
+  "lon": 23.895697533,
+  "tikslumas": "registras"
+ },
+ "Rudamina, Jašiūnų g. 2, 13255": {
+  "lat": 54.5971881,
+  "lon": 25.3151483,
+  "tikslumas": "pastatas"
+ },
+ "Varkaliai, Žemaičių g. 2A, 90105": {
+  "lat": 55.897046994,
+  "lon": 21.821425342,
+  "tikslumas": "registras"
+ },
+ "Ramučiai, K. Bielinio g. 2A, 54465": {
+  "lat": 54.944066303,
+  "lon": 24.036069753,
+  "tikslumas": "registras"
+ },
+ "Garliava, Vytauto g. 111A, 53253": {
+  "lat": 54.828119388,
+  "lon": 23.873020623,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Jonavos g. 51, 44131": {
+  "lat": 54.934034943,
+  "lon": 23.917876297,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Betygalos g. 8, 47183": {
+  "lat": 54.904524228,
+  "lon": 23.879734587,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Baltų pr. 141A, 47126": {
+  "lat": 54.922806901,
+  "lon": 23.869743096,
+  "tikslumas": "registras"
+ },
+ "Traksėdžių k., Klaipėdos. 60, 99104": {
+  "lat": 55.376977332,
+  "lon": 21.470443801,
+  "tikslumas": "registras"
+ },
+ "Šolių k., Pietinio Kelio g. 9, 75126": {
+  "lat": 55.485378067,
+  "lon": 22.171442336,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Taikos pr. 157, 94285": {
+  "lat": 55.661157294,
+  "lon": 21.178034731,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Partizanų g. 87G, 50312": {
+  "lat": 54.927297178,
+  "lon": 23.999157526,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Pramonės g. 18, 11115": {
+  "lat": 54.695850019,
+  "lon": 25.432049102,
+  "tikslumas": "registras"
+ },
+ "Toliočiai, Plento g. 2B, 76322": {
+  "lat": 55.954344723,
+  "lon": 23.255954352,
+  "tikslumas": "registras"
+ },
+ "Raseiniai, Maironio g. 78b, 60120": {
+  "lat": 55.389994416,
+  "lon": 23.13073867,
+  "tikslumas": "registras"
+ },
+ "Kelmė, V. Putvinskio g. 37, 86113": {
+  "lat": 55.643414243,
+  "lon": 22.925627474,
+  "tikslumas": "registras"
+ },
+ "Gargždai, Gamyklos g. 1, 96155": {
+  "lat": 55.706519252,
+  "lon": 21.363618541,
+  "tikslumas": "registras"
+ },
+ "Kuosiškių k. 4, 83169": {
+  "lat": 55.965793677,
+  "lon": 23.8798117,
+  "tikslumas": "registras"
+ },
+ "Panevėžys, S. Kerbedžio g. 7F, 35104": {
+  "lat": 55.74478704,
+  "lon": 24.346261991,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, Girulių g. 1, 78132": {
+  "lat": 55.922226972,
+  "lon": 23.296967383,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, Architektų g. 80, 78171": {
+  "lat": 55.924587818,
+  "lon": 23.279548623,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Parko g. 64, 11225": {
+  "lat": 54.685892693,
+  "lon": 25.430597256,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Ukmergės g. 130, 08100": {
+  "lat": 54.703151134,
+  "lon": 25.257526853,
+  "tikslumas": "registras"
+ },
+ "Kupiškis, Panevėžio g. 5, 40134": {
+  "lat": 55.827131208,
+  "lon": 24.986317472,
+  "tikslumas": "registras"
+ },
+ "Salaperaugio k., Europos g. 17, 69286": {
+  "lat": 54.320436738,
+  "lon": 23.139958677,
+  "tikslumas": "registras"
+ },
+ "Skraičionys, Skraičionių g. 1, 17140": {
+  "lat": 54.204130529,
+  "lon": 25.621030623,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Buivydiškių g. 5, 07171": {
+  "lat": 54.710865092,
+  "lon": 25.240554552,
+  "tikslumas": "registras"
+ },
+ "Visaginas, Kosmoso g. 3, 31142": {
+  "lat": 55.599254418,
+  "lon": 26.420027367,
+  "tikslumas": "registras"
+ },
+ "Marijampolė, Sporto g. 50A, 68110": {
+  "lat": 54.565969922,
+  "lon": 23.380467314,
+  "tikslumas": "registras"
+ },
+ "Ignalina, Švenčionių g. 29A, 30132": {
+  "lat": 55.332132901,
+  "lon": 26.167246569,
+  "tikslumas": "registras"
+ },
+ "Utena, Palijoniškio g. 1, 28183": {
+  "lat": 55.511886044,
+  "lon": 25.599999413,
+  "tikslumas": "registras"
+ },
+ "Grigiškės, Vilniaus g. 8, 27101": {
+  "lat": 54.677411491,
+  "lon": 25.079042464,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Šiaurės g. 39, 11110": {
+  "lat": 54.703463461,
+  "lon": 25.415791799,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Pelesos g. 1, 02161": {
+  "lat": 54.665560745,
+  "lon": 25.274983333,
+  "tikslumas": "registras"
+ },
+ "Daugailių k., Plento g. 17, 28414": {
+  "lat": 55.5939916,
+  "lon": 25.8334044,
+  "tikslumas": "pastatas"
+ },
+ "Paširvinčio k., Paširvio g. 1, 19128": {
+  "lat": 55.024590267,
+  "lon": 24.985641228,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Kirtimų g. 23A, 02300": {
+  "lat": 54.651210305,
+  "lon": 25.150220479,
+  "tikslumas": "registras"
+ },
+ "Utena, J. Basanavičiaus g. 1C, 28134": {
+  "lat": 55.495520047,
+  "lon": 25.581640751,
+  "tikslumas": "registras"
+ },
+ "Santaikos k., Santaikos g. 2A, 64283": {
+  "lat": 54.388342928,
+  "lon": 23.820264226,
+  "tikslumas": "registras"
+ },
+ "Marijampolė, Stoties g. 49, 68261": {
+  "lat": 54.562824698,
+  "lon": 23.366521704,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Kalvarijų g. 204G, 08247": {
+  "lat": 54.720863261,
+  "lon": 25.284837213,
+  "tikslumas": "registras"
+ },
+ "Ukmergė, Kauno g. 37, 20120": {
+  "lat": 55.244490457,
+  "lon": 24.750026818,
+  "tikslumas": "registras"
+ },
+ "Anykščiai, A. Vienuolio g. 32A, 29149": {
+  "lat": 55.522445806,
+  "lon": 25.090014692,
+  "tikslumas": "registras"
+ },
+ "Kairiai, Plento g. 2B, 80114": {
+  "lat": 55.920182311,
+  "lon": 23.425901233,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Šv. Stepono g. 44, 01312": {
+  "lat": 54.669124006,
+  "lon": 25.278784797,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Laisvės pr. 125A, 06118": {
+  "lat": 54.727835601,
+  "lon": 25.235623329,
+  "tikslumas": "registras"
+ },
+ "Bajorų k., Šimonių g. 36, 29352": {
+  "lat": 55.6848852,
+  "lon": 25.3532342,
+  "tikslumas": "pastatas"
+ },
+ "Kaunas, Palemono g. 171, 52107": {
+  "lat": 54.923683705,
+  "lon": 24.068998646,
+  "tikslumas": "registras"
+ },
+ "Puskelnių k., Plytinės g. 2, 68103": {
+  "lat": 54.605368854,
+  "lon": 23.405129802,
+  "tikslumas": "registras"
+ },
+ "Obeliai, Dariaus ir Girėno g. 36, 42209": {
+  "lat": 55.948492717,
+  "lon": 25.814124053,
+  "tikslumas": "registras"
+ },
+ "Kudirkos Naumiestis, Šakių g. 51, 71319": {
+  "lat": 54.784158363,
+  "lon": 22.873341401,
+  "tikslumas": "registras"
+ },
+ "Alytus, Santaikos g. 28 B, 62123": {
+  "lat": 54.387475068,
+  "lon": 24.03194652,
+  "tikslumas": "registras"
+ },
+ "Gustaičių k., 59296": {
+  "lat": 54.8297341,
+  "lon": 23.9471779,
+  "tikslumas": "pastatas"
+ },
+ "Klaipėda, Minijos g. 90, 93239": {
+  "lat": 55.687670493,
+  "lon": 21.145004572,
+  "tikslumas": "registras"
+ },
+ "Kupiškis, Panevėžio g. 9, 40134": {
+  "lat": 55.825909811,
+  "lon": 24.979519567,
+  "tikslumas": "registras"
+ },
+ "Kantališkių k., 69841": {
+  "lat": 54.8881365,
+  "lon": 23.7869836,
+  "tikslumas": "gatvė"
+ },
+ "Paliūniškio k., Žemdirbių g. 15, 38440": {
+  "lat": 55.787745787,
+  "lon": 24.439259139,
+  "tikslumas": "registras"
+ },
+ "Utena, Palangos g. 66, 28140": {
+  "lat": 55.497924917,
+  "lon": 25.583968942,
+  "tikslumas": "registras"
+ },
+ "Miklusėnai, Kauno g. 1, 62461": {
+  "lat": 54.428066822,
+  "lon": 24.00137159,
+  "tikslumas": "registras"
+ },
+ "Kaniūkų k., 64104": {
+  "lat": 54.3674236,
+  "lon": 24.091995,
+  "tikslumas": "pastatas"
+ },
+ "Alytaus k., 64464": {
+  "lat": 54.20364,
+  "lon": 24.000754,
+  "tikslumas": "pastatas"
+ },
+ "Kreivukė, Turgaus g. 4, 69232": {
+  "lat": 54.410870303,
+  "lon": 23.20685129,
+  "tikslumas": "registras"
+ },
+ "Ramučių k., Erdvės g. 78, 54463": {
+  "lat": 54.935162844,
+  "lon": 24.034719805,
+  "tikslumas": "gatvė (registras)"
+ },
+ "Vilnius, Ukmergės g. 246, 06120": {
+  "lat": 54.723213294,
+  "lon": 25.241257672,
+  "tikslumas": "registras"
+ },
+ "Gargždai, Dariaus ir Girėno g. 10, 96144": {
+  "lat": 55.70742468,
+  "lon": 21.380302038,
+  "tikslumas": "registras"
+ },
+ "Anykščiai, Mindaugo g. 23, 29141": {
+  "lat": 55.509000275,
+  "lon": 25.100598599,
+  "tikslumas": "registras"
+ },
+ "Pasvalys, Mūšos g. 18, 39104": {
+  "lat": 56.070021772,
+  "lon": 24.407485397,
+  "tikslumas": "gatvė (registras)"
+ },
+ "Palanga, Ganyklų g. 28C, 00126": {
+  "lat": 55.923397742,
+  "lon": 21.075793392,
+  "tikslumas": "registras"
+ },
+ "Leipalingis, Merkinės g. 37, 67280": {
+  "lat": 54.094484045,
+  "lon": 23.871556719,
+  "tikslumas": "registras"
+ },
+ "Radviliškis, Šiaulių g. 1A, 82142": {
+  "lat": 55.825678493,
+  "lon": 23.523272383,
+  "tikslumas": "registras"
+ },
+ "Marijampolė, P. Armino g. 69, 68127": {
+  "lat": 54.533820904,
+  "lon": 23.3531884,
+  "tikslumas": "registras"
+ },
+ "Veiverių k., Kauno g. 85, 59285": {
+  "lat": 54.761371573,
+  "lon": 23.707475384,
+  "tikslumas": "gatvė (registras)"
+ },
+ "Plateliai,  Žemaičių Kalvarijos g. 1A, 90421": {
+  "lat": 56.043791735,
+  "lon": 21.815873022,
+  "tikslumas": "registras"
+ },
+ "Tirkšliai, Laukų g. 10, 89330": {
+  "lat": 56.262555143,
+  "lon": 22.310452947,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Zujūnų g. 2A, 06200": {
+  "lat": 54.71093835,
+  "lon": 25.161516849,
+  "tikslumas": "registras"
+ },
+ "Girkalnio k., Žemaičių g. 39, 60311": {
+  "lat": 55.31831161,
+  "lon": 23.210783917,
+  "tikslumas": "registras"
+ },
+ "Taurų k., Tilžės pl. 362, 72142": {
+  "lat": 55.23828468,
+  "lon": 22.237698812,
+  "tikslumas": "gatvė (registras)"
+ },
+ "Bučių k., 75381": {
+  "lat": 55.5714384,
+  "lon": 22.2253601,
+  "tikslumas": "pašto kodas"
+ },
+ "Padustėlio k., V. Striogos g. 4A, 32306": {
+  "lat": 55.7398454,
+  "lon": 25.8521638,
+  "tikslumas": "pastatas"
+ },
+ "Klišių k., Pievų g. 2, 74211": {
+  "lat": 55.098428733,
+  "lon": 22.772948803,
+  "tikslumas": "registras"
+ },
+ "Noriūnų k., Parko g. 3A, 40395": {
+  "lat": 55.796476272,
+  "lon": 24.888755396,
+  "tikslumas": "registras"
+ },
+ "Sarakiškių k., Vytauto g. 61, 32139": {
+  "lat": 55.737161665,
+  "lon": 26.272832704,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Visalaukio g. 2, 08401": {
+  "lat": 54.779062769,
+  "lon": 25.342210374,
+  "tikslumas": "registras"
+ },
+ "Ringaudų k., Gėlių g. 1A, 53335": {
+  "lat": 54.88939522,
+  "lon": 23.804682779,
+  "tikslumas": "registras"
+ },
+ "Grigaičiai, Pavilnės g. 1, 11236": {
+  "lat": 54.680997426,
+  "lon": 25.412032188,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, Kupiškio g. 4, 76146": {
+  "lat": 55.957701639,
+  "lon": 23.315925254,
+  "tikslumas": "registras"
+ },
+ "Likiškėliai, Pabalių g. 11, 64381": {
+  "lat": 54.5283689,
+  "lon": 24.1816196,
+  "tikslumas": "pastatas"
+ },
+ "Vilnius, B. Brazdžionio g. 2, 47266": {
+  "lat": 54.6139256,
+  "lon": 25.3090003,
+  "tikslumas": "pastatas"
+ },
+ "Griškabūdis, A. Skelčio g., 71296": {
+  "lat": 54.8504993,
+  "lon": 23.1714484,
+  "tikslumas": "pastatas"
+ },
+ "Senosios Varėnos k., Vilniaus g. 6A, 65486": {
+  "lat": 54.256575582,
+  "lon": 24.547035128,
+  "tikslumas": "registras"
+ },
+ "Jonava, Žemaitės g. 1, 55134": {
+  "lat": 55.082285802,
+  "lon": 24.271009146,
+  "tikslumas": "registras"
+ },
+ "Rietavas, Dariaus ir Girėno g. 19, 90316": {
+  "lat": 55.719466872,
+  "lon": 21.928243551,
+  "tikslumas": "registras"
+ },
+ "Merkinė, Vilniaus g. 87, 65333": {
+  "lat": 54.169037185,
+  "lon": 24.207897135,
+  "tikslumas": "registras"
+ },
+ "Druskininkai, Leipalingio g. 26, 66371": {
+  "lat": 54.030274429,
+  "lon": 23.9835763,
+  "tikslumas": "registras"
+ },
+ "Mažeikiai, M. Daukšos g. 17, 89234": {
+  "lat": 56.305096261,
+  "lon": 22.350496709,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Liepų g. 79A, 92195": {
+  "lat": 55.720613933,
+  "lon": 21.152902287,
+  "tikslumas": "registras"
+ },
+ "Kalnujų k. 1, 60191": {
+  "lat": 55.335594699,
+  "lon": 23.102313184,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Taikos pr. 120, 52140": {
+  "lat": 54.917399998,
+  "lon": 24.034813695,
+  "tikslumas": "registras"
+ },
+ "Užežerės k., Gardenio g. 39, 89382": {
+  "lat": 56.163938373,
+  "lon": 22.101548139,
+  "tikslumas": "registras"
+ },
+ "Priekulė, Klaipėdos g. 61, 96342": {
+  "lat": 55.562002723,
+  "lon": 21.308498995,
+  "tikslumas": "registras"
+ },
+ "Spanėnų k., Plento g. 46, 55305": {
+  "lat": 55.05817871,
+  "lon": 24.263521018,
+  "tikslumas": "registras"
+ },
+ "Pagirių k., Marijampolės g. 1, 53282": {
+  "lat": 54.814578688,
+  "lon": 23.8725808,
+  "tikslumas": "registras"
+ },
+ "Triliškių k., Kauno pl. 5, 56179": {
+  "lat": 54.816941643,
+  "lon": 24.436768155,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Vaidoto g. 153, 45392": {
+  "lat": 54.861260964,
+  "lon": 23.958583786,
+  "tikslumas": "registras"
+ },
+ "Užuovėjos k., 82215": {
+  "lat": 55.8042338,
+  "lon": 23.5894747,
+  "tikslumas": "gatvė"
+ },
+ "Pandėlio k., Elektrinės g. 1, 42370": {
+  "lat": 56.019176941,
+  "lon": 25.222147513,
+  "tikslumas": "registras"
+ },
+ "Ožtakių k., Dariaus ir Girėno g. 76, 88321": {
+  "lat": 55.730429734,
+  "lon": 22.376885578,
+  "tikslumas": "gatvė (registras)"
+ },
+ "Marijampolė, Vasaros g. 15, 68266": {
+  "lat": 54.555439808,
+  "lon": 23.375386185,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Rinktinės g. 59, 09318": {
+  "lat": 54.702819932,
+  "lon": 25.288207981,
+  "tikslumas": "registras"
+ },
+ "Užubalių k., Senasis Ukmergės kl. 4, 14013": {
+  "lat": 54.7679182,
+  "lon": 25.1969796,
+  "tikslumas": "pastatas"
+ },
+ "Vilnius, S. Batoro g. 15, 11100": {
+  "lat": 54.6916953,
+  "lon": 25.3548995,
+  "tikslumas": "pastatas"
+ },
+ "Vilnius, Molėtų pl. 27A, 08450": {
+  "lat": 54.767666275,
+  "lon": 25.272410378,
+  "tikslumas": "registras"
+ },
+ "Pietarių k., Kauno g. 164, 68100": {
+  "lat": 54.586962306,
+  "lon": 23.384465317,
+  "tikslumas": "registras"
+ },
+ "Pasiekų k., Europos g. 12, 69270": {
+  "lat": 54.322378944,
+  "lon": 23.145190808,
+  "tikslumas": "registras"
+ },
+ "Šilalė, Rytinio kelio g. 2, 75122": {
+  "lat": 55.490070297,
+  "lon": 22.200059608,
+  "tikslumas": "registras"
+ },
+ "Pakruojis, Statybininkų g. 28, 83163": {
+  "lat": 55.974424453,
+  "lon": 23.868955328,
+  "tikslumas": "registras"
+ },
+ "Panevėžys, Smėlynės g. 169, 37454": {
+  "lat": 55.757761341,
+  "lon": 24.367231021,
+  "tikslumas": "registras"
+ },
+ "Vilkaraisčio k., 15173": {
+  "lat": 54.6349686,
+  "lon": 25.2905319,
+  "tikslumas": "pastatas"
+ },
+ "Naujoji Akmenė, V. Kudirkos g. 21A, 85145": {
+  "lat": 56.318906276,
+  "lon": 22.885267076,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Chemijos g. 6, 51344": {
+  "lat": 54.903234802,
+  "lon": 23.982786368,
+  "tikslumas": "registras"
+ },
+ "Širvintos, Musninkų g. 21, 19126": {
+  "lat": 55.032285891,
+  "lon": 24.967168133,
+  "tikslumas": "registras"
+ },
+ "Šalčininkai, Vilniaus g. 5A, 17102": {
+  "lat": 54.317936398,
+  "lon": 25.381615853,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Metalo g. 4B, 02189": {
+  "lat": 54.640480247,
+  "lon": 25.267366101,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Tilžės g. 90, 91101": {
+  "lat": 55.700412192,
+  "lon": 21.199093056,
+  "tikslumas": "registras"
+ },
+ "Varėna, M. K. Čiurlionio g. 63, 65219": {
+  "lat": 54.218344461,
+  "lon": 24.565665494,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Minkovskių g. 132, 46245": {
+  "lat": 54.8857026,
+  "lon": 23.9119704,
+  "tikslumas": "pastatas"
+ },
+ "Molėtai, Vilniaus g. 104, 33114": {
+  "lat": 55.216994291,
+  "lon": 25.403100608,
+  "tikslumas": "registras"
+ },
+ "Trakai, Vilniaus g. 33, 21118": {
+  "lat": 54.627357269,
+  "lon": 24.948585117,
+  "tikslumas": "registras"
+ },
+ "Vilnius,  Kalvarijų g. 161A, 08311": {
+  "lat": 54.724007069,
+  "lon": 25.282406171,
+  "tikslumas": "registras"
+ },
+ "Skuodas, Vytauto g. 22, 98122": {
+  "lat": 56.259137102,
+  "lon": 21.530235982,
+  "tikslumas": "registras"
+ },
+ "Šakiai, Sodų g. 1, 71136": {
+  "lat": 54.945583365,
+  "lon": 23.045778513,
+  "tikslumas": "registras"
+ },
+ "Valantiškio k., 41131": {
+  "lat": 54.9255852,
+  "lon": 23.9862442,
+  "tikslumas": "pašto kodas"
+ },
+ "Ukmergė, Kauno g. 49, 20115": {
+  "lat": 55.240905337,
+  "lon": 24.739769939,
+  "tikslumas": "registras"
+ },
+ "Kėdainiai, J. Basanavičiaus g. 95B, 57352": {
+  "lat": 55.276892986,
+  "lon": 23.955854555,
+  "tikslumas": "registras"
+ },
+ "Prienai, Vilniaus g. 3A, 59115": {
+  "lat": 54.62849553,
+  "lon": 23.958851577,
+  "tikslumas": "registras"
+ },
+ "Jurbarkas, Muitinės g. 22A, 74111": {
+  "lat": 55.078122184,
+  "lon": 22.744738105,
+  "tikslumas": "registras"
+ },
+ "Raseiniai, Vilniaus g. 30, 60183": {
+  "lat": 55.371043679,
+  "lon": 23.132905315,
+  "tikslumas": "registras"
+ },
+ "Utena, Basanavičiaus g. 1B, 28138": {
+  "lat": 55.4953295,
+  "lon": 25.5748777,
+  "tikslumas": "pastatas"
+ },
+ "Panevėžys, Velžio kl. 74, 36148": {
+  "lat": 55.721884,
+  "lon": 24.3914774,
+  "tikslumas": "pastatas"
+ },
+ "Radviliškis, Miško g. 64, 82128": {
+  "lat": 55.800637664,
+  "lon": 23.565938615,
+  "tikslumas": "registras"
+ },
+ "Joniškis, Vilniaus g. 72, 84172": {
+  "lat": 56.223351633,
+  "lon": 23.597612768,
+  "tikslumas": "registras"
+ },
+ "Telšiai, Šiaulių pl. 12, 88101": {
+  "lat": 56.004026149,
+  "lon": 22.244705385,
+  "tikslumas": "registras"
+ },
+ "Lazdijai, Turistų g. 88, 67102": {
+  "lat": 54.220630396,
+  "lon": 23.508918442,
+  "tikslumas": "registras"
+ },
+ "Druskininkai, Gardino g. 79, 69191": {
+  "lat": 53.999919918,
+  "lon": 23.988011491,
+  "tikslumas": "registras"
+ },
+ "Alytus, Santaikos g. 33, 62100": {
+  "lat": 54.386612133,
+  "lon": 24.033146706,
+  "tikslumas": "registras"
+ },
+ "Neringa, Nidos-Smiltynės pl. 6, 93125": {
+  "lat": 55.300700207,
+  "lon": 20.980073495,
+  "tikslumas": "registras"
+ },
+ "Šilutė, Klaipėdos g. 4A, 99116": {
+  "lat": 55.352908817,
+  "lon": 21.463035618,
+  "tikslumas": "registras"
+ },
+ "Palanga, Klaipėdos pl. 44, 00111": {
+  "lat": 55.9154357,
+  "lon": 21.07810559,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Šilutės pl. 1, 91109": {
+  "lat": 55.704919478,
+  "lon": 21.163292047,
+  "tikslumas": "registras"
+ },
+ "Jaučakių k., 54217": {
+  "lat": 55.0318611,
+  "lon": 23.5955556,
+  "tikslumas": "pastatas"
+ },
+ "Kaunas, Jonavos g. 60A, 44191": {
+  "lat": 54.905036399,
+  "lon": 23.899567055,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Raudondvario pl. 82, 47179": {
+  "lat": 54.907708272,
+  "lon": 23.874251672,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Savanorių pr. 121, 03150": {
+  "lat": 54.660842658,
+  "lon": 25.233372201,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Gerosios Vilties g. 33, 03202": {
+  "lat": 54.666720207,
+  "lon": 25.250820125,
+  "tikslumas": "registras"
+ },
+ "Gudžionių k., Plento g. 24, 58244": {
+  "lat": 55.099158333,
+  "lon": 24.315934602,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Antakalnio g. 128, 10200": {
+  "lat": 54.722231209,
+  "lon": 25.31729426,
+  "tikslumas": "registras"
+ },
+ "Utena, Pramonės g. 16, 28119": {
+  "lat": 55.49473643,
+  "lon": 25.645867433,
+  "tikslumas": "registras"
+ },
+ "Kvėdarna, Papynaujo k., Dvaro g. 1, 75342": {
+  "lat": 55.5564081,
+  "lon": 21.9963476,
+  "tikslumas": "pastatas"
+ },
+ "Stakliškės, Piliakalnio g. 3, 59370": {
+  "lat": 54.58224297,
+  "lon": 24.317723504,
+  "tikslumas": "registras"
+ },
+ "Aukštadvaris, Vilniaus g. 2a, 21253": {
+  "lat": 54.577977942,
+  "lon": 24.521586538,
+  "tikslumas": "registras"
+ },
+ "Birštonas, Prienų g. 14, 59219": {
+  "lat": 54.595451998,
+  "lon": 24.026724044,
+  "tikslumas": "registras"
+ },
+ "Plungė, Rietavo g. 109, 90106": {
+  "lat": 55.901274492,
+  "lon": 21.856471487,
+  "tikslumas": "gatvė (registras)"
+ },
+ "Plungė, Stoties g. 7C, 90115": {
+  "lat": 55.920472622,
+  "lon": 21.832112683,
+  "tikslumas": "registras"
+ },
+ "Jovaišiškės k., Telšių g. 127, 90107": {
+  "lat": 55.908228846,
+  "lon": 21.871460817,
+  "tikslumas": "registras"
+ },
+ "Mažeikiai, Viekšnių g. 24, 89235": {
+  "lat": 56.304210545,
+  "lon": 22.360247288,
+  "tikslumas": "registras"
+ },
+ "Tirkšlių k., Laukų g. 2C, 89330": {
+  "lat": 56.2582023,
+  "lon": 22.3094665,
+  "tikslumas": "pastatas"
+ },
+ "Škilinpamūšio k., Pasienio g. 10, 39421": {
+  "lat": 56.272326056,
+  "lon": 24.36778681,
+  "tikslumas": "registras"
+ },
+ "Škilinpamūšio k., Liepų g. 4, 39421": {
+  "lat": 56.267591642,
+  "lon": 24.370953757,
+  "tikslumas": "registras"
+ },
+ "Elektrėnai, Dubijos g. 36, 26130": {
+  "lat": 54.786550728,
+  "lon": 24.714148255,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Marvelės g. 132, 46230": {
+  "lat": 54.903978199,
+  "lon": 23.8354695,
+  "tikslumas": "registras"
+ },
+ "Kuršukų k., Plento g. 1, 86120": {
+  "lat": 55.61812765,
+  "lon": 22.901743762,
+  "tikslumas": "registras"
+ },
+ "Maironių k., Kuršių g. 2, 86203": {
+  "lat": 55.600505213,
+  "lon": 23.042750298,
+  "tikslumas": "registras"
+ },
+ "Kelmė, Kęstučio g. 1B, 86139": {
+  "lat": 55.634763801,
+  "lon": 22.94546291,
+  "tikslumas": "registras"
+ },
+ "Smėlinkos vs. 1, 33171": {
+  "lat": 55.264284232,
+  "lon": 25.490223294,
+  "tikslumas": "registras"
+ },
+ "Utena, Zarasų g. 9, 28216": {
+  "lat": 55.512401066,
+  "lon": 25.643881124,
+  "tikslumas": "registras"
+ },
+ "Ginkūnų k., Aušros g. 26, 81492": {
+  "lat": 55.956221641,
+  "lon": 23.342757144,
+  "tikslumas": "registras"
+ },
+ "Tauragė, Pramonės g. 6, 72324": {
+  "lat": 55.238328772,
+  "lon": 22.297767904,
+  "tikslumas": "registras"
+ },
+ "Marijampolė, Gėlių g. 25,": {
+  "lat": 54.551733267,
+  "lon": 23.359057323,
+  "tikslumas": "registras"
+ },
+ "Osijos k., Pamiškės g. 1, 70205": {
+  "lat": 54.636557888,
+  "lon": 23.006510363,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Priešpilio g. 5, 91240": {
+  "lat": 55.704145157,
+  "lon": 21.129605018,
+  "tikslumas": "registras"
+ },
+ "Ručiūnų k., Kauno g. 2A, 55355": {
+  "lat": 55.137903833,
+  "lon": 24.193454813,
+  "tikslumas": "registras"
+ },
+ "Joniškis, Turgaus g. 3, 84172": {
+  "lat": 56.22895213,
+  "lon": 23.6101326,
+  "tikslumas": "registras"
+ },
+ "Švenčionys, Mokyklos g. 23, 18111": {
+  "lat": 55.137806029,
+  "lon": 26.15572799,
+  "tikslumas": "registras"
+ },
+ "Mažeikiai, Algirdo g. 42, 89101": {
+  "lat": 56.318513269,
+  "lon": 22.318037826,
+  "tikslumas": "registras"
+ },
+ "Mažeikiai, Daukšos g. 29 / Žemaitijos g. 69, 89132": {
+  "lat": 56.3012334,
+  "lon": 22.3498409,
+  "tikslumas": "pastatas"
+ },
+ "Pasūduonės k., L.Taunio g. 3, 69331": {
+  "lat": 54.4757949,
+  "lon": 23.221689,
+  "tikslumas": "pastatas"
+ },
+ "Kaunas, Linkuvos g. 77, 48314": {
+  "lat": 54.914334306,
+  "lon": 23.887784253,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Rygos g. 2, 05264": {
+  "lat": 54.715574868,
+  "lon": 25.228964355,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Stanevičiaus g. 3A, 07131": {
+  "lat": 54.7217316,
+  "lon": 25.2558881,
+  "tikslumas": "pastatas"
+ },
+ "Kreivukės k., 69232": {
+  "lat": 54.4096957,
+  "lon": 23.2178283,
+  "tikslumas": "pastatas"
+ },
+ "Pašvenčio k., 74218": {
+  "lat": 55.0839161,
+  "lon": 22.6069418,
+  "tikslumas": "gatvė"
+ },
+ "Čekoniškių k., 14207": {
+  "lat": 54.7372828,
+  "lon": 25.0936102,
+  "tikslumas": "gatvė"
+ },
+ "Domeikava, Muitinės g. 2, 54359": {
+  "lat": 54.956352369,
+  "lon": 23.904747417,
+  "tikslumas": "registras"
+ },
+ "Lėkėčių k., Šakių g. 3, 71229": {
+  "lat": 55.0311227,
+  "lon": 23.5236542,
+  "tikslumas": "pastatas"
+ },
+ "Panarvės k., 67168": {
+  "lat": 54.2507018,
+  "lon": 23.5468307,
+  "tikslumas": "gatvė"
+ },
+ "Akmenės I k., Plento g. 1, 85380": {
+  "lat": 56.238514344,
+  "lon": 22.750824475,
+  "tikslumas": "registras"
+ },
+ "Marijampolė, Statybininkų g. 8, 68108": {
+  "lat": 54.577893325,
+  "lon": 23.376914458,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Garažų g. 20, 50314": {
+  "lat": 54.9236943,
+  "lon": 24.000811198,
+  "tikslumas": "registras"
+ },
+ "Kušliškių k. Suvalkijos g. 15, 69200": {
+  "lat": 54.4362101,
+  "lon": 23.2050045,
+  "tikslumas": "pastatas"
+ },
+ "Alytus, Miškininkų g. 7, 62201": {
+  "lat": 54.411694282,
+  "lon": 24.067674104,
+  "tikslumas": "registras"
+ },
+ "Pašakarnių k. Pašakarnių g. 1, 85271": {
+  "lat": 56.2667642,
+  "lon": 22.8349579,
+  "tikslumas": "pastatas"
+ },
+ "Naujoji Akmenė,  V. Kudirkos g. 18A, 85171": {
+  "lat": 56.317196254,
+  "lon": 22.884912785,
+  "tikslumas": "registras"
+ },
+ "Zujūnai, Buivydiškių g. 1A, 14160": {
+  "lat": 54.723597863,
+  "lon": 25.191281518,
+  "tikslumas": "gatvė (registras)"
+ },
+ "Šiauliai, Pramonės g. 7C, 78140": {
+  "lat": 55.916460491,
+  "lon": 23.30187074,
+  "tikslumas": "registras"
+ },
+ "Velžių k., Radviliškio plentas 2, 82218": {
+  "lat": 56.398896,
+  "lon": 24.7700004,
+  "tikslumas": "pastatas"
+ },
+ "Mauručiai, Liepų g. 20, 59290": {
+  "lat": 54.771066636,
+  "lon": 23.765498653,
+  "tikslumas": "registras"
+ },
+ "Ignacavos k., Kauno pl. 18, 59149": {
+  "lat": 54.646668303,
+  "lon": 23.930061409,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Jūrininkų pr. 29, 95225": {
+  "lat": 55.6568391,
+  "lon": 21.1838207,
+  "tikslumas": "pastatas"
+ },
+ "Babtai, Vandžiogalos g. 3, 54328": {
+  "lat": 55.096970144,
+  "lon": 23.806257209,
+  "tikslumas": "registras"
+ },
+ "Visaginas, Kosmoso g. 1, 31142": {
+  "lat": 55.597406984,
+  "lon": 26.403391626,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Jankiškių g. 43a, 02300": {
+  "lat": 54.651911637,
+  "lon": 25.185588401,
+  "tikslumas": "registras"
+ },
+ "Šilalė, Rytinio kelio g. 19, 75133": {
+  "lat": 55.491828319,
+  "lon": 22.199235577,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, Vilniaus g. 373A, 76326": {
+  "lat": 55.942728311,
+  "lon": 23.281565009,
+  "tikslumas": "registras"
+ },
+ "Radviliškis, Gedimino g. 50C, 82482": {
+  "lat": 55.814641918,
+  "lon": 23.553098851,
+  "tikslumas": "registras"
+ },
+ "Pageležių k, 20278": {
+  "lat": 55.1683551,
+  "lon": 24.4719526,
+  "tikslumas": "pastatas"
+ },
+ "Rumšiškės, Lekavičiaus g. 71, 56337": {
+  "lat": 54.87185,
+  "lon": 24.2132026,
+  "tikslumas": "pastatas"
+ },
+ "Ukmergė, Vilniaus g. 122, 20168": {
+  "lat": 55.233433397,
+  "lon": 24.781072978,
+  "tikslumas": "registras"
+ },
+ "Ukmergė, Kareivinių g. 64, 20184": {
+  "lat": 55.258987709,
+  "lon": 24.790493964,
+  "tikslumas": "registras"
+ },
+ "Alytus, Pramonės g. 5, 62323": {
+  "lat": 54.423491506,
+  "lon": 24.020355829,
+  "tikslumas": "registras"
+ },
+ "Skuodas, Vytauto g. 20, 98123": {
+  "lat": 56.261448639,
+  "lon": 21.529893268,
+  "tikslumas": "registras"
+ },
+ "Rietavas, Plungės g. 32, 90313": {
+  "lat": 55.735023683,
+  "lon": 21.924138618,
+  "tikslumas": "registras"
+ },
+ "Žemaitkiemis, S. Krasausko g. 21, 54340": {
+  "lat": 54.9716475,
+  "lon": 23.8588002,
+  "tikslumas": "pastatas"
+ },
+ "Vilkaviškis, S. Nėries g. 38, 70165": {
+  "lat": 54.658123111,
+  "lon": 23.033138179,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Vandžiogalos pl. 86A, 47478": {
+  "lat": 54.9515318,
+  "lon": 23.8936351,
+  "tikslumas": "pastatas"
+ },
+ "Vilnius, Gunkliškių g. 2F, 02231": {
+  "lat": 54.622819761,
+  "lon": 25.105362759,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Taikos pr. 124, 94286": {
+  "lat": 55.661136882,
+  "lon": 21.176366811,
+  "tikslumas": "registras"
+ },
+ "Skaisčiūnų k., Europos g. 11, 69338": {
+  "lat": 54.558142463,
+  "lon": 23.275130048,
+  "tikslumas": "registras"
+ },
+ "Šilutė, Gluosnių g. 4A, 99116": {
+  "lat": 55.348915432,
+  "lon": 21.468953255,
+  "tikslumas": "registras"
+ },
+ "Šilagalio k., Panevėžio aplinkl. 12, 38242": {
+  "lat": 55.669935985,
+  "lon": 24.346045797,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, Sembos g. 5, 78347": {
+  "lat": 55.898858625,
+  "lon": 23.271854929,
+  "tikslumas": "registras"
+ },
+ "Sereikonių k., Baltijos kelio g. 2, 39236": {
+  "lat": 55.906393726,
+  "lon": 24.338664845,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Savanorių pr. 225, 02300": {
+  "lat": 54.641043404,
+  "lon": 25.184203123,
+  "tikslumas": "registras"
+ },
+ "Sausių k., Sausių g. 2, 21401": {
+  "lat": 54.707450827,
+  "lon": 24.996059722,
+  "tikslumas": "registras"
+ },
+ "Raščių k. 1A, 60298": {
+  "lat": 55.277748283,
+  "lon": 23.341387408,
+  "tikslumas": "registras"
+ },
+ "Panevėžys, Ramygalos g. 186A, 36224": {
+  "lat": 55.7100897,
+  "lon": 24.3723092,
+  "tikslumas": "pastatas"
+ },
+ "Radviliškis, Miško g. 62, 77158": {
+  "lat": 55.801870742,
+  "lon": 23.56405882,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Pajautos g. 31, 06200": {
+  "lat": 54.710142623,
+  "lon": 25.162037269,
+  "tikslumas": "registras"
+ },
+ "Pietarių k., Kauno g. 165, 68100": {
+  "lat": 54.592864091,
+  "lon": 23.389467128,
+  "tikslumas": "registras"
+ },
+ "Kaišiadorys, Paukštininkų g. 4a, 56160": {
+  "lat": 54.86436516,
+  "lon": 24.436501708,
+  "tikslumas": "registras"
+ },
+ "Pasvalys, Taikos g. 24, 39132": {
+  "lat": 56.063680841,
+  "lon": 24.425771982,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Palemono g. 3A, 52159": {
+  "lat": 54.901003794,
+  "lon": 24.031197983,
+  "tikslumas": "registras"
+ },
+ "Panevėžys, Nemuno g. 79A, 35189": {
+  "lat": 55.731910993,
+  "lon": 24.340750872,
+  "tikslumas": "registras"
+ },
+ "Kreivalaužių k., Taikos g. 1, 15166": {
+  "lat": 54.83569364,
+  "lon": 25.460300971,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Savanorių pr. 402A, 49281": {
+  "lat": 54.927581474,
+  "lon": 23.97202656,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Minijos g. 154A, 93263": {
+  "lat": 55.668493937,
+  "lon": 21.15907597,
+  "tikslumas": "registras"
+ },
+ "Medininkų k., Pasieniečių g.10, 13192": {
+  "lat": 54.5496804,
+  "lon": 25.6800445,
+  "tikslumas": "pastatas"
+ },
+ "Mastaičių k., Marijampolės g. 58, 53285": {
+  "lat": 54.809435958,
+  "lon": 23.85366541,
+  "tikslumas": "registras"
+ },
+ "Kaunas, T. Masiulio g. 16A, 52375": {
+  "lat": 54.885041756,
+  "lon": 24.004504074,
+  "tikslumas": "registras"
+ },
+ "Marijampolė, Stoties g. 6B, 68110": {
+  "lat": 54.564955276,
+  "lon": 23.368437014,
+  "tikslumas": "registras"
+ },
+ "Maišiagala, Mokyklos g. 26, 14243": {
+  "lat": 54.873246273,
+  "lon": 25.073407255,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Armoniškių g. 31, 46401": {
+  "lat": 54.863066586,
+  "lon": 23.846306057,
+  "tikslumas": "gatvė (registras)"
+ },
+ "Vilnius, Liepkalnio g. 112A, 02121": {
+  "lat": 54.652663986,
+  "lon": 25.305543097,
+  "tikslumas": "registras"
+ },
+ "Lentvaris, Sodų g. 3, 25117": {
+  "lat": 54.643385134,
+  "lon": 25.053258735,
+  "tikslumas": "registras"
+ },
+ "Lazdijų sen., Janaslavo k. 11, 67170": {
+  "lat": 54.0900234,
+  "lon": 23.5183067,
+  "tikslumas": "pastatas"
+ },
+ "Vilnius, Laisvės pr. 80B, 06125": {
+  "lat": 54.723450414,
+  "lon": 25.232990531,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Kirtimų g. 33, 02300": {
+  "lat": 54.627379681,
+  "lon": 25.149315636,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Jonavos g. 292B, 44131": {
+  "lat": 54.932309889,
+  "lon": 23.917895415,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Kareivių g. 4, 09109": {
+  "lat": 54.717899287,
+  "lon": 25.295686594,
+  "tikslumas": "registras"
+ },
+ "Kalotės k., Medelyno g. 126, 96332": {
+  "lat": 55.790221706,
+  "lon": 21.141634015,
+  "tikslumas": "registras"
+ },
+ "Juodgirio k. 1, 58212": {
+  "lat": 55.197508018,
+  "lon": 23.625800079,
+  "tikslumas": "registras"
+ },
+ "Jonušų k., Durpyno g. 63, 96173": {
+  "lat": 55.71166048,
+  "lon": 21.265068885,
+  "tikslumas": "registras"
+ },
+ "Jonava, Vasario 16-osios g. 70, 55165": {
+  "lat": 55.070892941,
+  "lon": 24.258829104,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Jeruzalės g. 2, 08414": {
+  "lat": 54.739833295,
+  "lon": 25.276227984,
+  "tikslumas": "registras"
+ },
+ "Ilgakiemio k., Kauno g. 25, 53288": {
+  "lat": 54.783719428,
+  "lon": 23.876424429,
+  "tikslumas": "registras"
+ },
+ "Vilnius, Spyglių g. 2, 27101": {
+  "lat": 54.668345544,
+  "lon": 25.111776754,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Draugystės g. 8B, 51262": {
+  "lat": 54.908069567,
+  "lon": 23.992093879,
+  "tikslumas": "registras"
+ },
+ "Bukiškis, Ukmergės g. 437, 14183": {
+  "lat": 54.75360484,
+  "lon": 25.211752869,
+  "tikslumas": "registras"
+ },
+ "Biržai, Jaunimo g. 2a, 41168": {
+  "lat": 56.207636417,
+  "lon": 24.770750512,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Ateities pl. 40B, 52112": {
+  "lat": 54.921870154,
+  "lon": 24.047374962,
+  "tikslumas": "registras"
+ },
+ "Ariogala, Žemaičių g. 30, 60255": {
+  "lat": 55.260890468,
+  "lon": 23.488918632,
+  "tikslumas": "registras"
+ },
+ "Alytus, Ūdrijos g. 2, 62402": {
+  "lat": 54.408333589,
+  "lon": 24.016312545,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Raudondvario pl. 234, 47158": {
+  "lat": 54.920739765,
+  "lon": 23.826135405,
+  "tikslumas": "registras"
+ },
+ "Kuršėnai, Vytauto g. 80, 81146": {
+  "lat": 56.014834582,
+  "lon": 22.951216371,
+  "tikslumas": "registras"
+ },
+ "Šingalių k., Kėdainių g. 44, 58185": {
+  "lat": 55.24959784,
+  "lon": 23.851864124,
+  "tikslumas": "registras"
+ },
+ "Aleksandrijos k., Kikonių g. 10, 40335": {
+  "lat": 55.824341589,
+  "lon": 25.001344368,
+  "tikslumas": "registras"
+ },
+ "Dvariškių vs. 2, 40402": {
+  "lat": 55.773432529,
+  "lon": 24.754350133,
+  "tikslumas": "registras"
+ },
+ "Troškūnai, Vilniaus g. 32, 29306": {
+  "lat": 55.584934009,
+  "lon": 24.878243438,
+  "tikslumas": "registras"
+ },
+ "Vabalninkas, S. Nėries g. 35, 41341": {
+  "lat": 55.979013,
+  "lon": 24.7458823,
+  "tikslumas": "gatvė"
+ },
+ "Sausalaukės k. 2, 29345": {
+  "lat": 55.675789352,
+  "lon": 25.358551324,
+  "tikslumas": "registras"
+ },
+ "Pumpučiai, Pumpučių g. 25, 29253": {
+  "lat": 55.424320043,
+  "lon": 24.920140284,
+  "tikslumas": "registras"
+ },
+ "Jurbarkas, Muitinės g. 34A, 74106": {
+  "lat": 55.076804419,
+  "lon": 22.752030306,
+  "tikslumas": "registras"
+ },
+ "Girėnų k., Kauno g. 68, 71129": {
+  "lat": 54.952746566,
+  "lon": 23.083420888,
+  "tikslumas": "registras"
+ },
+ "Cirkliškio k., Aukštaičių g. 2A, 18122": {
+  "lat": 55.11994851,
+  "lon": 26.13127685,
+  "tikslumas": "registras"
+ },
+ "Ignalina, Švenčionių g. 35, 30132": {
+  "lat": 55.327196894,
+  "lon": 26.174464074,
+  "tikslumas": "registras"
+ },
+ "Vievis, Kauno g. 55A, 21371": {
+  "lat": 54.775244037,
+  "lon": 24.810488259,
+  "tikslumas": "registras"
+ },
+ "Rokiškis, Respublikos g. 113B, 42150": {
+  "lat": 55.947087639,
+  "lon": 25.590698273,
+  "tikslumas": "registras"
+ },
+ "Anykščiai, Vienuolio g. 34A, 29148": {
+  "lat": 55.5226002,
+  "lon": 25.0879884,
+  "tikslumas": "pastatas"
+ },
+ "Kėdainiai, Basanavičiaus g. 91E, 57356": {
+  "lat": 55.2781085,
+  "lon": 23.959972,
+  "tikslumas": "pastatas"
+ },
+ "Pagirių k., Durpių g. 45, 14118": {
+  "lat": 54.5691646,
+  "lon": 25.1878104,
+  "tikslumas": "pastatas"
+ },
+ "Šiauliai, Gegužių g. 28, 78322": {
+  "lat": 55.905942863,
+  "lon": 23.259168191,
+  "tikslumas": "registras"
+ },
+ "Kaunas, Islandijos pl. 191D, 49170": {
+  "lat": 54.931600029,
+  "lon": 23.951131316,
+  "tikslumas": "registras"
+ },
+ "Visaginas, Taikos pr. 47, 31217": {
+  "lat": 55.590458402,
+  "lon": 26.463235413,
+  "tikslumas": "registras"
+ },
+ "Vaidatonių k. 1, 73406": {
+  "lat": 55.469107171,
+  "lon": 22.678521608,
+  "tikslumas": "registras"
+ },
+ "Taurai, Tilžės pl. 46, 72142": {
+  "lat": 55.242431657,
+  "lon": 22.249876842,
+  "tikslumas": "registras"
+ },
+ "Truikių k., Pramogų g. 4, 90110": {
+  "lat": 55.938947045,
+  "lon": 21.88011811,
+  "tikslumas": "registras"
+ },
+ "Kaišiadorys, Paukštininkų g. 13, 56161": {
+  "lat": 54.865092522,
+  "lon": 24.434110632,
+  "tikslumas": "registras"
+ },
+ "Slavinčiškis, Slavinčiškio g. 18, 40333": {
+  "lat": 55.832444232,
+  "lon": 25.020037286,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, Žemaitės g. 131c, 76175": {
+  "lat": 55.948087599,
+  "lon": 23.320481409,
+  "tikslumas": "registras"
+ },
+ "Šiauliai, Bačiūnų g. 12a, 77109": {
+  "lat": 55.897986309,
+  "lon": 23.352088289,
+  "tikslumas": "registras"
+ },
+ "Gruzdžiai, M. Katiliškio g. 50, 81428": {
+  "lat": 56.099315088,
+  "lon": 23.265858183,
+  "tikslumas": "registras"
+ },
+ "Telšiai, Masčio g. 21, 87139": {
+  "lat": 55.975694673,
+  "lon": 22.26355059,
+  "tikslumas": "registras"
+ },
+ "Ukmergė, Dariaus ir Girėno g. 31, 20154": {
+  "lat": 55.240724479,
+  "lon": 24.787348391,
+  "tikslumas": "registras"
+ },
+ "Seirijai, Algirdo g. 35A, 67227": {
+  "lat": 54.239499572,
+  "lon": 23.823059404,
+  "tikslumas": "registras"
+ },
+ "Kalvelių k., Lazdijų pl. 29, 67333": {
+  "lat": 54.106043786,
+  "lon": 23.673755842,
+  "tikslumas": "registras"
+ },
+ "Gulbiniškių k. 7, 70481": {
+  "lat": 54.71182076,
+  "lon": 23.207786013,
+  "tikslumas": "registras"
+ },
+ "Luokė, Telšių g. 66, 88236": {
+  "lat": 55.901331498,
+  "lon": 22.506312329,
+  "tikslumas": "registras"
+ },
+ "Papušynės k., Šilalės g. 105, 72175": {
+  "lat": 55.271722195,
+  "lon": 22.286408614,
+  "tikslumas": "registras"
+ },
+ "Židikai, Mažeikių g. 10, 89442": {
+  "lat": 56.317634461,
+  "lon": 22.013592559,
+  "tikslumas": "registras"
+ },
+ "Rūdos k., Marijampolės g. 8, 70313": {
+  "lat": 54.60189826,
+  "lon": 23.194939687,
+  "tikslumas": "registras"
+ },
+ "Aristava, Aristavos g. 4, 58111": {
+  "lat": 55.297163016,
+  "lon": 24.076998669,
+  "tikslumas": "registras"
+ },
+ "Girėnai, Kauno g. 50, 71129": {
+  "lat": 54.95278635,
+  "lon": 23.080360048,
+  "tikslumas": "registras"
+ },
+ "Šakiai, V. Kudirkos g. 11D, 71124": {
+  "lat": 54.954086288,
+  "lon": 23.024640708,
+  "tikslumas": "registras"
+ },
+ "Jurbarkas, Knygnešių g. 9, 74212": {
+  "lat": 55.085607112,
+  "lon": 22.745631481,
+  "tikslumas": "registras"
+ },
+ "Jurbarkas, Muitinės g. 32, 74111": {
+  "lat": 55.077233962,
+  "lon": 22.750983312,
+  "tikslumas": "registras"
+ },
+ "Jurbarkas, S. Daukanto g. 66, 74170": {
+  "lat": 55.082467367,
+  "lon": 22.7887402,
+  "tikslumas": "registras"
+ },
+ "Kiduliai, Sūduvos g. 3, 71400": {
+  "lat": 55.06388821,
+  "lon": 22.780862982,
+  "tikslumas": "registras"
+ },
+ "Seredžius, S. Šimkaus g. 69, 74425": {
+  "lat": 55.07891997,
+  "lon": 23.396917541,
+  "tikslumas": "registras"
+ },
+ "Trakai, Senkelio g. 13, 21107": {
+  "lat": 54.630810459,
+  "lon": 24.922645039,
+  "tikslumas": "registras"
+ },
+ "Ramučių k., Luokės g. 2, 86377": {
+  "lat": 55.830035763,
+  "lon": 22.853369018,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Minijos g. 152A, 93263": {
+  "lat": 55.669549025,
+  "lon": 21.158840444,
+  "tikslumas": "registras"
+ },
+ "Saugų k., Tilžės g. 21, 99409": {
+  "lat": 55.46459088,
+  "lon": 21.470355254,
+  "tikslumas": "registras"
+ },
+ "Kretinga, Vilniaus g. 29B, 97101": {
+  "lat": 55.896886106,
+  "lon": 21.244494065,
+  "tikslumas": "registras"
+ },
+ "Darbėnai, Laisvės g. 15, 97264": {
+  "lat": 56.026785175,
+  "lon": 21.262637544,
+  "tikslumas": "registras"
+ },
+ "Žemaitkiemio k., Liepų g. 4, 99317": {
+  "lat": 55.227443904,
+  "lon": 21.701851411,
+  "tikslumas": "registras"
+ },
+ "Vatušių k., Kvėdarnos g. 2, 90307": {
+  "lat": 55.71846528,
+  "lon": 21.932260419,
+  "tikslumas": "registras"
+ },
+ "Dituvos k., Šv. Kristoforo g. 4, 96357": {
+  "lat": 55.581641412,
+  "lon": 21.285338647,
+  "tikslumas": "registras"
+ },
+ "Pyktiškės k., Veiviržėnų g. 29, 96303": {
+  "lat": 55.687086438,
+  "lon": 21.693217334,
+  "tikslumas": "registras"
+ },
+ "Gargždai, Klaipėdos g. 39, 96157": {
+  "lat": 55.712279088,
+  "lon": 21.381632542,
+  "tikslumas": "registras"
+ },
+ "Klaipėda, Kretingos g. 28A, 92211": {
+  "lat": 55.728361089,
+  "lon": 21.132430024,
+  "tikslumas": "registras"
+ },
+ "Plungė, Lentpjūvės g. 10A, 90118": {
+  "lat": 55.921497156,
+  "lon": 21.8526347,
+  "tikslumas": "registras"
+ },
+ "Tauragė, Dariaus ir Girėno g. 49, 72221": {
+  "lat": 55.258161329,
+  "lon": 22.294638694,
+  "tikslumas": "registras"
+ },
+ "Tauragė, Pramonės g. 10A, 72359": {
+  "lat": 55.236472678,
+  "lon": 22.296762207,
+  "tikslumas": "registras"
+ },
+ "Telšiai, Mažeikių g. 7A, 87101": {
+  "lat": 56.000531167,
+  "lon": 22.24723684,
+  "tikslumas": "registras"
+ },
+ "Igliauka, Prienų g. 7, 69117": {
+  "lat": 54.557938482,
+  "lon": 23.656260522,
+  "tikslumas": "registras"
+ },
+ "Martinavos g. 1, Neveronių k., 54475": {
+  "lat": 54.9245919,
+  "lon": 24.0787056,
+  "tikslumas": "pastatas"
+ },
+ "Mozūriškiai, Mozūriškių 10, 71382": {
+  "lat": 55.0216815,
+  "lon": 22.9695185,
+  "tikslumas": "pastatas"
+ },
+ "Rietavas, Lėgų k. 1, 90305": {
+  "lat": 55.7276097,
+  "lon": 21.9283218,
+  "tikslumas": "pastatas"
+ },
+ "Gargždai, Kretingos pl. 1, 96105": {
+  "lat": 55.7136834,
+  "lon": 21.3865768,
+  "tikslumas": "pastatas"
+ },
+ "Žygaičių k., Žygaičių g. 2, 73282": {
+  "lat": 55.3735658,
+  "lon": 22.0503505,
+  "tikslumas": "pastatas"
+ },
+ "Gineikių k., 75445": {
+  "lat": 55.5590558,
+  "lon": 22.4731434,
+  "tikslumas": "pašto kodas"
+ }
+}

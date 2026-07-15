@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.log
+geocache.backup.json
+.claude/
+.DS_Store
