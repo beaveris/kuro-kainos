@@ -26,21 +26,38 @@ def stored_dates() -> set[str]:
     return {p.stem.replace("kainos_", "") for p in DATA_DIR.glob("kainos_*.csv")}
 
 
-def sync(progress_cb=None) -> list[str]:
-    """Parsisiunčia trūkstamas dienas. Grąžina naujai išsaugotų datų sąrašą."""
+def sync(progress_cb=None, refresh_last: int = 2) -> list[str]:
+    """Parsisiunčia trūkstamas dienas. Grąžina naujai išsaugotų datų sąrašą.
+
+    ENA dienos failas pildosi visą dieną (degalinės duomenis pateikia
+    skirtingu metu), todėl paskutinės `refresh_last` jau turimos dienos
+    parsisiunčiamos iš naujo ir perrašomos, jei ENA versija ne mažesnė.
+    """
     DATA_DIR.mkdir(exist_ok=True)
     have = stored_dates()
-    missing = [l for l in list_daily_links() if l.date not in have]
+    links = list_daily_links()
+    refresh = {l.date for l in links if l.date in have}
+    refresh = set(sorted(refresh)[-refresh_last:]) if refresh_last else set()
+    todo = [l for l in links if l.date not in have or l.date in refresh]
     saved = []
-    for i, link in enumerate(missing):
+    for i, link in enumerate(todo):
         try:
             df = parse_daily_xlsx(download_daily_xlsx(link))
         except Exception:  # noqa: BLE001 — viena nepavykusi diena nestabdo kitų
             continue
-        df[COLUMNS].to_csv(_day_path(link.date), index=False)
-        saved.append(link.date)
+        path = _day_path(link.date)
+        new_csv = df[COLUMNS].to_csv(index=False)
+        if link.date in have:
+            old_csv = path.read_text()
+            old_rows = old_csv.count("\n") - 1
+            if new_csv == old_csv or len(df) < old_rows:
+                continue  # nepasikeitė arba ENA versija trumpesnė
+            saved.append(f"{link.date} (atnaujinta: {old_rows} → {len(df)} eil.)")
+        else:
+            saved.append(link.date)
+        path.write_text(new_csv)
         if progress_cb:
-            progress_cb(i + 1, len(missing), link.date)
+            progress_cb(i + 1, len(todo), link.date)
     return saved
 
 
