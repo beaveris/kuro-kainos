@@ -383,13 +383,28 @@ with tab_map:
         )
         mapped["nuokrypis_txt"] = mapped["nuokrypis_pct"].map("{:+.1f} %".format)
 
-        st.markdown(
-            "🟢 pigiau nei rinkos vidurkis · 🟡 apie vidurkį · 🔴 brangiau "
-            f"(vidurkis: **{market_avg:.3f} €/l**)"
-        )
+        col_leg, col_style = st.columns([3, 1], vertical_alignment="center")
+        with col_leg:
+            st.markdown(
+                "🟢 pigiau nei rinkos vidurkis · 🟡 apie vidurkį · 🔴 brangiau "
+                f"(vidurkis: **{market_avg:.3f} €/l**)"
+            )
+        MAP_STYLES = {
+            "Detalus": "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json",
+            "Šviesus": "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
+            "Tamsus": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+        }
+        with col_style:
+            map_style_name = st.selectbox(
+                "Žemėlapio stilius",
+                list(MAP_STYLES),
+                label_visibility="collapsed",
+                key="map_style",
+            )
+        dark_map = map_style_name == "Tamsus"
         map_event = st.pydeck_chart(
             pdk.Deck(
-                map_style=None,
+                map_style=MAP_STYLES[map_style_name],
                 initial_view_state=pdk.ViewState(
                     latitude=55.2, longitude=23.9, zoom=6.3
                 ),
@@ -411,7 +426,9 @@ with tab_map:
                         radius_max_pixels=18,
                         pickable=True,
                         stroked=True,
-                        get_line_color=[255, 255, 255, 120],
+                        get_line_color=(
+                            [255, 255, 255, 120] if dark_map else [60, 60, 60, 140]
+                        ),
                         line_width_min_pixels=1,
                     )
                 ],
