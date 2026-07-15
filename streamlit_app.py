@@ -32,7 +32,16 @@ def load_data() -> tuple[str, pd.DataFrame, pd.DataFrame]:
     if hist.empty:
         raise RuntimeError("Nepavyko parsisiųsti duomenų iš ena.lt")
     latest = hist["data"].max()
-    df = hist[hist["data"] == latest].reset_index(drop=True)
+    # Dalis tinklų kai kuriomis dienomis duomenų nepateikia — kad degalinės
+    # „neišnyktų“, imame paskutinę žinomą kiekvienos kainą (iki 7 d. senumo)
+    # ir pažymime jos datą.
+    recent = hist[hist["data"].map(lambda d: (latest - d).days <= 7)]
+    df = (
+        recent.sort_values("data")
+        .drop_duplicates(subset=["stotis_id", "tipas"], keep="last")
+        .reset_index(drop=True)
+    )
+    df["senumas"] = df["data"].map(lambda d: (latest - d).days)
     return str(latest), df, hist
 
 
@@ -62,9 +71,15 @@ date, df, hist = load_data()
 coords = load_coords()
 
 st.title("⛽ Kuro kainos Lietuvoje")
+stale_n = df.loc[df["senumas"] > 0, "stotis_id"].nunique()
 st.caption(
     f"Duomenys: [Lietuvos energetikos agentūra](https://www.ena.lt/dk-visa-informacija/) · "
-    f"**{date}** · {df[['imone', 'adresas']].drop_duplicates().shape[0]} degalinių"
+    f"**{date}** · {df['stotis_id'].nunique()} degalinių"
+    + (
+        f" · iš jų {stale_n} tą dieną duomenų nepateikė — rodoma paskutinė "
+        "žinoma kaina (žymima data)"
+        if stale_n else ""
+    )
 )
 
 col_fuel, col_net = st.columns([1, 2], vertical_alignment="bottom")
@@ -208,8 +223,13 @@ def station_card(sid: str) -> None:
     with st.container(horizontal=True):
         if not today_rows.empty:
             trow = today_rows.iloc[0]
+            label = (
+                "Šiandienos kaina"
+                if trow.get("senumas", 0) == 0
+                else f"Kaina ({trow['data']})"
+            )
             st.metric(
-                "Šiandienos kaina",
+                label,
                 f"{trow['kaina']:.3f} €/l",
                 f"{trow['nuokrypis_pct']:+.1f} % nuo rinkos",
                 delta_color="inverse",
@@ -351,7 +371,16 @@ with tab_map:
                 "nerastos koordinatės."
             )
         mapped["color"] = mapped["nuokrypis_pct"].map(deviation_color)
+        # nepateikusių šiandien — blankesni taškai
+        stale_mask = mapped["senumas"] > 0
+        mapped.loc[stale_mask, "color"] = mapped.loc[stale_mask, "color"].map(
+            lambda c: c[:3] + [110]
+        )
         mapped["kaina_txt"] = mapped["kaina"].map("{:.3f} €/l".format)
+        mapped.loc[stale_mask, "kaina_txt"] = (
+            mapped.loc[stale_mask, "kaina_txt"]
+            + " (" + mapped.loc[stale_mask, "data"].astype(str) + ")"
+        )
         mapped["nuokrypis_txt"] = mapped["nuokrypis_pct"].map("{:+.1f} %".format)
 
         st.markdown(
@@ -629,7 +658,7 @@ with tab_all:
     tdf = (
         tdf[
             ["imone", "miestas", "adresas", "kaina", "nuokrypis",
-             "nuokrypis_pct", "stotis_id"]
+             "nuokrypis_pct", "data", "stotis_id"]
         ]
         .sort_values("kaina")
         .reset_index(drop=True)
@@ -648,6 +677,7 @@ with tab_all:
             "nuokrypis_pct": st.column_config.NumberColumn(
                 "Nuo vidurkio, %", format="%+.1f %%"
             ),
+            "data": st.column_config.DateColumn("Kainos data", format="MM-DD"),
             "stotis_id": None,
         },
         hide_index=True,
