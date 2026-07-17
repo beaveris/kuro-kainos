@@ -200,6 +200,13 @@ hist_fuel = hist[hist["tipas"] == fuel]
 day_avg_all = hist_fuel.groupby("data")["kaina"].mean()
 
 
+def city_options(data: pd.DataFrame) -> list[str]:
+    """Savivaldybės didžiausių (pagal degalinių skaičių) tvarka, ne abėcėlės."""
+    counts = data.groupby("miestas")["stotis_id"].nunique()
+    ranked = sorted(counts.items(), key=lambda x: (-x[1], x[0]))
+    return ["Visos"] + [name for name, _ in ranked]
+
+
 def station_card(sid: str) -> None:
     """Degalinės kortelė: šiandienos būklė, istorija ir savaitės dienų profilis."""
     sh = hist_fuel[hist_fuel["stotis_id"] == sid]
@@ -556,7 +563,7 @@ with tab_stable:
 
     city_stable = st.selectbox(
         "Savivaldybė",
-        ["Visos"] + sorted(agg["miestas"].unique()),
+        city_options(shf),
         key="stable_city",
     )
     if city_stable != "Visos":
@@ -669,7 +676,7 @@ with tab_trends:
 with tab_all:
     city = st.selectbox(
         "Savivaldybė",
-        ["Visos"] + sorted(fdf["miestas"].unique()),
+        city_options(fdf),
     )
     tdf = fdf if city == "Visos" else fdf[fdf["miestas"] == city]
     tdf = (
