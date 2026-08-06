@@ -27,7 +27,7 @@ jobs:
           cache: pip
 
       - name: Įdiegti priklausomybes
-        run: pip install pandas openpyxl requests
+        run: pip install pandas openpyxl requests beautifulsoup4
 
       - name: Parsisiųsti naujas dienas ir geokoduoti naujas degalines
         run: python update_history.py

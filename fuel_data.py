@@ -12,8 +12,14 @@ from dataclasses import dataclass
 
 import pandas as pd
 import requests
+from bs4 import BeautifulSoup
 
-ENA_PAGE_URL = "https://www.ena.lt/dk-visa-informacija/"
+ENA_PAGE_URL = "https://www.ena.lt/dk-pr-pr-duomenys/"
+# Ankstesnė ENA svetainės struktūra (iki 2026-07-27) šiuos duomenis skelbė
+# adresu dk-visa-informacija/ — po pertvarkos puslapis perkeltas į tris
+# atskirus adresus: dk-zemelapis/ (žemėlapis), dk-irankis/ (stebėsenos
+# įrankis) ir aukščiau nurodytą dk-pr-pr-duomenys/ (pranešimai ir pradiniai
+# duomenys — mums reikalingos SharePoint nuorodos).
 USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
@@ -40,10 +46,41 @@ def _session() -> requests.Session:
     return s
 
 
-def list_daily_links() -> list[DailyLink]:
-    """Iš ENA puslapio ištraukia visų dienų Excel failų nuorodas."""
-    s = _session()
-    html = s.get(ENA_PAGE_URL, timeout=30).text
+_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+_SHAREPOINT_RE = re.compile(r"sharepoint\.com")
+
+
+def _links_from_tables(html: str) -> dict[str, str]:
+    """Struktūrinis parseris (nuo 2026-07-27 svetainės pertvarkos).
+
+    Kiekvienas mėnuo — lentelė, eilutės trejetais: datų eilutė (Pr–Pn),
+    „Pranešimas" eilutė, „Kainos" eilutė. Nuorodos šiame formate title
+    atributo nebeturi — data nustatoma pagal stulpelio poziciją.
+    """
+    soup = BeautifulSoup(html, "html.parser")
+    links: dict[str, str] = {}
+    for table in soup.find_all("table"):
+        rows = table.find_all("tr")
+        for i in range(0, len(rows) - 2, 3):
+            date_cells = rows[i].find_all("td")
+            kainos_cells = rows[i + 2].find_all("td")
+            if len(date_cells) != len(kainos_cells):
+                continue
+            for date_td, kainos_td in zip(date_cells, kainos_cells):
+                date = date_td.get_text(strip=True)
+                if not _DATE_RE.match(date):
+                    continue
+                a = kainos_td.find("a", href=_SHAREPOINT_RE)
+                if a and a.get("href"):
+                    links[date] = a["href"]
+    return links
+
+
+def _links_from_title_attr(html: str) -> dict[str, str]:
+    """Senasis parseris (iki 2026-07-27): nuorodos su title="Degalų kainos ...".
+
+    Paliktas kaip atsarginis variantas, jei ENA vėl pakeistų formatą.
+    """
     pattern = re.compile(
         r'href="(https://ltenergagen\.sharepoint\.com/[^"]+)"[^>]*'
         r'title="Degalų kainos (\d{4}-\d{2}-\d{2})"'
@@ -54,9 +91,23 @@ def list_daily_links() -> list[DailyLink]:
     for m in pattern.finditer(html):
         url = m.group(1) or m.group(4)
         date = m.group(2) or m.group(3)
-        links[date] = url.replace("&amp;", "&")
+        links[date] = url
+    return links
+
+
+def list_daily_links() -> list[DailyLink]:
+    """Iš ENA puslapio ištraukia visų dienų Excel failų nuorodas."""
+    s = _session()
+    html = s.get(ENA_PAGE_URL, timeout=30).text
+    links = _links_from_tables(html)
+    links.update(_links_from_title_attr(html))  # papildo, jei kur liko title
+    if not links:
+        raise RuntimeError(
+            f"ENA puslapyje ({ENA_PAGE_URL}) nerasta nė vienos kainų nuorodos "
+            "— tikriausiai svetainės struktūra vėl pasikeitė."
+        )
     return sorted(
-        (DailyLink(date=d, url=u) for d, u in links.items()),
+        (DailyLink(date=d, url=u.replace("&amp;", "&")) for d, u in links.items()),
         key=lambda x: x.date,
     )
 
