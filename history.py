@@ -36,6 +36,30 @@ def sync(progress_cb=None, refresh_last: int = 2) -> list[str]:
     DATA_DIR.mkdir(exist_ok=True)
     have = stored_dates()
     links = list_daily_links()
+    if len(links) == 1 and links[0].date == "annual":
+        # Nuo 2026-09-09 ENA pateikia vieną visų metų failą.
+        frame = parse_daily_xlsx(download_daily_xlsx(links[0]))
+        frame = frame.dropna(subset=["data"])
+        if frame.empty:
+            raise RuntimeError("ENA metiniame faile nėra datuotų kainų")
+        saved = []
+        refresh = set(sorted(have)[-refresh_last:]) if refresh_last else set()
+        # Seną archyvą išsaugome: suvestinėje kai kurios senos datos nepilnos.
+        for day, df in frame.groupby("data", sort=True):
+            date = day.isoformat()
+            if date in have and date not in refresh:
+                continue
+            new_csv = df[COLUMNS].to_csv(index=False)
+            path = _day_path(date)
+            if path.exists():
+                old = path.read_text()
+                if old == new_csv or len(df) < old.count("\n") - 1:
+                    continue
+            temporary = path.with_suffix(".csv.tmp")
+            temporary.write_text(new_csv)
+            temporary.replace(path)
+            saved.append(date)
+        return saved
     refresh = {l.date for l in links if l.date in have}
     refresh = set(sorted(refresh)[-refresh_last:]) if refresh_last else set()
     todo = [l for l in links if l.date not in have or l.date in refresh]

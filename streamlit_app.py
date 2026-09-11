@@ -6,6 +6,7 @@ Duomenų šaltinis: Lietuvos energetikos agentūra (ena.lt), atnaujinama kasdien
 from __future__ import annotations
 
 import altair as alt
+import logging
 import pandas as pd
 import pydeck as pdk
 import streamlit as st
@@ -22,12 +23,17 @@ st.set_page_config(
 
 
 @st.cache_data(ttl=3600, show_spinner="Atnaujinami duomenys iš ena.lt…")
-def load_data() -> tuple[str, pd.DataFrame, pd.DataFrame]:
+def load_data() -> tuple[str, pd.DataFrame, pd.DataFrame, bool]:
     """Grąžina (naujausia data, tos dienos duomenys, visa istorija).
 
     Kas valandą patikrina, ar ENA nepaskelbė naujų dienų, ir jas parsisiunčia.
     """
-    history.sync()
+    update_failed = False
+    try:
+        history.sync()
+    except Exception:
+        logging.getLogger(__name__).exception("Nepavyko atnaujinti ENA duomenų")
+        update_failed = True
     hist = history.load_history()
     if hist.empty:
         raise RuntimeError("Nepavyko parsisiųsti duomenų iš ena.lt")
@@ -42,7 +48,7 @@ def load_data() -> tuple[str, pd.DataFrame, pd.DataFrame]:
         .reset_index(drop=True)
     )
     df["senumas"] = df["data"].map(lambda d: (latest - d).days)
-    return str(latest), df, hist
+    return str(latest), df, hist, update_failed
 
 
 @st.cache_data(ttl=600)
@@ -67,13 +73,23 @@ def deviation_color(pct: float) -> list[int]:
     return [int(230 + (220 - 230) * t), int(200 - 200 * t * 0.85), int(60 - 60 * t), 200]
 
 
-date, df, hist = load_data()
+try:
+    date, df, hist, update_failed = load_data()
+except Exception:
+    logging.getLogger(__name__).exception("Nepavyko įkelti kainų istorijos")
+    st.error("Kainų šiuo metu nepavyko įkelti. Bandykite vėliau.")
+    st.stop()
 coords = load_coords()
 
 st.title("⛽ Kuro kainos Lietuvoje")
+if update_failed:
+    st.warning(
+        f"Nepavyko gauti naujų ENA duomenų. Rodomos paskutinės išsaugotos "
+        f"kainos ({date}); dabartinės kainos degalinėse gali skirtis."
+    )
 stale_n = df.loc[df["senumas"] > 0, "stotis_id"].nunique()
 st.caption(
-    f"Duomenys: [Lietuvos energetikos agentūra](https://www.ena.lt/dk-visa-informacija/) · "
+    f"Duomenys: [Lietuvos energetikos agentūra](https://www.ena.lt/dk-pr-pr-duomenys/) · "
     f"**{date}** · {df['stotis_id'].nunique()} degalinių"
     + (
         f" · iš jų {stale_n} tą dieną duomenų nepateikė — rodoma paskutinė "

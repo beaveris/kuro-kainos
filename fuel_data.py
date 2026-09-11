@@ -98,10 +98,20 @@ def _links_from_title_attr(html: str) -> dict[str, str]:
 def list_daily_links() -> list[DailyLink]:
     """Iš ENA puslapio ištraukia visų dienų Excel failų nuorodas."""
     s = _session()
-    html = s.get(ENA_PAGE_URL, timeout=30).text
+    response = s.get(ENA_PAGE_URL, timeout=30)
+    response.raise_for_status()
+    html = response.text
     links = _links_from_tables(html)
     links.update(_links_from_title_attr(html))  # papildo, jei kur liko title
     if not links:
+        soup = BeautifulSoup(html, "html.parser")
+        if "suvestiniame" in soup.get_text():
+            candidates = {
+                a["href"] for a in soup.find_all("a", href=True)
+                if a["href"].startswith("https://ltenergagen.sharepoint.com/:x:/")
+            }
+            if len(candidates) == 1:
+                return [DailyLink(date="annual", url=candidates.pop())]
         raise RuntimeError(
             f"ENA puslapyje ({ENA_PAGE_URL}) nerasta nė vienos kainų nuorodos "
             "— tikriausiai svetainės struktūra vėl pasikeitė."
