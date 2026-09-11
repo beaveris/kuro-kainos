@@ -87,9 +87,10 @@ except Exception:
     st.stop()
 coords = load_coords()
 
-st.title("⛽ Kuro kainos Lietuvoje")
-st.caption(f"Atnaujinimą tikrinome {checked_at[11:16]} Lietuvos laiku ({checked_at[:10]}).")
-with st.expander(f"Duomenų būklė · kainos {date}"):
+compact = st.session_state.get('compact', st.query_params.get('compact', '1') != '0')
+st.header("⛽ Kuro kainos" if compact else "⛽ Kuro kainos Lietuvoje")
+st.caption(f"ENA kainos · {date} · senesnės kainos pažymėtos data")
+with st.sidebar.expander(f"Duomenų būklė · {date}"):
     st.write(f"Paskutinis bandymas atnaujinti: **{checked_at.replace('T', ' ')}** (Lietuvos laikas).")
     st.write("Atnaujinimas nepavyko — rodoma išsaugota istorija." if update_failed else "ENA duomenys patikrinti.")
     current_ids = set(df.loc[df['senumas'] == 0, 'stotis_id'])
@@ -115,7 +116,7 @@ if update_failed:
         f"kainos ({date}); dabartinės kainos degalinėse gali skirtis."
     )
 stale_n = df.loc[df["senumas"] > 0, "stotis_id"].nunique()
-st.caption(
+st.sidebar.caption(
     f"Duomenys: [Lietuvos energetikos agentūra](https://www.ena.lt/dk-pr-pr-duomenys/) · "
     f"**{date}** · {df['stotis_id'].nunique()} degalinių"
     + (
@@ -125,7 +126,7 @@ st.caption(
     )
 )
 
-col_fuel, col_net = st.columns([1, 2], vertical_alignment="bottom")
+col_fuel = st.container()
 with col_fuel:
     fuel = st.segmented_control(
         "Degalų tipas",
@@ -144,10 +145,11 @@ market_avg = fdf.loc[fdf["senumas"] == 0, "kaina"].mean()
 if pd.isna(market_avg):
     st.info("Naujausios dienos šio kuro kainų nėra. Pasirinkite kitą kuro tipą.")
     st.stop()
-st.caption("Rinkos vidurkis: tik naujausios ataskaitos kainos, be ankstesnių dienų kainų.")
+st.sidebar.caption("Rinkos vidurkis: tik naujausios ataskaitos kainos, be ankstesnių dienų kainų.")
 
 network_counts = fdf["imone"].value_counts()
-with col_net:
+filters = st.expander('Filtrai · tinklai ir savivaldybė', expanded=not compact)
+with filters:
     networks = st.multiselect(
         "Degalinių tinklai",
         options=list(network_counts.index),
@@ -168,14 +170,14 @@ if position is not None:
 if st.session_state.get('user_location'):
     if st.button('Nenaudoti mano vietos'):
         del st.session_state['user_location']
-st.caption('Vieta nustatoma tik paspaudus. Koordinatės perduodamos programai tik šiai sesijai, neįrašomos į kainų istoriją ar asmeninę nuorodą. Nuolatinio sekimo nėra.')
+st.sidebar.caption('Vieta nustatoma tik paspaudus. Koordinatės perduodamos programai tik šiai sesijai, neįrašomos į kainų istoriją ar asmeninę nuorodą. Nuolatinio sekimo nėra.')
 city_counts = df.groupby('miestas').stotis_id.nunique().sort_values(ascending=False)
 global_cities = ['Visos', *city_counts.index]
 saved_city = st.query_params.get('city', 'Visos')
-global_city = st.selectbox('Mano savivaldybė', global_cities,
+global_city = filters.selectbox('Mano savivaldybė', global_cities,
                            index=global_cities.index(saved_city) if saved_city in global_cities else 0,
                            key='global_city')
-with st.popover('Vaizdas ir mano nuoroda'):
+with st.sidebar:
     compact = st.toggle('Kompaktiškas vaizdas telefonui', value=st.query_params.get('compact', '1') != '0', key='compact')
     params = {'fuel': fuel, 'network': networks, 'city': global_city}
     params['compact'] = '1' if compact else '0'
@@ -199,8 +201,8 @@ fdf["nuokrypis_pct"] = fdf["nuokrypis"] / market_avg * 100
 cheapest = fdf.loc[fdf["kaina"].idxmin()]
 priciest = fdf.loc[fdf["kaina"].idxmax()]
 
-st.caption(f"{len(fdf)} degalinių · rinkos vidurkis {market_avg:.3f} €/l · mažiausia rodoma kaina {cheapest['kaina']:.3f} €/l ({cheapest['data']})")
-with st.expander('Kainų suvestinė', expanded=not compact):
+st.caption(f"{len(fdf)} degalinių · {global_city}" + (f" · {', '.join(networks)}" if networks else ' · visi tinklai'))
+with st.sidebar.expander('Kainų suvestinė', expanded=not compact):
     st.metric("Rinkos vidurkis", f"{market_avg:.3f} €/l", border=True)
     if networks:
         sel_avg = fdf["kaina"].mean()
@@ -229,26 +231,37 @@ with st.expander('Kainų suvestinė', expanded=not compact):
     )
     st.metric("Degalinių su šiuo kuru", f"{len(fdf)}", border=True)
 
-def trend_chart(data: pd.DataFrame, color_col: str, color_title: str | None = None):
+def trend_chart(data: pd.DataFrame, color_col: str, color_title: str | None = None, *, key=None):
+    period = st.selectbox('Grafiko laikotarpis', [14, 30, 90, 365, None],
+                          index=0 if compact else 1,
+                          format_func=lambda n: f'{n} d.' if n else 'Visa istorija',
+                          key=f'chart_period_{key or color_col}')
+    data = data.copy()
+    data['data'] = pd.to_datetime(data['data'])
+    if period:
+        data = data[data['data'] >= data['data'].max() - pd.Timedelta(days=period-1)]
+    st.caption(f"Rodoma {data['data'].min():%Y-%m-%d} – {data['data'].max():%Y-%m-%d}. Kiekvienas taškas — paskelbta dienos kaina.")
     return (
         alt.Chart(data)
         .mark_line()
         .encode(
-            x=alt.X("data:T", title="Data", axis=alt.Axis(format="%m-%d")),
+            x=alt.X("data:T", title=None, axis=alt.Axis(format="%m-%d", tickCount=4 if compact else 8, labelAngle=0)),
             y=alt.Y(
                 "kaina:Q",
                 title="Kaina, €/l",
                 scale=alt.Scale(zero=False),
                 axis=alt.Axis(format=".2f"),
             ),
-            color=alt.Color(f"{color_col}:N", title=color_title),
+            color=alt.Color(f"{color_col}:N", title=color_title,
+                            legend=alt.Legend(orient='bottom', columns=1 if compact else 3)),
             tooltip=[
                 alt.Tooltip("data:T", title="Data", format="%Y-%m-%d"),
                 alt.Tooltip(color_col, title=color_title or " "),
                 alt.Tooltip("kaina:Q", title="Kaina", format=".3f"),
             ],
         )
-        .properties(height=340)
+        .properties(height=280 if compact else 400)
+        .interactive(bind_y=False)
     )
 
 
@@ -356,13 +369,21 @@ def station_card(sid: str, context: str = "map") -> None:
         .groupby("data")["kaina"].mean().reset_index()
     )
     city_line["serija"] = f"{last['miestas']} vidurkis"
+    chart_lines = [station_line]
+    if st.toggle('Lyginti su rinkos ir savivaldybės vidurkiu', value=not compact,
+                 key=f'compare_{context}_{sid}'):
+        chart_lines.extend([market_line, city_line])
     st.altair_chart(
         trend_chart(
-            pd.concat([station_line, market_line, city_line], ignore_index=True),
+            pd.concat(chart_lines, ignore_index=True),
             "serija",
             None,
+            key=f'{context}_{sid}',
         )
     )
+
+    if not st.toggle('Analizuoti savaitės ritmą', key=f'rhythm_{context}_{sid}'):
+        return
 
     # Savaitės ritmas dviem pjūviais:
     # 1) degalinė prieš savo tos savaitės vidurkį — kada ČIA realiai pigiausia
@@ -464,12 +485,18 @@ if view == '🗺️ Žemėlapis':
         )
         mapped["nuokrypis_txt"] = mapped["nuokrypis_pct"].map("{:+.1f} %".format)
 
-        col_leg, col_style = st.columns([3, 1], vertical_alignment="center")
+        if compact:
+            col_leg, col_style = st.container(), st.sidebar
+        else:
+            col_leg, col_style = st.columns([3, 1], vertical_alignment="center")
         with col_leg:
-            st.markdown(
-                "🟢 pigiau nei rinkos vidurkis · 🟡 apie vidurkį · 🔴 brangiau "
-                f"(vidurkis: **{market_avg:.3f} €/l**)"
-            )
+            if compact:
+                st.caption('🟢 pigiau · 🟡 apie vidurkį · 🔴 brangiau')
+            else:
+                st.markdown(
+                    "🟢 pigiau nei rinkos vidurkis · 🟡 apie vidurkį · 🔴 brangiau "
+                    f"(vidurkis: **{market_avg:.3f} €/l**)"
+                )
         MAP_STYLES = {
             "Detalus": "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json",
             "Šviesus": "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
@@ -479,7 +506,7 @@ if view == '🗺️ Žemėlapis':
             map_style_name = st.selectbox(
                 "Žemėlapio stilius",
                 list(MAP_STYLES),
-                label_visibility="collapsed",
+                label_visibility="visible" if compact else "collapsed",
                 key="map_style",
             )
         dark_map = map_style_name == "Tamsus"
@@ -685,8 +712,13 @@ if view == '📈 Tendencijos':
 
     st.subheader("Rinkos vidurkis pagal kuro tipą")
     all_avg = hist.groupby(["data", "tipas"])["kaina"].mean().reset_index()
+    if compact:
+        all_avg = all_avg[all_avg['tipas'] == fuel]
     all_avg["tipas"] = all_avg["tipas"].map(FUEL_TYPES)
     st.altair_chart(trend_chart(all_avg, "tipas", "Kuro tipas"))
+
+    if compact and not st.toggle('Rodyti papildomus rinkos grafikus', key='more_trends'):
+        st.stop()
 
     hf = hist[hist["tipas"] == fuel]
 

@@ -24,6 +24,14 @@ streamlit run streamlit_app.py
 
 ## Naudojimas telefone ir rodiklių interpretavimas
 
+- Pagrindiniame kompaktiškame vaizde palikti degalai, vietos mygtukas ir
+  žemėlapis. Tinklai ir savivaldybė išskleidžiami „Filtrai“ bloke;
+  duomenų būklė, suvestinės, žemėlapio stilius ir asmeninė nuoroda yra
+  šoniniame meniu (rodyklė viršutiniame kairiajame kampe).
+- Kainų grafikai pagal nutylėjimą rodo 14 d. kompaktiškame arba 30 d.
+  pilname vaizde. Galima rinktis 90 d., 365 d. ar visą istoriją ir
+  priartinti laiko ašį. Istoriniai duomenys nėra šalinami ar suvidurkinami.
+  Telefone papildomi grafikai ir savaitės ritmas įjungiami atskirai.
 - „Rasti šalia manęs“ vieną kartą paprašo naršyklės buvimo vietos leidimo,
   priartina žemėlapį ir rodo penkias artimiausias degalines pagal pasirinktus
   kuro ir tinklų filtrus. Savivaldybė grąžinama į „Visos“, kad neribotų
