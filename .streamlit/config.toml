@@ -12,6 +12,7 @@ baseRadius = "12px"
 buttonRadius = "full"
 linkUnderline = false
 showWidgetBorder = true
+chartCategoricalColors = ["#0F766E", "#B45309", "#334155", "#9333EA", "#C2410C", "#64748B", "#15803D"]
 
 [theme.light]
 primaryColor = "#0F766E"
@@ -23,7 +24,6 @@ linkColor = "#0F766E"
 borderColor = "#DEDACB"
 dataframeBorderColor = "#DEDACB"
 dataframeHeaderBackgroundColor = "#F0EEE5"
-chartCategoricalColors = ["#0F766E", "#B45309", "#334155", "#9333EA", "#C2410C", "#64748B", "#15803D"]
 greenColor = "#15803D"
 redColor = "#B91C1C"
 yellowColor = "#A16207"
@@ -42,7 +42,6 @@ linkColor = "#2DD4BF"
 borderColor = "#2C352F"
 dataframeBorderColor = "#2C352F"
 dataframeHeaderBackgroundColor = "#1A211D"
-chartCategoricalColors = ["#2DD4BF", "#FBBF24", "#94A3B8", "#C084FC", "#FB923C", "#7DD3FC", "#4ADE80"]
 greenColor = "#4ADE80"
 redColor = "#F87171"
 yellowColor = "#FACC15"

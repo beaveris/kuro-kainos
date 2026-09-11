@@ -154,6 +154,10 @@ def parse_daily_xlsx(content: bytes) -> pd.DataFrame:
     for col in ("imone", "savivaldybe", "adresas", "tipas"):
         df[col] = df[col].astype(str).str.strip()
     df["data"] = pd.to_datetime(df["data"], errors="coerce").dt.date
+    df = df.dropna(subset=["data"])
+    df = df[df["kaina"].gt(0) & df["tipas"].isin(FUEL_TYPES)]
+    if df.empty:
+        raise RuntimeError("Excel faile nėra tinkamų datuotų degalų kainų")
     df["miestas"] = df["savivaldybe"].str.replace(r"\s*sav\.$", "", regex=True)
     return df.reset_index(drop=True)
 

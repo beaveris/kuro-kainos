@@ -7,6 +7,7 @@ trūkstamas dienas — sync() atsisiunčia tik tas, kurių dar neturime.
 from __future__ import annotations
 
 import re
+import logging
 from pathlib import Path
 
 import pandas as pd
@@ -147,14 +148,25 @@ def load_history() -> pd.DataFrame:
     df = pd.concat((pd.read_csv(f) for f in files), ignore_index=True)
     df["data"] = pd.to_datetime(df["data"]).dt.date
     df["miestas"] = df["savivaldybe"].str.replace(r"\s*sav\.$", "", regex=True)
-    df["stotis_id"] = df["adresas"].map(
-        {a: _station_key(a) for a in df["adresas"].unique()}
-    )
     # Senuose failuose pasitaiko pavienių kitos datos eilučių — dienos su vos
     # keliais įrašais nėra tikros ataskaitos, jos iškraipytų statistiką.
     counts = df.groupby("data").size()
     df = df[df["data"].isin(counts[counts >= 100].index)]
-    return _unify_company_names(df.reset_index(drop=True))
+    df = _unify_company_names(df.reset_index(drop=True))
+    # Vienas adresas gali priklausyti keliems operatoriams.
+    df["stotis_id"] = (
+        df["imone"] + "|" + df["savivaldybe"] + "|"
+        + df["adresas"].map(_station_key)
+    )
+    df = df.drop_duplicates()
+    keys = ["stotis_id", "data", "tipas"]
+    conflicting = df.groupby(keys)["kaina"].transform("nunique") > 1
+    if conflicting.any():
+        logging.getLogger(__name__).warning(
+            "Analizėje praleista %s eilučių su prieštaringomis tos pačios degalinės kainomis",
+            int(conflicting.sum()),
+        )
+    return df.loc[~conflicting].drop_duplicates(keys).reset_index(drop=True)
 
 
 if __name__ == "__main__":

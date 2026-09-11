@@ -7,6 +7,8 @@ Paleidžiama ranka arba per launchd (žr. README).
 from __future__ import annotations
 
 import history
+from datetime import datetime
+from zoneinfo import ZoneInfo
 from geocode import PRECISE, geocode_stations, load_cache, save_cache
 
 
@@ -16,7 +18,11 @@ def main() -> None:
 
     df = history.load_history()
     if df.empty:
-        return
+        raise RuntimeError("Kainų istorija tuščia")
+    latest_day = df["data"].max()
+    print(f"Naujausia kainų data: {latest_day}", flush=True)
+    if (datetime.now(ZoneInfo("Europe/Vilnius")).date() - latest_day).days > 7:
+        raise RuntimeError("Kainos neatnaujintos ilgiau nei 7 dienas — patikrinkite ENA šaltinį")
     latest = df[df["data"] == df["data"].max()]
     stations = latest[["adresas", "savivaldybe"]].drop_duplicates()
     cache = load_cache()

@@ -112,7 +112,11 @@ if not fuel:
 fdf = df[df["tipas"] == fuel].copy()
 # Rinkos vidurkis skaičiuojamas nuo visos rinkos — filtrai jo nekeičia,
 # kad nuokrypiai visada rodytų palyginimą su rinka.
-market_avg = fdf["kaina"].mean()
+market_avg = fdf.loc[fdf["senumas"] == 0, "kaina"].mean()
+if pd.isna(market_avg):
+    st.info("Naujausios dienos šio kuro kainų nėra. Pasirinkite kitą kuro tipą.")
+    st.stop()
+st.caption("Rinkos vidurkis: tik naujausios ataskaitos kainos, be ankstesnių dienų kainų.")
 
 network_counts = fdf["imone"].value_counts()
 with col_net:
@@ -328,12 +332,12 @@ def station_card(sid: str) -> None:
             )
         else:
             source = (
-                "tai daugiausia jos pačios akcija, ne rinkos banga"
+                "jos savaitės profilis skiriasi nuo rinkos; akcijos priežasties duomenys nepatvirtina"
                 if amp_savas >= 0.6 * amp_own
                 else "iš esmės ji juda kartu su visa rinka"
             )
             st.markdown(
-                f"Šioje degalinėje istoriškai pigiausia "
+                f"Iš stebėtų darbo dienų šioje degalinėje vidutiniškai pigiausia "
                 f"**{DAY_NAMES[best].lower()[:-2]}iais** — vidutiniškai "
                 f"{prof_own.loc[best, 'mean']:+.1f} ct/l nuo jos savaitės "
                 f"vidurkio; {source}."
@@ -547,8 +551,6 @@ with tab_stable:
         st.stop()
 
     shf = hist[hist["tipas"] == fuel].copy()
-    if networks:
-        shf = shf[shf["imone"].isin(networks)]
     if period:
         cutoff = pd.Timestamp(str(hist["data"].max())) - pd.Timedelta(days=period - 1)
         shf = shf[pd.to_datetime(shf["data"]) >= cutoff]
@@ -563,16 +565,20 @@ with tab_stable:
     shf["pigiausia_sav"] = (
         shf.groupby(["data", "miestas"])["kaina"].rank(method="min") <= 1
     )
+    if networks:
+        shf = shf[shf["imone"].isin(networks)]
 
     agg = (
-        shf.groupby(["imone", "miestas", "adresas"])
+        shf.sort_values("data").groupby(["stotis_id", "imone", "miestas"])
         .agg(
+            adresas=("adresas", "last"),
             dienu=("data", "nunique"),
             vid_kaina=("kaina", "mean"),
             vid_nuokrypis=("nuokrypis", "mean"),
             pigiausia_pct=("pigiausia_sav", "mean"),
         )
         .reset_index()
+        .drop(columns="stotis_id")
     )
     agg = agg[agg["dienu"] >= 0.6 * n_days]
     agg["pigiausia_pct"] *= 100
@@ -649,9 +655,10 @@ with tab_trends:
     # perėjimų analizė: kas vyksta tarp gretimų skelbimo dienų
     seq = wd.sort_values("data_ts").set_index("data_ts")["dienos_vid"]
     chg = (seq.diff() * 100).dropna()
-    prev_wd = chg.index.to_series().shift(1).dt.dayofweek
-    fri_mon = chg[(prev_wd == 4) & (chg.index.dayofweek == 0)].mean()
-    mon_tue = chg[(prev_wd == 0) & (chg.index.dayofweek == 1)].mean()
+    prev_wd = seq.index.to_series().shift(1).dt.dayofweek.reindex(chg.index)
+    gap = seq.index.to_series().diff().dt.days.reindex(chg.index)
+    fri_mon = chg[(prev_wd == 4) & (chg.index.dayofweek == 0) & (gap == 3)].mean()
+    mon_tue = chg[(prev_wd == 0) & (chg.index.dayofweek == 1) & (gap == 1)].mean()
     if amplitude < 1.5:
         st.markdown(
             f"**{FUEL_TYPES[fuel]}** ryškaus savaitės ciklo neturi "
@@ -660,14 +667,12 @@ with tab_trends:
         )
     else:
         st.markdown(
-            f"**{FUEL_TYPES[fuel]}** kainos savaitės eigoje leidžiasi ir žemiausią "
-            f"tašką pasiekia **savaitgalio–pirmadienio lange**: nuo penktadienio iki "
-            f"pirmadienio jos nukrenta dar vidutiniškai **{fri_mon:+.1f} ct/l** "
-            f"(savaitgalių ENA neskelbia, tad ar sekmadienis pigesnis už pirmadienį — "
-            f"nematome). Brangiausia — **{worst['diena'].lower()[:-2]}į**: "
-            f"pirmadienio–antradienio naktį kainos „perkraunamos“ "
-            f"vidutiniškai **{mon_tue:+.1f} ct/l** šuoliu. "
-            "*(ENA skelbia tik darbo dienų kainas.)*"
+            f"**{FUEL_TYPES[fuel]}**: didžiausias vidutinis nuokrypis nuo tos "
+            f"savaitės vidurkio — **{worst['diena']}**. "
+            f"Penktadienio–pirmadienio ataskaitų vidutinis pokytis: "
+            f"**{fri_mon:+.1f} ct/l**, pirmadienio–antradienio: **{mon_tue:+.1f} ct/l**. "
+            "Tai istoriniai stebėjimai, ne prognozė. Savaitgalio kainų ir tikslaus "
+            "perkainojimo laiko šie duomenys neparodo."
         )
     st.altair_chart(weekday_bar(weekday, "Nuokrypis nuo savaitės vidurkio, ct/l"))
 
