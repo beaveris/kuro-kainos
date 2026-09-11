@@ -24,6 +24,13 @@ streamlit run streamlit_app.py
 
 ## Naudojimas telefone ir rodiklių interpretavimas
 
+- „Rasti šalia manęs“ vieną kartą paprašo naršyklės buvimo vietos leidimo,
+  priartina žemėlapį ir rodo penkias artimiausias degalines pagal pasirinktus
+  kuro ir tinklų filtrus. Savivaldybė grąžinama į „Visos“, kad neribotų
+  paieškos senesniu pasirinkimu. Atstumai yra tiesia linija, ne keliu.
+  Koordinatės laikomos tik programos sesijoje, neįrašomos į failus ar nuorodas.
+  Vietą atnaujinkite dar kartą paspaudę mygtuką; nuolatinio sekimo nėra.
+  Leidimo nesuteikus galima toliau rinktis savivaldybę rankiniu būdu.
 - Kompaktiškas vaizdas įjungtas pagal nutylėjimą: trumpesnis žemėlapis,
   skilčių pasirinkimas iš sąrašo, degalinių kortelės po aštuonias puslapyje.
   Pilnos lentelės ir išsamūs grafikai išskleidžiami prireikus.
@@ -45,7 +52,7 @@ streamlit run streamlit_app.py
 ## Testai
 
 ```bash
-python3 -m unittest test_history test_analytics -v
+python3 -m unittest test_history test_analytics test_location -v
 ```
 
 ## Talpinimas internete (Streamlit Community Cloud)

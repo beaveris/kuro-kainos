@@ -18,6 +18,7 @@ import history
 from analytics import stability_report, weekday_profile
 from fuel_data import FUEL_TYPES
 from geocode import load_cache
+from location import location_button, validate_location, distance_km
 
 st.set_page_config(
     page_title="Kuro kainos Lietuvoje",
@@ -155,6 +156,19 @@ with col_net:
         default=[n for n in st.query_params.get_all('network') if n in network_counts.index],
         key="network_choice",
     )
+position = location_button()
+if position is not None:
+    valid_position = validate_location(position)
+    if valid_position:
+        st.session_state['user_location'] = valid_position
+        st.session_state['global_city'] = 'Visos'
+        st.session_state['view'] = '🗺️ Žemėlapis'
+    else:
+        st.warning('Gauta netinkama vieta. Bandykite dar kartą arba pasirinkite savivaldybę.')
+if st.session_state.get('user_location'):
+    if st.button('Nenaudoti mano vietos'):
+        del st.session_state['user_location']
+st.caption('Vieta nustatoma tik paspaudus. Koordinatės perduodamos programai tik šiai sesijai, neįrašomos į kainų istoriją ar asmeninę nuorodą. Nuolatinio sekimo nėra.')
 city_counts = df.groupby('miestas').stotis_id.nunique().sort_values(ascending=False)
 global_cities = ['Visos', *city_counts.index]
 saved_city = st.query_params.get('city', 'Visos')
@@ -414,8 +428,16 @@ view = st.selectbox(
 )
 
 if view == '🗺️ Žemėlapis':
+    user_location = st.session_state.get('user_location')
     mdf = fdf.merge(coords, on="adresas", how="left")
     mapped = mdf.dropna(subset=["lat", "lon"]).copy()
+    if user_location and not mapped.empty:
+        mapped['atstumas_km'] = [distance_km(user_location['lat'], user_location['lon'], r.lat, r.lon)
+                                 for r in mapped.itertuples()]
+        mapped = mapped.sort_values('atstumas_km')
+        st.caption(f"📍 Jūsų vieta · nurodytas tikslumas apie {user_location['accuracy']:.0f} m. Taikomi pasirinkti tinklų, kuro ir savivaldybės filtrai.")
+        if user_location['accuracy'] > 1000:
+            st.warning('Vieta apytikslė — artimiausių degalinių tvarka gali būti netiksli.')
 
     if mapped.empty:
         st.info(
@@ -465,9 +487,9 @@ if view == '🗺️ Žemėlapis':
             pdk.Deck(
                 map_style=MAP_STYLES[map_style_name],
                 initial_view_state=pdk.ViewState(
-                    latitude=float(mapped.lat.median()) if global_city != 'Visos' else 55.2,
-                    longitude=float(mapped.lon.median()) if global_city != 'Visos' else 23.9,
-                    zoom=10 if global_city != 'Visos' else (5.0 if compact else 6.3),
+                    latitude=user_location['lat'] if user_location else (float(mapped.lat.median()) if global_city != 'Visos' else 55.2),
+                    longitude=user_location['lon'] if user_location else (float(mapped.lon.median()) if global_city != 'Visos' else 23.9),
+                    zoom=11 if user_location else (10 if global_city != 'Visos' else (5.0 if compact else 6.3)),
                 ),
                 layers=[
                     pdk.Layer(
@@ -482,7 +504,7 @@ if view == '🗺️ Žemėlapis':
                         ],
                         get_position=["lon", "lat"],
                         get_fill_color="color",
-                        get_radius=2500,
+                        get_radius=70 if user_location else 2500,
                         radius_min_pixels=4,
                         radius_max_pixels=18,
                         pickable=True,
@@ -492,7 +514,11 @@ if view == '🗺️ Žemėlapis':
                         ),
                         line_width_min_pixels=1,
                     )
-                ],
+                ] + ([pdk.Layer('ScatterplotLayer', id='my-location', data=[user_location],
+                                get_position=['lon', 'lat'], get_fill_color=[50, 140, 255],
+                                get_radius=30, radius_min_pixels=7, stroked=True,
+                                get_line_color=[255, 255, 255], line_width_min_pixels=2,
+                                pickable=False)] if user_location else []),
                 tooltip={
                     "html": (
                         "<b>{imone}</b><br/>{adresas}<br/>{savivaldybe}<br/>"
@@ -504,12 +530,22 @@ if view == '🗺️ Žemėlapis':
             height=420 if compact else 650,
             on_select="rerun",
             selection_mode="single-object",
-            key="stations_map",
+            key="stations_map_near" if user_location else "stations_map",
         )
         picked = map_event.selection.objects.get("stations", [])
         if picked:
             st.divider()
             station_card(picked[0]["stotis_id"])
+        if user_location:
+            st.subheader('Artimiausios degalinės')
+            st.caption('Atstumas tiesia linija, ne kelio ilgis. Degalinių koordinatės gali būti apytikslės. Mėlynas taškas — jūsų vieta.')
+            for row in mapped.head(5).itertuples():
+                with st.container(border=True):
+                    st.markdown(f'**{row.imone} · {row.atstumas_km:.1f} km · {row.kaina:.3f} €/l**')
+                    st.write(row.adresas)
+                    st.caption(f'Kainos data {row.data}')
+                    with st.expander('Istorija ir navigacija'):
+                        station_card(row.stotis_id, 'near')
 
 if view == '🏙️ Pigiausios pagal miestą':
     grouped = fdf.groupby("miestas")
