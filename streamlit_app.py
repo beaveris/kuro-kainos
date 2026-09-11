@@ -7,11 +7,15 @@ from __future__ import annotations
 
 import altair as alt
 import logging
+from datetime import datetime
+from zoneinfo import ZoneInfo
+from urllib.parse import urlencode
 import pandas as pd
 import pydeck as pdk
 import streamlit as st
 
 import history
+from analytics import stability_report, weekday_profile
 from fuel_data import FUEL_TYPES
 from geocode import load_cache
 
@@ -23,7 +27,7 @@ st.set_page_config(
 
 
 @st.cache_data(ttl=3600, show_spinner="Atnaujinami duomenys iš ena.lt…")
-def load_data() -> tuple[str, pd.DataFrame, pd.DataFrame, bool]:
+def load_data() -> tuple[str, pd.DataFrame, pd.DataFrame, bool, str]:
     """Grąžina (naujausia data, tos dienos duomenys, visa istorija).
 
     Kas valandą patikrina, ar ENA nepaskelbė naujų dienų, ir jas parsisiunčia.
@@ -48,7 +52,8 @@ def load_data() -> tuple[str, pd.DataFrame, pd.DataFrame, bool]:
         .reset_index(drop=True)
     )
     df["senumas"] = df["data"].map(lambda d: (latest - d).days)
-    return str(latest), df, hist, update_failed
+    checked_at = datetime.now(ZoneInfo("Europe/Vilnius")).isoformat(timespec="minutes")
+    return str(latest), df, hist, update_failed, checked_at
 
 
 @st.cache_data(ttl=600)
@@ -74,7 +79,7 @@ def deviation_color(pct: float) -> list[int]:
 
 
 try:
-    date, df, hist, update_failed = load_data()
+    date, df, hist, update_failed, checked_at = load_data()
 except Exception:
     logging.getLogger(__name__).exception("Nepavyko įkelti kainų istorijos")
     st.error("Kainų šiuo metu nepavyko įkelti. Bandykite vėliau.")
@@ -82,6 +87,27 @@ except Exception:
 coords = load_coords()
 
 st.title("⛽ Kuro kainos Lietuvoje")
+st.caption(f"Atnaujinimą tikrinome {checked_at[11:16]} Lietuvos laiku ({checked_at[:10]}).")
+with st.expander(f"Duomenų būklė · kainos {date}"):
+    st.write(f"Paskutinis bandymas atnaujinti: **{checked_at.replace('T', ' ')}** (Lietuvos laikas).")
+    st.write("Atnaujinimas nepavyko — rodoma išsaugota istorija." if update_failed else "ENA duomenys patikrinti.")
+    current_ids = set(df.loc[df['senumas'] == 0, 'stotis_id'])
+    old_ids = set(df.loc[df['senumas'] > 0, 'stotis_id'])
+    with st.container(horizontal=True):
+        st.metric("Pateikė naujausią dieną", len(current_ids), border=True)
+        st.metric("Tik ankstesnės kainos", len(old_ids - current_ids), border=True)
+        st.metric("Dalis kuro kainų senesnės", len(old_ids & current_ids), border=True)
+    age = (datetime.now(ZoneInfo('Europe/Vilnius')).date() - pd.Timestamp(date).date()).days
+    st.caption(f"Naujausia ataskaita prieš {age} kalendorines d. Nauja kaina nereiškia realaus laiko kainos: tai ENA dienos stebėjimas.")
+    completeness = df.assign(nauja=df['senumas'].eq(0)).groupby('imone').agg(
+        kainu=('tipas', 'size'), nauju=('nauja', 'sum'), paskutine=('data', 'max')
+    ).reset_index()
+    completeness['Naujų kainų, %'] = completeness.nauju / completeness.kainu * 100
+    st.dataframe(completeness.rename(columns={'imone':'Tinklas','kainu':'Rodomų kainų','nauju':'Naujausios dienos kainų','paskutine':'Paskutinė data'}), hide_index=True)
+    st.caption("Aprėptis skaičiuojama tarp paskutinės savaitės rodinyje esančių degalinių, ne visų Lietuvos degalinių registro.")
+    if st.button('Tikrinti kainas dabar'):
+        load_data.clear()
+        st.rerun()
 if update_failed:
     st.warning(
         f"Nepavyko gauti naujų ENA duomenų. Rodomos paskutinės išsaugotos "
@@ -104,7 +130,8 @@ with col_fuel:
         "Degalų tipas",
         options=list(FUEL_TYPES),
         format_func=lambda x: FUEL_TYPES[x],
-        default="95 benzinas",
+        default=st.query_params.get('fuel', '95 benzinas') if st.query_params.get('fuel', '95 benzinas') in FUEL_TYPES else '95 benzinas',
+        key="fuel_choice",
     )
 if not fuel:
     st.stop()
@@ -125,19 +152,41 @@ with col_net:
         options=list(network_counts.index),
         format_func=lambda x: f"{x} ({network_counts[x]})",
         placeholder="Visi tinklai",
+        default=[n for n in st.query_params.get_all('network') if n in network_counts.index],
+        key="network_choice",
     )
+city_counts = df.groupby('miestas').stotis_id.nunique().sort_values(ascending=False)
+global_cities = ['Visos', *city_counts.index]
+saved_city = st.query_params.get('city', 'Visos')
+global_city = st.selectbox('Mano savivaldybė', global_cities,
+                           index=global_cities.index(saved_city) if saved_city in global_cities else 0,
+                           key='global_city')
+with st.popover('Vaizdas ir mano nuoroda'):
+    compact = st.toggle('Kompaktiškas vaizdas telefonui', value=st.query_params.get('compact', '1') != '0', key='compact')
+    params = {'fuel': fuel, 'network': networks, 'city': global_city}
+    params['compact'] = '1' if compact else '0'
+    preference_url = 'https://kuro-kainos-lt.streamlit.app/?' + urlencode(params, doseq=True)
+    st.link_button('Atidaryti mano pasirinkimus', preference_url)
+    st.code(preference_url, language=None)
+    st.caption('Pridėkite šią nuorodą prie žymelių arba telefono pradžios ekrano. Ji atkurs kuro tipą, tinklus ir savivaldybę. Pasirinkimai saugomi nuorodoje, ne paskyroje.')
 if networks:
     fdf = fdf[fdf["imone"].isin(networks)]
     if fdf.empty:
         st.warning("Pasirinkti tinklai neturi šio tipo degalų.")
         st.stop()
+if global_city != 'Visos':
+    fdf = fdf[fdf.miestas == global_city]
+if fdf.empty:
+    st.info('Pagal pasirinktą savivaldybę ir tinklus kainų nerasta. Pakeiskite filtrus.')
+    st.stop()
 fdf["nuokrypis"] = fdf["kaina"] - market_avg
 fdf["nuokrypis_pct"] = fdf["nuokrypis"] / market_avg * 100
 
 cheapest = fdf.loc[fdf["kaina"].idxmin()]
 priciest = fdf.loc[fdf["kaina"].idxmax()]
 
-with st.container(horizontal=True):
+st.caption(f"{len(fdf)} degalinių · rinkos vidurkis {market_avg:.3f} €/l · mažiausia rodoma kaina {cheapest['kaina']:.3f} €/l ({cheapest['data']})")
+with st.expander('Kainų suvestinė', expanded=not compact):
     st.metric("Rinkos vidurkis", f"{market_avg:.3f} €/l", border=True)
     if networks:
         sel_avg = fdf["kaina"].mean()
@@ -227,7 +276,7 @@ def city_options(data: pd.DataFrame) -> list[str]:
     return ["Visos"] + [name for name, _ in ranked]
 
 
-def station_card(sid: str) -> None:
+def station_card(sid: str, context: str = "map") -> None:
     """Degalinės kortelė: šiandienos būklė, istorija ir savaitės dienų profilis."""
     sh = hist_fuel[hist_fuel["stotis_id"] == sid]
     if sh.empty:
@@ -236,6 +285,12 @@ def station_card(sid: str) -> None:
     last = sh[sh["data"] == sh["data"].max()].iloc[0]
 
     st.subheader(f"⛽ {last['imone']} — {last['adresas']}")
+    # Adreso paieška navigacijoje saugesnė nei apytikslis pašto kodo taškas.
+    destination = f"{last['imone']}, {last['adresas']}, {last['savivaldybe']}, Lietuva"
+    with st.container(horizontal=True):
+        st.link_button('Važiuoti su Google Maps', 'https://www.google.com/maps/dir/?' + urlencode({'api': 1, 'destination': destination}))
+        st.link_button('Ieškoti Waze', 'https://www.waze.com/ul?' + urlencode({'q': destination, 'navigate': 'yes'}))
+    st.caption('Navigacijoje patikrinkite pasirinktą degalinę. Rodoma kainos data gali skirtis nuo šiandienos.')
 
     sh_daily = sh.groupby("data")["kaina"].min()
     sh_dev = (sh_daily - day_avg_all).dropna()
@@ -251,7 +306,7 @@ def station_card(sid: str) -> None:
         if not today_rows.empty:
             trow = today_rows.iloc[0]
             label = (
-                "Šiandienos kaina"
+                f"Kaina ({trow['data']})"
                 if trow.get("senumas", 0) == 0
                 else f"Kaina ({trow['data']})"
             )
@@ -268,18 +323,15 @@ def station_card(sid: str) -> None:
                 f"{last['kaina']:.3f} €/l",
                 border=True,
             )
-        st.metric(
-            "Vid. nuokrypis nuo rinkos",
-            f"{sh_dev.mean() * 100:+.1f} ct/l",
-            border=True,
-            help="Per visą turimą istoriją",
-        )
-        st.metric(
-            "Pigiausia savivaldybėje",
-            f"{(cheapest_days['rank'] <= 1).mean() * 100:.0f} % dienų",
-            border=True,
-        )
-        st.metric("Istorijos dienų", f"{sh['data'].nunique()}", border=True)
+        if compact:
+            st.caption(f"Per {sh['data'].nunique()} istorijos d.: vid. {sh_dev.mean() * 100:+.1f} ct/l nuo rinkos; pigiausia savivaldybėje {(cheapest_days['rank'] <= 1).mean() * 100:.0f} % stebėtų dienų.")
+        else:
+            st.metric("Vid. nuokrypis nuo rinkos", f"{sh_dev.mean() * 100:+.1f} ct/l", border=True)
+            st.metric("Pigiausia savivaldybėje", f"{(cheapest_days['rank'] <= 1).mean() * 100:.0f} % dienų", border=True)
+            st.metric("Istorijos dienų", f"{sh['data'].nunique()}", border=True)
+
+    if not st.toggle('Rodyti kainų istoriją ir savaitės ritmą', key=f'details_{context}_{sid}'):
+        return
 
     station_line = sh_daily.reset_index()
     station_line["serija"] = "Ši degalinė"
@@ -302,50 +354,29 @@ def station_card(sid: str) -> None:
     # 1) degalinė prieš savo tos savaitės vidurkį — kada ČIA realiai pigiausia
     #    (kainų trendas susiprastina per savaitės centravimą);
     # 2) prieš tos dienos rinkos vidurkį — ar ritmas savas, ar tik rinkos aidas.
-    own = sh_daily.to_frame("kaina")
-    own["ts"] = pd.to_datetime(own.index.astype(str))
-    iso = own["ts"].dt.isocalendar()
-    own["savaite"] = iso["year"].astype(str) + "-" + iso["week"].astype(str)
-    own["sav_vid"] = own.groupby("savaite")["kaina"].transform("mean")
-    own["nuokrypis_ct"] = (own["kaina"] - own["sav_vid"]) * 100
-    own["diena_nr"] = own["ts"].dt.dayofweek
-
-    prof_own = own.groupby("diena_nr")["nuokrypis_ct"].agg(["mean", "count"])
-    rez = (sh_dev * 100).to_frame("nuokrypis_ct")
+    rhythm = weekday_profile(sh_daily)
+    prof_own = rhythm['profile']
+    rez = (sh_dev.reindex(rhythm.get('dates', [])) * 100).to_frame("nuokrypis_ct")
     rez["diena_nr"] = pd.to_datetime(rez.index.astype(str)).dayofweek
     prof_rink = rez.groupby("diena_nr")["nuokrypis_ct"].mean()
 
-    enough = len(prof_own) >= 4 and prof_own["count"].min() >= 5
+    enough = rhythm['weeks'] >= 6
     st.markdown("**Šios degalinės savaitės ritmas**")
     if not enough:
-        st.caption("Per mažai istorijos savaitės tendencijai įvertinti.")
+        st.caption(f"Per mažai palyginamų savaičių: {rhythm['weeks']}. Reikia bent 6 pilnų Pr–Pn savaičių.")
     else:
-        amp_own = prof_own["mean"].max() - prof_own["mean"].min()
-        # savo ritmo dalis, nepaaiškinama rinkos ritmu
         rink_centered = prof_rink - prof_rink.mean()
-        amp_savas = rink_centered.max() - rink_centered.min()
-        best = prof_own["mean"].idxmin()
-        if amp_own < 1.5:
-            st.markdown(
-                "Šios degalinės kainos per savaitę beveik nesikeičia "
-                f"(amplitudė {amp_own:.1f} ct/l) — diena čia nesvarbi."
-            )
+        best = rhythm['best']
+        st.caption(f"Analizuota {rhythm['weeks']} pilnų savaičių. Diena „{DAY_NAMES[best]}“ buvo vienintelė pigiausia {rhythm['wins']} iš jų ({rhythm['wins'] / rhythm['weeks']:.0%}).")
+        if not rhythm['reliable']:
+            st.info('Aiškios, stabiliai pasikartojančios pigiausios dienos nėra. Grafikas rodo istorinius skirtumus, bet konkrečios dienos nerekomenduojame.')
         else:
-            source = (
-                "jos savaitės profilis skiriasi nuo rinkos; akcijos priežasties duomenys nepatvirtina"
-                if amp_savas >= 0.6 * amp_own
-                else "iš esmės ji juda kartu su visa rinka"
-            )
-            st.markdown(
-                f"Iš stebėtų darbo dienų šioje degalinėje vidutiniškai pigiausia "
-                f"**{DAY_NAMES[best].lower()[:-2]}iais** — vidutiniškai "
-                f"{prof_own.loc[best, 'mean']:+.1f} ct/l nuo jos savaitės "
-                f"vidurkio; {source}."
-            )
+            st.success(f"Pasikartojanti istoriškai pigiausia darbo diena: {DAY_NAMES[best]}. Medianinis nuokrypis nuo savo savaitės vidurkio: {prof_own.loc[best, 'median']:+.1f} ct/l.")
+        st.caption('Tai aprašomoji taisyklė, ne statistinė garantija: ≥6 pilnos savaitės, ≥60 % vienareikšmių laimėjimų, bent 0,5 ct/l skirtumas nuo antros dienos ir ta pati geriausia diena naujesnėje istorijos pusėje. Savaitgalio kainų nematome; bendras kainų kritimas gali paveikti savaitės profilį.')
 
         both = pd.DataFrame({
             "diena_nr": prof_own.index,
-            "Prieš savo savaitės vidurkį": prof_own["mean"],
+            "Prieš savo savaitės vidurkį (mediana)": prof_own["median"],
             "Santykinai su rinka (centruota)": rink_centered,
         }).melt("diena_nr", var_name="serija", value_name="nuokrypis_ct")
         both["diena"] = both["diena_nr"].map(DAY_NAMES)
@@ -371,17 +402,18 @@ def station_card(sid: str) -> None:
         )
 
 
-tab_map, tab_cities, tab_stable, tab_trends, tab_all = st.tabs(
+view = st.selectbox(
+    'Ką norite peržiūrėti?',
     [
         "🗺️ Žemėlapis",
         "🏙️ Pigiausios pagal miestą",
         "🏆 Pastoviai pigiausios",
         "📈 Tendencijos",
         "📋 Visos degalinės",
-    ]
+    ], key='view',
 )
 
-with tab_map:
+if view == '🗺️ Žemėlapis':
     mdf = fdf.merge(coords, on="adresas", how="left")
     mapped = mdf.dropna(subset=["lat", "lon"]).copy()
 
@@ -433,7 +465,9 @@ with tab_map:
             pdk.Deck(
                 map_style=MAP_STYLES[map_style_name],
                 initial_view_state=pdk.ViewState(
-                    latitude=55.2, longitude=23.9, zoom=6.3
+                    latitude=float(mapped.lat.median()) if global_city != 'Visos' else 55.2,
+                    longitude=float(mapped.lon.median()) if global_city != 'Visos' else 23.9,
+                    zoom=10 if global_city != 'Visos' else (5.0 if compact else 6.3),
                 ),
                 layers=[
                     pdk.Layer(
@@ -467,7 +501,7 @@ with tab_map:
                     )
                 },
             ),
-            height=650,
+            height=420 if compact else 650,
             on_select="rerun",
             selection_mode="single-object",
             key="stations_map",
@@ -477,7 +511,7 @@ with tab_map:
             st.divider()
             station_card(picked[0]["stotis_id"])
 
-with tab_cities:
+if view == '🏙️ Pigiausios pagal miestą':
     grouped = fdf.groupby("miestas")
     city_report = grouped.apply(
         lambda g: pd.Series(
@@ -534,10 +568,10 @@ with tab_cities:
         height=420,
     )
 
-with tab_stable:
+if view == '🏆 Pastoviai pigiausios':
     st.markdown(
-        "Reitingas pagal **vidutinį nuokrypį nuo tos dienos rinkos vidurkio** "
-        "per pasirinktą laikotarpį — vienadienės akcijos rezultato nenulemia. "
+        "Reitingas pagal **medianinį nuokrypį nuo tos dienos rinkos vidurkio** "
+        "per pasirinktą laikotarpį — mediana mažiau jautri pavienėms akcijoms. "
         "Rodomos tik degalinės, teikusios duomenis bent 60 % laikotarpio dienų."
     )
     period = st.segmented_control(
@@ -550,52 +584,41 @@ with tab_stable:
     if period is None:
         st.stop()
 
-    shf = hist[hist["tipas"] == fuel].copy()
-    if period:
-        cutoff = pd.Timestamp(str(hist["data"].max())) - pd.Timedelta(days=period - 1)
-        shf = shf[pd.to_datetime(shf["data"]) >= cutoff]
-
-    n_days = shf["data"].nunique()
-    # nuokrypis nuo VISOS rinkos dienos vidurkio (ne filtruotos)
-    day_avg = (
-        hist[hist["tipas"] == fuel].groupby("data")["kaina"].mean().rename("dienos_vid")
-    )
-    shf = shf.join(day_avg, on="data")
-    shf["nuokrypis"] = shf["kaina"] - shf["dienos_vid"]
-    shf["pigiausia_sav"] = (
-        shf.groupby(["data", "miestas"])["kaina"].rank(method="min") <= 1
-    )
+    agg, n_days = stability_report(hist[hist['tipas'] == fuel], period)
     if networks:
-        shf = shf[shf["imone"].isin(networks)]
-
-    agg = (
-        shf.sort_values("data").groupby(["stotis_id", "imone", "miestas"])
-        .agg(
-            adresas=("adresas", "last"),
-            dienu=("data", "nunique"),
-            vid_kaina=("kaina", "mean"),
-            vid_nuokrypis=("nuokrypis", "mean"),
-            pigiausia_pct=("pigiausia_sav", "mean"),
-        )
-        .reset_index()
-        .drop(columns="stotis_id")
-    )
-    agg = agg[agg["dienu"] >= 0.6 * n_days]
-    agg["pigiausia_pct"] *= 100
-
-    city_stable = st.selectbox(
-        "Savivaldybė",
-        city_options(shf),
-        key="stable_city",
-    )
-    if city_stable != "Visos":
-        agg = agg[agg["miestas"] == city_stable]
-    agg = agg.sort_values("vid_nuokrypis").head(30).reset_index(drop=True)
+        agg = agg[agg.imone.isin(networks)]
+    if global_city != 'Visos':
+        agg = agg[agg.miestas == global_city]
+    st.caption('TOP 10 % skaičiuojamas savivaldybėje tarp bent 10 tą dieną kainą pateikusių degalinių; riba apvalinama aukštyn, vienodos kainos įtraukiamos kartu. Rodiklio vardiklis — tik palyginamos dienos.')
+    st.caption('14 d. pokytis: paskutinių 14 kalendorinių dienų medianinio nuokrypio nuo rinkos skirtumas prieš ankstesnes 14 d. Neigiamas skaičius — santykinai atpigo. Reikia bent 60 % dienų ir bent 3 stebėjimų abiejuose languose.')
+    agg = agg.head(30).reset_index(drop=True)
     agg.index += 1
-
-    st.dataframe(
+    if agg.empty:
+        st.info('Nepakanka duomenų reitingui pagal pasirinktus filtrus.')
+    if compact:
+        for rank, row in agg.iterrows():
+            with st.expander(f"{rank}. {row.imone} · {row.median_deviation * 100:+.1f} ct/l"):
+                st.write(row.adresas)
+                st.write(f"Kainos mediana **{row.mediana:.3f} €/l** · aprėptis **{row.coverage:.0f} %** ({row.dienu}/{n_days} d.)")
+                if pd.notna(row.top10_pct):
+                    st.write(f"Tarp pigiausių 10 %: **{row.top10_pct:.0f} %** iš {row.top10_days} palyginamų dienų.")
+                if pd.notna(row.change_ct):
+                    st.write(f"14 d. nuokrypio pokytis: **{row.change_ct:+.2f} ct/l**.")
+                if st.button('Degalinės kortelė', key=f'stable_open_{row.stotis_id}'):
+                    st.session_state['stable_selected'] = row.stotis_id
+        selected_stable = st.session_state.get('stable_selected')
+        if selected_stable in set(agg.stotis_id):
+            station_card(selected_stable, 'stable')
+    st.expander('Pilna reitingo lentelė', expanded=not compact).dataframe(
         agg,
         column_config={
+            "stotis_id": None,
+            "mediana": st.column_config.NumberColumn('Kainos mediana', format='%.3f €'),
+            "median_deviation": st.column_config.NumberColumn('Medianinis nuokrypis', format='%+.3f €'),
+            "coverage": st.column_config.ProgressColumn('Duomenų aprėptis', min_value=0, max_value=100, format='%.0f %%'),
+            "top10_pct": st.column_config.ProgressColumn('Dienų tarp pigiausių 10 %', min_value=0, max_value=100, format='%.0f %%'),
+            "top10_days": st.column_config.NumberColumn('TOP 10 % palyginamų dienų', format='%d'),
+            "change_ct": st.column_config.NumberColumn('14 d. pokytis prieš ankstesnes 14 d., ct/l', format='%+.2f'),
             "imone": st.column_config.TextColumn("Tinklas", pinned=True),
             "miestas": "Savivaldybė",
             "adresas": "Adresas",
@@ -618,7 +641,7 @@ with tab_stable:
     )
 
 
-with tab_trends:
+if view == '📈 Tendencijos':
     st.caption(
         f"Istorija: {hist['data'].min()} – {hist['data'].max()} "
         f"({hist['data'].nunique()} d.). Duomenys kaupiami kasdien."
@@ -694,11 +717,8 @@ with tab_trends:
             "palyginti su rinkos vidurkiu."
         )
 
-with tab_all:
-    city = st.selectbox(
-        "Savivaldybė",
-        city_options(fdf),
-    )
+if view == '📋 Visos degalinės':
+    city = global_city
     tdf = fdf if city == "Visos" else fdf[fdf["miestas"] == city]
     tdf = (
         tdf[
@@ -708,8 +728,25 @@ with tab_all:
         .sort_values("kaina")
         .reset_index(drop=True)
     )
-    st.caption("Pažymėk eilutę — apačioje atsivers degalinės kainų istorija.")
-    selection = st.dataframe(
+    station_labels = {r.stotis_id: f"{r.imone} · {r.adresas} · {r.kaina:.3f} €/l" for r in tdf.itertuples()}
+    quick = st.selectbox('Atverti degalinės kortelę', [''] + list(tdf.stotis_id),
+                         format_func=lambda sid: station_labels.get(sid, 'Pasirinkite degalinę…'),
+                         key='quick_station')
+    if quick:
+        station_card(quick, 'quick')
+    if compact:
+        page = st.selectbox('Sąrašo puslapis', range(1, max(2, (len(tdf) + 7) // 8 + 1)), key='station_page')
+        for row in tdf.iloc[(page - 1) * 8:page * 8].itertuples():
+            with st.container(border=True):
+                st.markdown(f"**{row.imone} · {row.kaina:.3f} €/l**")
+                st.write(row.adresas)
+                st.caption(f"Kainos data {row.data} · {row.nuokrypis * 100:+.1f} ct/l nuo rinkos")
+                def select_station(sid):
+                    st.session_state.quick_station = sid
+                st.button('Atverti istoriją ir navigaciją', key=f'open_{row.stotis_id}',
+                          on_click=select_station, args=(row.stotis_id,))
+    st.caption("Pilnoje lentelėje galima rūšiuoti kainas ir pasirinkti eilutę.")
+    selection = st.expander('Pilna degalinių lentelė', expanded=not compact).dataframe(
         tdf,
         column_config={
             "imone": st.column_config.TextColumn("Įmonė", pinned=True),
@@ -733,4 +770,4 @@ with tab_all:
 
     if selection.selection.rows:
         st.divider()
-        station_card(tdf.iloc[selection.selection.rows[0]]["stotis_id"])
+        station_card(tdf.iloc[selection.selection.rows[0]]["stotis_id"], 'table')

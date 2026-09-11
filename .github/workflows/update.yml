@@ -32,6 +32,9 @@ jobs:
       - name: Parsisiųsti naujas dienas ir geokoduoti naujas degalines
         run: python update_history.py
 
+      - name: Patikrinti importo ir analizės taisykles
+        run: python -m unittest test_history test_analytics
+
       - name: Įcommitinti naujus duomenis
         run: |
           git config user.name "kuro-kainos-bot"

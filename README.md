@@ -22,6 +22,32 @@ python3 rc_match.py    # tikslios Adresų registro koordinatės (prioritetas)
 streamlit run streamlit_app.py
 ```
 
+## Naudojimas telefone ir rodiklių interpretavimas
+
+- Kompaktiškas vaizdas įjungtas pagal nutylėjimą: trumpesnis žemėlapis,
+  skilčių pasirinkimas iš sąrašo, degalinių kortelės po aštuonias puslapyje.
+  Pilnos lentelės ir išsamūs grafikai išskleidžiami prireikus.
+- „Vaizdas ir mano nuoroda“ leidžia susikurti nuorodą su degalų tipu,
+  tinklais, savivaldybe ir vaizdo nustatymu. Išsisaugokite ją naršyklės
+  žymėse arba telefono pradžios ekrane. Nustatymai saugomi nuorodoje,
+  ne vartotojo paskyroje.
+- „Duomenų būklė“ atskiria naujos ataskaitos įrašus nuo ankstesnių kainų.
+  Paskutinio tikrinimo laikas nėra kainų paskelbimo laikas.
+- „Pastoviai pigiausios“ lygina tik faktiškai paskelbtas kainas ir rodo
+  medianą, duomenų aprėptį, patekimą į pigiausią savivaldybės dešimtadalį
+  bei paskutinių 14 dienų pokytį, palyginti su ankstesnėmis 14 dienų.
+  Dešimtadalio rodiklis neskaičiuojamas, kai yra mažiau nei 10 degalinių.
+- Savaitės ritmas vertinamas pagal pačios degalinės kainas pilnomis
+  darbo dienų savaitėmis. Rekomendacijai reikia bent 6 savaičių ir
+  pasikartojančio skirtumo. Tai istorinis požymis, ne kainos prognozė;
+  savaitgalio kainų iš darbo dienų duomenų nustatyti negalima.
+
+## Testai
+
+```bash
+python3 -m unittest test_history test_analytics -v
+```
+
 ## Talpinimas internete (Streamlit Community Cloud)
 
 Aplikacija talpinama nemokamai: GitHub repo + [share.streamlit.io](https://share.streamlit.io).
