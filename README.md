@@ -1,0 +1,101 @@
+# ⛽ Kuro kainos Lietuvoje
+
+Streamlit aplikacija, rodanti kasdienes degalų kainas Lietuvos degalinėse:
+žemėlapis, pigiausios degalinės pagal savivaldybę ir kainų palyginimas su
+rinkos vidurkiu.
+
+Duomenų šaltinis: [Lietuvos energetikos agentūra](https://www.ena.lt/dk-visa-informacija/)
+(atnaujinama kasdien darbo dienomis).
+
+## Paleidimas
+
+```bash
+pip install -r requirements.txt
+
+# Atsiradus naujoms degalinėms — koordinačių atnaujinimas žemėlapiui.
+# Pagrindinis šaltinis: oficialus Adresų registras (rc_adresai.csv.gz),
+# atsarginis: Photon/Nominatim geokoderiai. Rezultatai įsimenami
+# geocache.json faile:
+python3 geocode.py     # nauji adresai per Photon/Nominatim
+python3 rc_match.py    # tikslios Adresų registro koordinatės (prioritetas)
+
+streamlit run streamlit_app.py
+```
+
+## Naudojimas telefone ir rodiklių interpretavimas
+
+- Pagrindiniame kompaktiškame vaizde palikti degalai, vietos mygtukas ir
+  žemėlapis. Tinklai ir savivaldybė išskleidžiami „Filtrai“ bloke;
+  duomenų būklė, suvestinės, žemėlapio stilius ir asmeninė nuoroda yra
+  šoniniame meniu (rodyklė viršutiniame kairiajame kampe).
+- Kainų grafikai pagal nutylėjimą rodo 14 d. kompaktiškame arba 30 d.
+  pilname vaizde. Galima rinktis 90 d., 365 d. ar visą istoriją ir
+  priartinti laiko ašį. Istoriniai duomenys nėra šalinami ar suvidurkinami.
+  Telefone papildomi grafikai ir savaitės ritmas įjungiami atskirai.
+- „Rasti šalia manęs“ vieną kartą paprašo naršyklės buvimo vietos leidimo,
+  priartina žemėlapį ir rodo penkias artimiausias degalines pagal pasirinktus
+  kuro ir tinklų filtrus. Savivaldybė grąžinama į „Visos“, kad neribotų
+  paieškos senesniu pasirinkimu. Atstumai yra tiesia linija, ne keliu.
+  Koordinatės laikomos tik programos sesijoje, neįrašomos į failus ar nuorodas.
+  Vietą atnaujinkite dar kartą paspaudę mygtuką; nuolatinio sekimo nėra.
+  Leidimo nesuteikus galima toliau rinktis savivaldybę rankiniu būdu.
+- Kompaktiškas vaizdas įjungtas pagal nutylėjimą: trumpesnis žemėlapis,
+  skilčių pasirinkimas iš sąrašo, degalinių kortelės po aštuonias puslapyje.
+  Pilnos lentelės ir išsamūs grafikai išskleidžiami prireikus.
+- „Vaizdas ir mano nuoroda“ leidžia susikurti nuorodą su degalų tipu,
+  tinklais, savivaldybe ir vaizdo nustatymu. Išsisaugokite ją naršyklės
+  žymėse arba telefono pradžios ekrane. Nustatymai saugomi nuorodoje,
+  ne vartotojo paskyroje.
+- „Duomenų būklė“ atskiria naujos ataskaitos įrašus nuo ankstesnių kainų.
+  Paskutinio tikrinimo laikas nėra kainų paskelbimo laikas.
+- „Pastoviai pigiausios“ lygina tik faktiškai paskelbtas kainas ir rodo
+  medianą, duomenų aprėptį, patekimą į pigiausią savivaldybės dešimtadalį
+  bei paskutinių 14 dienų pokytį, palyginti su ankstesnėmis 14 dienų.
+  Dešimtadalio rodiklis neskaičiuojamas, kai yra mažiau nei 10 degalinių.
+- Savaitės ritmas vertinamas pagal pačios degalinės kainas pilnomis
+  darbo dienų savaitėmis. Rekomendacijai reikia bent 6 savaičių ir
+  pasikartojančio skirtumo. Tai istorinis požymis, ne kainos prognozė;
+  savaitgalio kainų iš darbo dienų duomenų nustatyti negalima.
+
+## Testai
+
+```bash
+python3 -m unittest test_history test_analytics test_location -v
+```
+
+## Talpinimas internete (Streamlit Community Cloud)
+
+Aplikacija talpinama nemokamai: GitHub repo + [share.streamlit.io](https://share.streamlit.io).
+Duomenis kasdien atnaujina GitHub Actions (`.github/workflows/update.yml`):
+darbo dienomis 13:00 ir 19:30 LT parsiunčia naują ENA failą, geokoduoja
+naujas degalines ir įcommitina į repo — Streamlit Cloud persikrauna
+automatiškai. Rankinis paleidimas: repo skiltis Actions → „Atnaujinti kuro
+kainas" → Run workflow.
+
+Diegimas: share.streamlit.io → Sign in with GitHub → New app →
+pasirinkti šį repo, branch `main`, failą `streamlit_app.py` → Deploy.
+Norint riboti prieigą: App settings → Sharing → „Only specific people
+can view this app" ir suvesti žiūrovų el. paštus.
+
+## Istorija ir automatinis atnaujinimas (lokaliai)
+
+Kainų istorija kaupiama `data/` kataloge (po CSV kiekvienai dienai; ENA
+archyvas siekia 2026-04-08). Aplikacija pati parsisiunčia trūkstamas dienas
+kas valandą, o visiškai automatiškai tai daro launchd užduotis:
+
+- `~/Library/LaunchAgents/lt.kuro-kainos.update.plist` — kasdien 12:30 ir
+  18:30 paleidžia `update_history.py` (naujos dienos + naujų degalinių
+  geokodavimas). Žurnalas: `update.log`.
+- Įjungimas: `launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/lt.kuro-kainos.update.plist`
+- Išjungimas: `launchctl bootout gui/$(id -u)/lt.kuro-kainos.update`
+
+## Failai
+
+- `streamlit_app.py` — pagrindinė aplikacija
+- `fuel_data.py` — duomenų parsisiuntimas iš ena.lt (SharePoint xlsx)
+- `rc_match.py` — adresų sutapdinimas su oficialiu Adresų registru
+- `rc_adresai.csv.gz` — Adresų registro pastatai su koordinatėmis (1.13 mln;
+  šaltinis: registrucentras.lt atviri duomenys, `adr_stat_lr.csv` +
+  `adr_gra_adresai_LT.zip` + gatvių/gyvenviečių žodynai)
+- `geocode.py` — atsarginis geokodavimas per Photon/Nominatim (OSM)
+- `geocache.json` — koordinačių talpykla (generuojama automatiškai)
